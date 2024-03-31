@@ -1,0 +1,3 @@
+ERROR 2024-03-31 16:43:40,225 views 10272 14544 Failed to create a new user: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+WARNING 2024-03-31 16:43:40,226 log 10272 14544 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 16:43:40,226 basehttp 10272 14544 "POST /auth/sign-up/ HTTP/1.1" 400 58
