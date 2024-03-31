@@ -93,9 +93,23 @@ class TaskEnvironmentAction(APIView):
         user_pk = get_user_id_from_token(request)
         serializer = TaskSerializer(data=request.data)
         try:
-            environment = Environment.objects.get(id=pk)
+            environment = Environment.objects.get(id=pk,
+                                                  user=UserProfile.objects.get(id=user_pk))
         except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+            try:
+                environment = Environment.objects.get(id=pk)
+            except Environment.DoesNotExist:
+                return Response(
+                    {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+                )
+            try:
+                admin = Admin.objects.get(environment=environment,
+                                          user=UserProfile.objects.get(id=get_user_id_from_token(request)),
+                                          is_admin=True)
+            except Admin.DoesNotExist:
+                return Response(
+                    {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+                )
         if serializer.is_valid():
             serializer.save(user=UserProfile.objects.get(id=user_pk), environment=environment)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -191,12 +205,15 @@ class EnvironmentAction(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk, user_pk):
-        return get_object_or_404(Environment, id=pk, user=UserProfile.objects.get(id=user_pk))
+        return get_object_or_404(Environment,
+                                 id=pk,
+                                 user=UserProfile.objects.get(id=user_pk))
 
     def post(self, request, pk):
         user_pk = get_user_id_from_token(request)
         try:
-            environment = self.get_object(pk, user_pk)
+            environment = self.get_object(pk,
+                                          user_pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
         admin_pk = request.data.get('admin_pk')
@@ -210,12 +227,15 @@ class EnvironmentAdminAction(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk, user_pk):
-        return get_object_or_404(Environment, pk=pk, user=UserProfile.objects.get(id=user_pk))
+        return get_object_or_404(Environment,
+                                 pk=pk,
+                                 user=UserProfile.objects.get(id=user_pk))
 
     def delete(self, request, pk, admin_pk):
         user_pk = get_user_id_from_token(request)
         try:
-            environment = self.get_object(pk, user_pk)
+            environment = self.get_object(pk,
+                                          user_pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -236,9 +256,11 @@ class AdminActionsView(APIView):
         except Admin.DoesNotExist:
             return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
         task = Task.objects.filter(environment=environment,
-                                   user=UserProfile.objects.get(id=get_user_id_from_token(request)), is_deleted=False,
+                                   user=UserProfile.objects.get(id=get_user_id_from_token(request)),
+                                   is_deleted=False,
                                    completed=False)
-        serializer = TaskSerializer(task, many=True)
+        serializer = TaskSerializer(task,
+                                    many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
 
@@ -249,18 +271,56 @@ class EnvironmentTaskView(APIView):
     def put(self, request, environment_pk):
         user_pk = get_user_id_from_token(request)
         try:
-            environment = Environment.objects.get(id=environment_pk, user=UserProfile.objects.get(id=user_pk))
+            environment = Environment.objects.get(id=environment_pk,
+                                                  user=UserProfile.objects.get(id=user_pk))
         except Environment.DoesNotExist:
-            return Response(
-                {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
-            )
-
+            try:
+                environment = Environment.objects.get(id=environment_pk)
+            except Environment.DoesNotExist:
+                return Response(
+                    {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+                )
+            try:
+                admin = Admin.objects.get(environment=environment,
+                                          user=UserProfile.objects.get(id=get_user_id_from_token(request)),
+                                          is_admin=True)
+            except Admin.DoesNotExist:
+                return Response(
+                    {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+                )
         task_pk = request.data.get('task_pk')
         try:
-            task = Task.objects.get(environment=environment, id=task_pk)
+            task = Task.objects.get(environment=environment,
+                                    id=task_pk)
         except Task.DoesNotExist:
             return Response(
                 {'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND
             )
         task.completed = True
+        return Response({'message': 'Task has been completed'}, status=status.HTTP_200_OK)
+
+
+class EnvironmentAdminView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def put(self, request, environment_pk):
+        user_pk = get_user_id_from_token(request)
+        try:
+            environment = Environment.objects.get(id=environment_pk,
+                                                  user=UserProfile.objects.get(id=user_pk))
+        except Environment.DoesNotExist:
+            return Response(
+                {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+            )
+
+        admin_pk = request.data.get('admin_pk')
+        try:
+            admin = Admin.objects.get(environment=environment,
+                                      id=admin_pk)
+        except Task.DoesNotExist:
+            return Response(
+                {'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND
+            )
+        admin_pk.is_admin = True
         return Response({'message': 'Task has been completed'}, status=status.HTTP_200_OK)
