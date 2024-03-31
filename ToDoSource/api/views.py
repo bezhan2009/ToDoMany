@@ -20,7 +20,6 @@ from rest_framework import status
 from .serializers import *
 from rest_framework_simplejwt.tokens import RefreshToken
 
-
 logger = logging.getLogger('django')
 
 
@@ -83,6 +82,22 @@ class TaskList(APIView):
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=UserProfile.objects.get(id=user_pk))
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class TaskEnvironmentAction(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, pk):
+        user_pk = get_user_id_from_token(request)
+        serializer = TaskSerializer(data=request.data)
+        try:
+            environment = Environment.objects.get(id=pk)
+        except Environment.DoesNotExist:
+            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+        if serializer.is_valid():
+            serializer.save(user=UserProfile.objects.get(id=user_pk), environment=environment)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -176,7 +191,7 @@ class EnvironmentAction(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk, user_pk):
-        return get_object_or_404(Environment, pk=pk, user=UserProfile.objects.get(id=user_pk))
+        return get_object_or_404(Environment, id=pk, user=UserProfile.objects.get(id=user_pk))
 
     def post(self, request, pk):
         user_pk = get_user_id_from_token(request)
@@ -184,11 +199,16 @@ class EnvironmentAction(APIView):
             environment = self.get_object(pk, user_pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=user_pk))
-        return Response({'message': 'You have successfully added your friend to environment'}, status=status.HTTP_201_CREATED)
+        admin_pk = request.data.get('admin_pk')
+        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
+        return Response({'message': 'You have successfully added your friend to environment'},
+                        status=status.HTTP_201_CREATED)
 
 
 class EnvironmentAdminAction(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
     def get_object(self, pk, user_pk):
         return get_object_or_404(Environment, pk=pk, user=UserProfile.objects.get(id=user_pk))
 
@@ -204,6 +224,9 @@ class EnvironmentAdminAction(APIView):
 
 
 class AdminActionsView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request, environment_pk):
         try:
             environment = Environment.objects.get(id=environment_pk)
@@ -212,8 +235,32 @@ class AdminActionsView(APIView):
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
         except Admin.DoesNotExist:
             return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
-        task = Task.objects.filter(environment=environment, user=UserProfile.objects.get(id=get_user_id_from_token(request)), is_deleted=False, completed=False)
+        task = Task.objects.filter(environment=environment,
+                                   user=UserProfile.objects.get(id=get_user_id_from_token(request)), is_deleted=False,
+                                   completed=False)
         serializer = TaskSerializer(task, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
-# wORK
+
+class EnvironmentTaskView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def put(self, request, environment_pk):
+        user_pk = get_user_id_from_token(request)
+        try:
+            environment = Environment.objects.get(id=environment_pk, user=UserProfile.objects.get(id=user_pk))
+        except Environment.DoesNotExist:
+            return Response(
+                {'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND
+            )
+
+        task_pk = request.data.get('task_pk')
+        try:
+            task = Task.objects.get(environment=environment, id=task_pk)
+        except Task.DoesNotExist:
+            return Response(
+                {'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND
+            )
+        task.completed = True
+        return Response({'message': 'Task has been completed'}, status=status.HTTP_200_OK)
