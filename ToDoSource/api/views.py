@@ -177,7 +177,7 @@ class EnvironmentAction(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk, user_pk):
-        return get_object_or_404(Environment, pk=pk, user=UserProfile.objects.get(id=user_pk))
+        return get_object_or_404(Environment, id=pk, user=UserProfile.objects.get(id=user_pk))
 
     def post(self, request, pk):
         user_pk = get_user_id_from_token(request)
@@ -185,7 +185,8 @@ class EnvironmentAction(APIView):
             environment = self.get_object(pk, user_pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=user_pk))
+        admin_pk = request.data.get('admin_pk')
+        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
         return Response({'message': 'You have successfully added your friend to environment'}, status=status.HTTP_201_CREATED)
 
 
