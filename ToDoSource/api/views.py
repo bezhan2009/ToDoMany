@@ -34,9 +34,15 @@ logger = logging.getLogger('django')
 ))
 @api_view(["POST"])
 def create_user(request):
-    serializer = UserProfileSerializer(data=request.data)
+    data = {
+        'username': request.data['username'],
+        'password': request.data['password'],
+        'age': request.data['age'],
+    }
+
+    serializer = UserProfileSerializer(data=data)
     if serializer.is_valid():
-        user = serializer.save()
+        user = UserProfile.objects.create_user(**data)
         refresh = RefreshToken.for_user(user)
         logger.info(f"New user created with ID {user.id}.")
         return Response({
@@ -44,7 +50,7 @@ def create_user(request):
             'access': str(refresh.access_token),
             'user_id': user.id
         })
-    logger.error(f"Failed to create a new user: {serializer.errors}")
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

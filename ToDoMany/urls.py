@@ -38,15 +38,32 @@ schema_view = get_schema_view(
     permission_classes=(permissions.AllowAny,),
 )
 
+
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework.response import Response
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    def post(self, request, *args, **kwargs):
+        print("He")
+        response = super().post(request, *args, **kwargs)
+        if response.status_code == 200:
+            print("Token generated successfully:", response.data)
+        else:
+            print("Token generation failed:", response.data)
+        return response
+
+
+
 urlpatterns = [
     path('', ping, name='ping'),
-    path('admin/', admin.site.urls),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # Оставьте только одно определение для 'admin/'
     path('demo/', include('ToDoSource.urls')),
     path('auth/sign-up/', create_user, name='sign_up'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/token/verify/', TokenVerifyView.as_view(), name='verify_refresh'),
-    path('auth/sign-in/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('auth/sign-in/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
+

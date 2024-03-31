@@ -6,6 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class UserProfile(User):
     age = models.IntegerField()
+    is_activate = models.BooleanField(default=True)
 
 
 class Environment(models.Model):
