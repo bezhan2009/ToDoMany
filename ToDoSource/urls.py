@@ -8,3 +8,5 @@ urlpatterns = [
     path('ping', views.ping, name='ping'),
     path('api/', include('ToDoSource.api.urls'))
 ]
+
+# Checking git
