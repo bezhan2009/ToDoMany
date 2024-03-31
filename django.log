@@ -1,3 +1,120 @@
 ERROR 2024-03-31 16:43:40,225 views 10272 14544 Failed to create a new user: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
 WARNING 2024-03-31 16:43:40,226 log 10272 14544 Bad Request: /auth/sign-up/
 WARNING 2024-03-31 16:43:40,226 basehttp 10272 14544 "POST /auth/sign-up/ HTTP/1.1" 400 58
+WARNING 2024-03-31 16:56:31,284 log 8944 11740 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:56:31,284 basehttp 8944 11740 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:56:41,623 log 8944 11740 Unauthorized: /api/token/
+WARNING 2024-03-31 16:56:41,623 basehttp 8944 11740 "POST /api/token/ HTTP/1.1" 401 63
+ERROR 2024-03-31 16:56:51,481 views 8944 11740 Failed to create a new user: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+WARNING 2024-03-31 16:56:51,481 log 8944 11740 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 16:56:51,482 basehttp 8944 11740 "POST /auth/sign-up/ HTTP/1.1" 400 58
+WARNING 2024-03-31 16:57:15,494 log 8944 11740 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:57:15,494 basehttp 8944 11740 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:59:05,541 log 14204 5208 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:59:05,542 basehttp 14204 5208 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:59:22,756 log 14204 5208 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:59:22,756 basehttp 14204 5208 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:01:38,174 log 14204 13368 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:01:38,175 basehttp 14204 13368 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:02:05,180 log 14204 13368 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:02:05,180 basehttp 14204 13368 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:56:09,270 log 6512 9800 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:56:09,270 basehttp 6512 9800 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:07:21,639 log 12744 5452 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:07:21,640 basehttp 12744 5452 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:10:03,457 log 11192 6492 Unauthorized: /auth/sign-in/two
+WARNING 2024-03-31 18:10:03,457 basehttp 11192 6492 "POST /auth/sign-in/two HTTP/1.1" 401 63
+ERROR 2024-03-31 18:12:32,706 log 13080 11724 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
+DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 43, in create_user
+    UserProfile.objects.create_user(**data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 78, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 906, in save_base
+    parent_inserted = self._save_parents(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 959, in _save_parents
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 1067, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 1108, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
+DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+
+ERROR 2024-03-31 18:12:32,712 basehttp 13080 11724 "POST /auth/sign-up/ HTTP/1.1" 500 199034
+WARNING 2024-03-31 18:13:18,803 log 13080 11724 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:13:18,804 basehttp 13080 11724 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:14:46,895 log 1332 12844 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:14:46,896 basehttp 1332 12844 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:15:48,658 log 12492 12204 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 18:15:48,658 basehttp 12492 12204 "POST /auth/sign-up/ HTTP/1.1" 400 58
