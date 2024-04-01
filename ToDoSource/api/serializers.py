@@ -16,10 +16,19 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = '__all__'
 
+    def get_fields(self):
+        fields = super().get_fields()
+        fields.pop('user', None)
+        fields.pop('environment', None)
+        return fields
+
 
 class EnvironmentSerializer(serializers.ModelSerializer):
-    user = serializers.PrimaryKeyRelatedField(queryset=UserProfile.objects.all(), required=False)
-
     class Meta:
         model = Environment
         fields = '__all__'
+
+    def get_fields(self):
+        fields = super().get_fields()
+        fields.pop('user', None)
+        return fields
