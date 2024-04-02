@@ -41,3 +41,12 @@ class Admin(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    parent_id = models.IntegerField(null=True)
+    comment_text = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+

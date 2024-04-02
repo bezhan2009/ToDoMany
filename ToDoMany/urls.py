@@ -54,9 +54,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
         return response
 
 
-
 urlpatterns = [
-    path('', ping, name='ping'),
     path('admin/', admin.site.urls),  # Оставьте только одно определение для 'admin/'
     path('demo/', include('ToDoSource.urls')),
     path('auth/sign-up/', create_user, name='sign_up'),
@@ -64,6 +62,6 @@ urlpatterns = [
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/token/verify/', TokenVerifyView.as_view(), name='verify_refresh'),
     path('auth/sign-in/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 

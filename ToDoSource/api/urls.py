@@ -14,5 +14,8 @@ urlpatterns = [
     path('environment/action/<int:pk>/', EnvironmentAction.as_view(), name='environment-action'),
     path('environment/admin/action/<int:pk>/', AdminActionsView.as_view(), name='admin-action'),
 
-    path('environment/task/<int:pk>/', EnvironmentTaskView.as_view(), name='environment-task')
+    path('environment/task/<int:pk>/', EnvironmentTaskView.as_view(), name='environment-task'),
+
+    path('comment/<int:task_id>/', CommentList.as_view(), name='comment'),
+    path('comment/<int:comment_id>/detail/', CommentDetail.as_view(), name='comment_detail'),
 ]
