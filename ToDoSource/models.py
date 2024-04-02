@@ -49,4 +49,3 @@ class Comment(models.Model):
     parent_id = models.IntegerField(null=True)
     comment_text = models.TextField()
     date = models.DateTimeField(default=timezone.now)
-
