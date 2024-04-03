@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "ToDoMany",
+      "src": "manage.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "ToDoMany/asgi.py"
+      "dest": "/manage.py"
     }
   ]
 }
