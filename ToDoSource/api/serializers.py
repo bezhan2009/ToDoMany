@@ -62,3 +62,10 @@ class CommentMainSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'comment_text', 'parent_id', 'children']
+
+
+class SavedEnvironmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SavedEnvironment
+        fields = '__all__'
+

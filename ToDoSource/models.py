@@ -50,3 +50,14 @@ class Comment(models.Model):
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, related_name='children')
     comment_text = models.TextField()
     date = models.DateTimeField(default=timezone.now)
+
+
+class SavedEnvironment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
+    environment = models.ForeignKey(Environment, on_delete=models.CASCADE)
+    is_deleted = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.environment.name
+
