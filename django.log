@@ -886,3 +886,24 @@ ERROR 2024-04-02 12:37:20,223 basehttp 16012 15240 "POST /demo/api/comment/1/ HT
 ERROR 2024-04-02 16:29:07,513 views 1844 19396 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
 ERROR 2024-04-02 16:29:07,517 log 1844 19396 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 16:29:07,519 basehttp 1844 19396 "GET /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:25:23,953 views 5220 10484 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
+ERROR 2024-04-03 10:25:23,954 log 5220 10484 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:25:23,954 basehttp 5220 10484 "POST /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:28:11,072 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:11,073 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:11,074 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:28:13,122 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:13,123 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:13,123 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:29:14,107 views 10904 9412 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:29:14,108 log 10904 9412 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:29:14,108 basehttp 10904 9412 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:32:51,355 views 11164 8816 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:32:51,355 log 11164 8816 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:32:51,356 basehttp 11164 8816 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:38:06,053 views 7380 8928 An error occurred while processing the request: 'RelatedManager' object has no attribute 'append'
+ERROR 2024-04-03 10:38:06,055 log 7380 8928 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:38:06,056 basehttp 7380 8928 "POST /demo/api/comment/1/ HTTP/1.1" 500 61
+ERROR 2024-04-03 10:39:28,017 views 8964 2800 An error occurred while processing the request: 'Comment' object has no attribute 'add_child'
+ERROR 2024-04-03 10:39:28,018 log 8964 2800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:39:28,019 basehttp 8964 2800 "POST /demo/api/comment/1/ HTTP/1.1" 500 57
