@@ -57,7 +57,3 @@ ToDoMany - это веб-приложение, разработанное для
 **Структура БД**
 
 ![image](https://github.com/bezhan2009/ToDoMany/assets/157696306/ae11cbdb-cb8e-44e8-bb0c-7ea612f463ef)
-<<<<<<< HEAD
-
-=======
->>>>>>> 1d6cdc77ccfdce180834d2e8fba657279bbd7f8e
