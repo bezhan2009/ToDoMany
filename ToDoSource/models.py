@@ -29,6 +29,7 @@ class Task(models.Model):
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE, null=True, blank=True)
     is_deleted = models.BooleanField(default=False)
     money = models.IntegerField(null=False, default=0)
+    deadline = models.DateTimeField(null=True, blank=True)  # Добавляем поле для срока выполнения задачи
 
     def __str__(self):
         return self.description
