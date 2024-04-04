@@ -886,3 +886,332 @@ ERROR 2024-04-02 12:37:20,223 basehttp 16012 15240 "POST /demo/api/comment/1/ HT
 ERROR 2024-04-02 16:29:07,513 views 1844 19396 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
 ERROR 2024-04-02 16:29:07,517 log 1844 19396 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 16:29:07,519 basehttp 1844 19396 "GET /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:25:23,953 views 5220 10484 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
+ERROR 2024-04-03 10:25:23,954 log 5220 10484 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:25:23,954 basehttp 5220 10484 "POST /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:28:11,072 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:11,073 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:11,074 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:28:13,122 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:13,123 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:13,123 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:29:14,107 views 10904 9412 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:29:14,108 log 10904 9412 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:29:14,108 basehttp 10904 9412 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:32:51,355 views 11164 8816 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:32:51,355 log 11164 8816 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:32:51,356 basehttp 11164 8816 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:38:06,053 views 7380 8928 An error occurred while processing the request: 'RelatedManager' object has no attribute 'append'
+ERROR 2024-04-03 10:38:06,055 log 7380 8928 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:38:06,056 basehttp 7380 8928 "POST /demo/api/comment/1/ HTTP/1.1" 500 61
+ERROR 2024-04-03 10:39:28,017 views 8964 2800 An error occurred while processing the request: 'Comment' object has no attribute 'add_child'
+ERROR 2024-04-03 10:39:28,018 log 8964 2800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:39:28,019 basehttp 8964 2800 "POST /demo/api/comment/1/ HTTP/1.1" 500 57
+ERROR 2024-04-03 11:58:15,404 exception 8392 3328 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-03 11:58:15,540 log 8392 3328 Bad Request: /
+WARNING 2024-04-03 11:58:15,541 basehttp 8392 3328 "GET / HTTP/1.1" 400 76230
+WARNING 2024-04-03 17:38:28,041 log 12900 3328 Method Not Allowed: /auth/sign-up/
+WARNING 2024-04-03 17:38:28,042 basehttp 12900 3328 "GET /auth/sign-up/ HTTP/1.1" 405 5948
+WARNING 2024-04-03 17:40:37,436 views 12900 12872 Failed to delete Comment. Comment with ID 1 not found.
+WARNING 2024-04-03 17:40:37,437 log 12900 12872 Not Found: /demo/api/comment/1/detail/
+WARNING 2024-04-03 17:40:37,437 basehttp 12900 12872 "DELETE /demo/api/comment/1/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 17:40:44,586 views 12900 12872 Failed to delete Comment. Comment with ID 2 not found.
+WARNING 2024-04-03 17:40:44,586 log 12900 12872 Not Found: /demo/api/comment/2/detail/
+WARNING 2024-04-03 17:40:44,587 basehttp 12900 12872 "DELETE /demo/api/comment/2/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 20:52:28,941 views 9920 4500 Failed to delete Comment. Comment with ID 1 not found.
+WARNING 2024-04-03 20:52:28,941 log 9920 4500 Not Found: /demo/api/comment/1/detail/
+WARNING 2024-04-03 20:52:28,941 basehttp 9920 4500 "DELETE /demo/api/comment/1/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 20:53:03,955 views 9920 1644 Failed to delete Comment. Comment with ID 2 not found.
+WARNING 2024-04-03 20:53:03,956 log 9920 1644 Not Found: /demo/api/comment/2/detail/
+WARNING 2024-04-03 20:53:03,956 basehttp 9920 1644 "DELETE /demo/api/comment/2/detail/ HTTP/1.1" 404 31
+ERROR 2024-04-03 22:00:14,516 log 3024 10200 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:14,520 basehttp 3024 10200 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:00:43,078 log 3024 9908 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:43,080 basehttp 3024 9908 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:00:46,680 log 3024 9784 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:46,682 basehttp 3024 9784 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:01:43,370 log 5568 1256 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: QuerySet.create() takes 1 positional argument but 2 were given
+ERROR 2024-04-03 22:01:43,373 basehttp 5568 1256 "GET /demo/api/environment/1/ HTTP/1.1" 500 22503
+ERROR 2024-04-03 22:02:24,158 log 10716 4480 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: QuerySet.create() takes 1 positional argument but 2 were given
+ERROR 2024-04-03 22:02:24,160 basehttp 10716 4480 "GET /demo/api/environment/1/ HTTP/1.1" 500 22503
+ERROR 2024-04-03 22:03:09,976 log 11224 7228 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironmentSerializer(data=data).save()
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 176, in save
+    assert hasattr(self, '_errors'), (
+AssertionError: You must call `.is_valid()` before calling `.save()`.
+ERROR 2024-04-03 22:03:09,979 basehttp 11224 7228 "GET /demo/api/environment/1/ HTTP/1.1" 500 22421
+WARNING 2024-04-03 22:07:30,864 log 2884 5944 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:07:30,864 basehttp 2884 5944 "GET /demo/api/environment/ HTTP/1.1" 404 35
+WARNING 2024-04-03 22:08:08,624 log 732 10700 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:08,625 basehttp 732 10700 "GET /demo/api/environment/ HTTP/1.1" 404 45
+WARNING 2024-04-03 22:08:29,286 log 392 9572 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:29,287 basehttp 392 9572 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:08:46,917 log 392 10068 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:46,917 basehttp 392 10068 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:40:31,749 log 7416 2248 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:40:31,749 basehttp 7416 2248 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:41:01,574 log 10700 2420 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:41:01,575 basehttp 10700 2420 "GET /demo/api/environment/ HTTP/1.1" 404 46
+ERROR 2024-04-03 22:41:07,274 log 10700 2420 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 134, in __init__
+    self.status_code = int(status)
+                       ^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 303, in get
+    return Response(saving_environment.errors, status=status)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\response.py", line 30, in __init__
+    super().__init__(None, status=status)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\template\response.py", line 44, in __init__
+    super().__init__("", content_type, status, charset=charset, headers=headers)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 374, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 136, in __init__
+    raise TypeError("HTTP status code must be an integer.")
+TypeError: HTTP status code must be an integer.
+ERROR 2024-04-03 22:41:07,278 basehttp 10700 2420 "GET /demo/api/environment/1/ HTTP/1.1" 500 23476
+WARNING 2024-04-03 22:41:25,707 log 11348 9448 Not Found: /demo/api/environment/1/
+WARNING 2024-04-03 22:41:25,707 basehttp 11348 9448 "GET /demo/api/environment/1/ HTTP/1.1" 404 144
+WARNING 2024-04-03 22:42:03,274 log 252 11884 Not Found: /demo/api/environment/1/
+WARNING 2024-04-03 22:42:03,274 basehttp 252 11884 "GET /demo/api/environment/1/ HTTP/1.1" 404 143
+ERROR 2024-04-03 22:44:46,305 log 7352 8356 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 247, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+TypeError: 'SavedEnvironment' object is not iterable
+ERROR 2024-04-03 22:44:46,307 basehttp 7352 8356 "GET /demo/api/environment/ HTTP/1.1" 500 22756
