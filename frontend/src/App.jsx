@@ -4,8 +4,8 @@ import viteLogo from "/vite.svg";
 import "./null.css";
 import "./App.css";
 
-import { TaskButton } from "./components/TaskButton/TaskButton";
-import { TaskTemp } from "./components/TaskTemp/TaskTemp";
+
+import { TaskCard } from "./components/TaskCard/TaskCard";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -36,13 +36,6 @@ function App() {
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
-            <div className="">
-                <TaskButton
-                    taskButtonName="Выполнить задание"
-                    taskStatus="active"
-                />
-                <TaskTemp taskStatus="active" />
-            </div>
         </>
     );
 }
