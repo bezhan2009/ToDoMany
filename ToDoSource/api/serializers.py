@@ -34,15 +34,6 @@ class EnvironmentSerializer(serializers.ModelSerializer):
         return fields
 
 
-class CommentsSerializer(serializers.ModelSerializer):
-    user = serializers.PrimaryKeyRelatedField(queryset=UserProfile.objects.all(), required=False)
-    task = serializers.PrimaryKeyRelatedField(queryset=Task.objects.all(), required=False)
-
-    class Meta:
-        model = Comment
-        fields = ['task', 'user', 'comment_text', 'parent_id', 'date', 'children']
-
-
 class CommentChildrenSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     comment_text = serializers.CharField()
@@ -51,6 +42,15 @@ class CommentChildrenSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'comment_text', 'parent_id']
+
+
+class CommentsSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(queryset=UserProfile.objects.all(), required=False)
+    task = serializers.PrimaryKeyRelatedField(queryset=Task.objects.all(), required=False)
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
 
 
 class CommentMainSerializer(serializers.ModelSerializer):
@@ -62,3 +62,10 @@ class CommentMainSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'comment_text', 'parent_id', 'children']
+
+
+class SavedEnvironmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SavedEnvironment
+        fields = '__all__'
+
