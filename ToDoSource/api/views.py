@@ -159,8 +159,8 @@ class TaskDetail(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk):
-        return get_object_or_404(Task, id=pk)
+    def get_object(self, pk, request):
+        return get_object_or_404(Task, id=pk, user=UserProfile.objects.get(id=get_user_id_from_token(request)))
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -174,7 +174,7 @@ class TaskDetail(APIView):
         Получает информацию о задаче.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
         serializer = TaskSerializer(task)
@@ -192,7 +192,7 @@ class TaskDetail(APIView):
         Удаляет задачу.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -212,7 +212,7 @@ class TaskDetail(APIView):
         Обновляет информацию о задаче.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
