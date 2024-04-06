@@ -159,8 +159,8 @@ class TaskDetail(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk):
-        return get_object_or_404(Task, id=pk)
+    def get_object(self, pk, request):
+        return get_object_or_404(Task, id=pk, user=UserProfile.objects.get(id=get_user_id_from_token(request)))
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -174,7 +174,7 @@ class TaskDetail(APIView):
         Получает информацию о задаче.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
         serializer = TaskSerializer(task)
@@ -192,7 +192,7 @@ class TaskDetail(APIView):
         Удаляет задачу.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -212,7 +212,7 @@ class TaskDetail(APIView):
         Обновляет информацию о задаче.
         """
         try:
-            task = self.get_object(pk)
+            task = self.get_object(pk, request)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -232,18 +232,19 @@ class EnvironmentList(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        responses={200: EnvironmentSerializer(many=True)},
+        responses={200: SavedEnvironmentSerializer(many=True)},
     )
     def get(self, request):
         """
-        Получает список всех окружений.
+        Получает список всех сохраненных окружений.
         """
         try:
-            environments = Environment.objects.all()
-        except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+            user_id = get_user_id_from_token(request)
+            saved_environments = SavedEnvironment.objects.filter(user=user_id)
+        except SavedEnvironment.DoesNotExist:
+            return Response({'message': 'You have not saved environments.'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = EnvironmentSerializer(environments, many=True)
+        serializer = SavedEnvironmentSerializer(saved_environments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
@@ -291,7 +292,30 @@ class EnvironmentDetail(APIView):
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = EnvironmentSerializer(environment)
+        user_id = get_user_id_from_token(request)  # Получаем первичный ключ пользователя
+
+        # Проверяем, существует ли уже запись для данного пользователя и окружения
+        saved_environment_qs = SavedEnvironment.objects.filter(user=user_id, environment=pk)
+
+        if saved_environment_qs.exists():
+            # Если запись уже существует, обновляем ее дату
+            saved_environment = saved_environment_qs.first()
+            saved_environment.date = timezone.now()  # Обновляем дату
+        else:
+            # Если запись не существует, создаем новую запись
+            data = {
+                'user': user_id,
+                'environment': pk,
+            }
+            saving_environment = SavedEnvironmentSerializer(data=data)
+            if saving_environment.is_valid():
+                saved_environment = saving_environment.save()
+            else:
+                return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        saved_environment.save()  # Сохраняем изменения или новую запись
+
+        serializer = EnvironmentSerializer(environment, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
