@@ -1251,3 +1251,5 @@ ToDoSource.models.UserProfile.DoesNotExist: UserProfile matching query does not 
 ERROR 2024-04-05 12:03:29,926 basehttp 8392 3524 "POST /demo/api/tasks/for_environment/1/ HTTP/1.1" 500 21716
 WARNING 2024-04-05 12:06:52,078 log 9676 4396 Not Found: /demo/api/tasks/10/
 WARNING 2024-04-05 12:06:52,079 basehttp 9676 4396 "GET /demo/api/tasks/10/ HTTP/1.1" 404 28
+WARNING 2024-04-06 12:06:43,951 log 14400 5024 Not Found: /favicon.ico
+WARNING 2024-04-06 12:06:43,952 basehttp 14400 5024 "GET /favicon.ico HTTP/1.1" 404 3029
