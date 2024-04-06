@@ -61,4 +61,3 @@ class SavedEnvironment(models.Model):
 
     def __str__(self):
         return self.environment.name
-
