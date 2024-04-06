@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#2n#&16h+2neo(&n@w6sd&y^mfu(=+n(5mq!rj!a0gu@9$3ol^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', 'bezhan2009.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -81,6 +81,8 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -90,9 +92,10 @@ DATABASES = {
     }
 }
 
+    
 """
 
-    DATABASES = {
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'fmsehwdu',  # Имя базы данных
@@ -102,9 +105,6 @@ DATABASES = {
             'PORT': '5432',  # Порт базы данных (обычно 5432)
         }
     }
-"""
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
