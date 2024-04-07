@@ -133,7 +133,7 @@ class TaskEnvironmentAction(APIView):
         user_pk = get_user_id_from_token(request)
         task_user_pk = request.data.get('user')
         if not task_user_pk:
-            return Response({'message': 'user has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'message': 'User has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
         serializer = TaskSerializer(data=request.data)
         try:
             environment = Environment.objects.get(id=pk, user=UserProfile.objects.get(id=user_pk))
@@ -199,7 +199,6 @@ class TaskDetail(APIView):
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
         task.is_deleted = True
-        task.save()
         return Response({'message': 'Task has been successfully removed'}, status=status.HTTP_204_NO_CONTENT)
 
     @swagger_auto_schema(
@@ -296,14 +295,6 @@ class EnvironmentDetail(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            properties={
-                'password': openapi.Schema(type=openapi.TYPE_STRING,
-                                           description="пароль от окружения для доступа к нему"),
-            },
-            required=['password']
-        ),
         responses={200: EnvironmentSerializer()},
     )
     def get(self, request, pk):
@@ -416,9 +407,6 @@ class EnvironmentAction(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        responses={
-            200: AdminEnvironmentSerializer()
-        },
     )
     def get(self, request, pk):
         try:
@@ -635,7 +623,6 @@ class EnvironmentTaskView(APIView):
                 {'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND
             )
         task.completed = True
-        task.save()
         return Response({'message': 'Task has been completed'}, status=status.HTTP_200_OK)
 
 

@@ -1,6 +1,5 @@
 
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from ToDoSource.api.views import *
 
 urlpatterns = [

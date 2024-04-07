@@ -84,10 +84,6 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 
 """
 
-
-   
-
-    
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -96,8 +92,9 @@ DATABASES = {
         'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
     }
 }
-"""
+   
 
+"""
 
 DATABASES = {
         'default': {
@@ -109,6 +106,7 @@ DATABASES = {
             'PORT': '5432',  # Порт базы данных (обычно 5432)
         }
     }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
