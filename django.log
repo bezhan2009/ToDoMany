@@ -1,0 +1,1284 @@
+ERROR 2024-03-31 16:43:40,225 views 10272 14544 Failed to create a new user: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+WARNING 2024-03-31 16:43:40,226 log 10272 14544 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 16:43:40,226 basehttp 10272 14544 "POST /auth/sign-up/ HTTP/1.1" 400 58
+WARNING 2024-03-31 16:56:31,284 log 8944 11740 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:56:31,284 basehttp 8944 11740 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:56:41,623 log 8944 11740 Unauthorized: /api/token/
+WARNING 2024-03-31 16:56:41,623 basehttp 8944 11740 "POST /api/token/ HTTP/1.1" 401 63
+ERROR 2024-03-31 16:56:51,481 views 8944 11740 Failed to create a new user: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+WARNING 2024-03-31 16:56:51,481 log 8944 11740 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 16:56:51,482 basehttp 8944 11740 "POST /auth/sign-up/ HTTP/1.1" 400 58
+WARNING 2024-03-31 16:57:15,494 log 8944 11740 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:57:15,494 basehttp 8944 11740 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:59:05,541 log 14204 5208 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:59:05,542 basehttp 14204 5208 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 16:59:22,756 log 14204 5208 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 16:59:22,756 basehttp 14204 5208 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:01:38,174 log 14204 13368 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:01:38,175 basehttp 14204 13368 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:02:05,180 log 14204 13368 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:02:05,180 basehttp 14204 13368 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 17:56:09,270 log 6512 9800 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 17:56:09,270 basehttp 6512 9800 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:07:21,639 log 12744 5452 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:07:21,640 basehttp 12744 5452 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:10:03,457 log 11192 6492 Unauthorized: /auth/sign-in/two
+WARNING 2024-03-31 18:10:03,457 basehttp 11192 6492 "POST /auth/sign-in/two HTTP/1.1" 401 63
+ERROR 2024-03-31 18:12:32,706 log 13080 11724 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: ������:  ������������� �������� ����� �������� ����������� ������������ "auth_user_username_key"
+DETAIL:  ���� "(username)=(testing_project)" ��� ����������.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 43, in create_user
+    UserProfile.objects.create_user(**data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 78, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 906, in save_base
+    parent_inserted = self._save_parents(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 959, in _save_parents
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 1067, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 1108, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: ������:  ������������� �������� ����� �������� ����������� ������������ "auth_user_username_key"
+DETAIL:  ���� "(username)=(testing_project)" ��� ����������.
+
+ERROR 2024-03-31 18:12:32,712 basehttp 13080 11724 "POST /auth/sign-up/ HTTP/1.1" 500 199034
+WARNING 2024-03-31 18:13:18,803 log 13080 11724 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:13:18,804 basehttp 13080 11724 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:14:46,895 log 1332 12844 Unauthorized: /auth/sign-in/
+WARNING 2024-03-31 18:14:46,896 basehttp 1332 12844 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-03-31 18:15:48,658 log 12492 12204 Bad Request: /auth/sign-up/
+WARNING 2024-03-31 18:15:48,658 basehttp 12492 12204 "POST /auth/sign-up/ HTTP/1.1" 400 58
+WARNING 2024-04-01 15:16:11,002 log 15828 8196 Not Found: /favicon.ico
+WARNING 2024-04-01 15:16:48,469 log 15828 11704 Unauthorized: /demo/api/environment/
+WARNING 2024-04-01 15:16:48,470 basehttp 15828 11704 "GET /demo/api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-01 15:19:45,875 log 5904 17148 Unauthorized: /auth/sign-in/
+WARNING 2024-04-01 15:19:45,876 basehttp 5904 17148 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-04-01 15:20:12,687 log 5904 17148 Bad Request: /auth/sign-up/
+WARNING 2024-04-01 15:20:12,687 basehttp 5904 17148 "POST /auth/sign-up/ HTTP/1.1" 400 58
+ERROR 2024-04-01 15:21:37,155 log 14204 4136 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: ������:  ������� ToDoSource_environment.password �� ����������
+LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 240, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: ������:  ������� ToDoSource_environment.password �� ����������
+LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
+                                                             ^
+
+ERROR 2024-04-01 15:21:37,160 basehttp 14204 4136 "GET /demo/api/environment/ HTTP/1.1" 500 25330
+ERROR 2024-04-01 15:26:21,732 log 2976 14644 Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 182, in get_responses
+    responses=self.get_response_schemas(response_serializers)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 271, in get_response_schemas
+    schema=self.serializer_to_schema(serializer),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 82, in field_to_swagger_object
+    child_schema = self.probe_field_inspectors(field.child, ChildSwaggerType, use_references)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1144, in get_field_names
+    assert not (fields and exclude), (
+AssertionError: Cannot set both 'fields' and 'exclude' options on serializer EnvironmentSerializer.
+ERROR 2024-04-01 15:26:21,737 basehttp 2976 14644 "GET /swagger/?format=openapi HTTP/1.1" 500 236452
+ERROR 2024-04-01 15:29:46,245 log 13628 16760 Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 182, in get_responses
+    responses=self.get_response_schemas(response_serializers)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 271, in get_response_schemas
+    schema=self.serializer_to_schema(serializer),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 82, in field_to_swagger_object
+    child_schema = self.probe_field_inspectors(field.child, ChildSwaggerType, use_references)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1191, in get_field_names
+    assert field_name not in self._declared_fields, (
+AssertionError: Cannot both declare the field 'user' and include it in the EnvironmentSerializer 'exclude' option. Remove the field or, if inherited from a parent serializer, disable with `user = None`.
+ERROR 2024-04-01 15:29:46,250 basehttp 13628 16760 "GET /swagger/?format=openapi HTTP/1.1" 500 239542
+ERROR 2024-04-01 15:31:16,124 log 7684 15708 Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 182, in get_responses
+    responses=self.get_response_schemas(response_serializers)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\view.py", line 271, in get_response_schemas
+    schema=self.serializer_to_schema(serializer),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 82, in field_to_swagger_object
+    child_schema = self.probe_field_inspectors(field.child, ChildSwaggerType, use_references)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 1191, in get_field_names
+    assert field_name not in self._declared_fields, (
+AssertionError: Cannot both declare the field 'user' and include it in the EnvironmentSerializer 'exclude' option. Remove the field or, if inherited from a parent serializer, disable with `user = None`.
+ERROR 2024-04-01 15:31:16,130 basehttp 7684 15708 "GET /swagger/?format=openapi HTTP/1.1" 500 239508
+WARNING 2024-04-01 15:42:31,274 log 15428 13688 Bad Request: /demo/api/tasks/
+WARNING 2024-04-01 15:42:31,275 basehttp 15428 13688 "POST /demo/api/tasks/ HTTP/1.1" 400 61
+WARNING 2024-04-01 15:42:37,127 log 15428 13688 Bad Request: /demo/api/tasks/
+WARNING 2024-04-01 15:42:37,128 basehttp 15428 13688 "POST /demo/api/tasks/ HTTP/1.1" 400 61
+WARNING 2024-04-01 15:50:34,518 log 14816 3044 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-01 15:50:34,518 basehttp 14816 3044 "POST /demo/api/tasks/ HTTP/1.1" 401 58
+ERROR 2024-04-01 15:54:22,137 log 3564 8584 Internal Server Error: /demo/api/tasks/for_environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-04-01 15:54:22,139 basehttp 3564 8584 "POST /demo/api/tasks/for_environment/1/ HTTP/1.1" 500 21729
+ERROR 2024-04-01 17:42:29,292 exception 16484 18188 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-01 17:42:29,945 log 16484 18188 Bad Request: /swagger/
+WARNING 2024-04-01 17:42:29,953 basehttp 16484 18188 "GET /swagger/ HTTP/1.1" 400 76130
+ERROR 2024-04-01 17:42:30,743 exception 16484 8924 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-01 17:42:31,370 log 16484 8924 Bad Request: /favicon.ico
+ERROR 2024-04-01 17:42:35,798 exception 16484 17908 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-01 17:42:35,829 log 16484 17908 Bad Request: /swagger
+ERROR 2024-04-01 17:42:35,878 exception 16484 3220 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-01 17:42:35,906 log 16484 3220 Bad Request: /swagger/
+WARNING 2024-04-01 17:42:35,906 basehttp 16484 3220 "GET /swagger/ HTTP/1.1" 400 76130
+ERROR 2024-04-01 17:43:18,131 exception 16484 14784 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-01 17:43:18,190 log 16484 14784 Bad Request: /
+WARNING 2024-04-01 17:43:18,190 basehttp 16484 14784 "GET / HTTP/1.1" 400 76038
+WARNING 2024-04-01 19:52:50,475 log 8704 17272 Not Found: /favicon.ico
+ERROR 2024-04-01 19:58:17,152 log 8704 14456 Internal Server Error: /demo/api/tasks/for_environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 150, in post
+    serializer.save(user=UserProfile.objects.get(id=task_user_pk), environment=environment)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2024-04-01 19:58:17,218 basehttp 8704 14456 "POST /demo/api/tasks/for_environment/1/ HTTP/1.1" 500 22535
+ERROR 2024-04-01 20:20:55,253 log 8816 7876 Internal Server Error: /demo/api/tasks/for_environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 152, in post
+    serializer.save(user=UserProfile.objects.get(id=task_user_pk), environment=environment)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2024-04-01 20:20:55,258 basehttp 8816 7876 "POST /demo/api/tasks/for_environment/1/ HTTP/1.1" 500 22535
+ERROR 2024-04-02 12:06:25,423 views 5068 12356 An error occurred while processing the request: Cannot resolve keyword 'product' into field. Choices are: comment_text, id, parent_id, task, task_id, user, user_id
+ERROR 2024-04-02 12:06:25,497 views 5068 12356 An error occurred while processing the request: {'error': "Cannot resolve keyword 'product' into field. Choices are: comment_text, id, parent_id, task, task_id, user, user_id"}
+ERROR 2024-04-02 12:06:25,498 log 5068 12356 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:06:25,498 basehttp 5068 12356 "GET /demo/api/comment/1/ HTTP/1.1" 500 142
+ERROR 2024-04-02 12:07:12,048 views 9100 19008 An error occurred while processing the request: relation "ToDoSource_comment" does not exist
+LINE 1: ...ent_id", "ToDoSource_comment"."comment_text" FROM "ToDoSourc...
+                                                             ^
+
+ERROR 2024-04-02 12:07:12,048 views 9100 19008 An error occurred while processing the request: {'error': 'relation "ToDoSource_comment" does not exist\nLINE 1: ...ent_id", "ToDoSource_comment"."comment_text" FROM "ToDoSourc...\n                                                             ^\n'}
+ERROR 2024-04-02 12:07:12,049 log 9100 19008 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:07:12,050 basehttp 9100 19008 "GET /demo/api/comment/1/ HTTP/1.1" 500 222
+ERROR 2024-04-02 12:10:05,279 views 15808 2252 An error occurred while processing the request: Got a `TypeError` when calling `Comment.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `Comment.objects.create()`. You may need to make the field read-only, or override the CommentSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Comment() got unexpected keyword arguments: 'product'
+
+ERROR 2024-04-02 12:10:05,280 log 15808 2252 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:10:05,280 basehttp 15808 2252 "POST /demo/api/comment/1/ HTTP/1.1" 500 1316
+ERROR 2024-04-02 12:12:56,075 views 12108 19224 An error occurred while processing the request: Got a `TypeError` when calling `Comment.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `Comment.objects.create()`. You may need to make the field read-only, or override the CommentSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Comment() got unexpected keyword arguments: 'product'
+
+ERROR 2024-04-02 12:12:56,076 log 12108 19224 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:12:56,078 basehttp 12108 19224 "POST /demo/api/comment/1/ HTTP/1.1" 500 1316
+ERROR 2024-04-02 12:14:07,839 views 7128 16288 An error occurred while processing the request: Got a `TypeError` when calling `Comment.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `Comment.objects.create()`. You may need to make the field read-only, or override the CommentsSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Comment() got unexpected keyword arguments: 'product'
+
+ERROR 2024-04-02 12:14:07,841 log 7128 16288 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:14:07,842 basehttp 7128 16288 "POST /demo/api/comment/1/ HTTP/1.1" 500 1317
+ERROR 2024-04-02 12:19:16,612 views 17436 1560 An error occurred while processing the request: Got a `TypeError` when calling `Comment.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `Comment.objects.create()`. You may need to make the field read-only, or override the CommentsSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Comment() got unexpected keyword arguments: 'product'
+
+ERROR 2024-04-02 12:19:16,613 log 17436 1560 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:19:16,613 basehttp 17436 1560 "POST /demo/api/comment/1/ HTTP/1.1" 500 1317
+ERROR 2024-04-02 12:20:12,644 views 12564 14732 An error occurred while processing the request: ������:  ��������� "ToDoSource_comment" �� ����������
+LINE 1: INSERT INTO "ToDoSource_comment" ("user_id", "task_id", "par...
+                    ^
+
+ERROR 2024-04-02 12:20:12,645 log 12564 14732 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:20:12,645 basehttp 12564 14732 "POST /demo/api/comment/1/ HTTP/1.1" 500 199
+ERROR 2024-04-02 12:20:33,452 views 12564 14732 An error occurred while processing the request: ������:  ������� "date" � ������� "ToDoSource_comment" �� ����������
+LINE 1: ...user_id", "task_id", "parent_id", "comment_text", "date") VA...
+                                                             ^
+
+ERROR 2024-04-02 12:20:33,453 log 12564 14732 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:20:33,453 basehttp 12564 14732 "POST /demo/api/comment/1/ HTTP/1.1" 500 268
+ERROR 2024-04-02 12:25:51,657 views 1836 17116 An error occurred while processing the request: Task matching query does not exist.
+ERROR 2024-04-02 12:25:51,659 log 1836 17116 Internal Server Error: /demo/api/comment/10/
+ERROR 2024-04-02 12:25:51,660 basehttp 1836 17116 "POST /demo/api/comment/10/ HTTP/1.1" 500 47
+WARNING 2024-04-02 12:26:32,797 views 1504 9860 Failed to get comments. Product not found.
+ERROR 2024-04-02 12:26:32,878 log 1504 9860 Internal Server Error: /demo/api/comment/10/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 533, in post
+    task = Task.objects.get(id=task_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Task.DoesNotExist: Task matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 551, in post
+    raise Response({"message": "Task not found"}, status=404)
+rest_framework.response.Response: {'message': 'Task not found'}
+ERROR 2024-04-02 12:26:32,883 basehttp 1504 9860 "POST /demo/api/comment/10/ HTTP/1.1" 500 22651
+WARNING 2024-04-02 12:32:14,180 views 15800 18920 Failed to get comments. Task not found.
+ERROR 2024-04-02 12:32:14,209 log 15800 18920 Internal Server Error: /demo/api/comment/10/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 528, in post
+    task_test = Task.objects.get(id=task_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Task.DoesNotExist: Task matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 531, in post
+    raise Response({"message": "Task not found"}, status=404)
+rest_framework.response.Response: {'message': 'Task not found'}
+ERROR 2024-04-02 12:32:14,213 basehttp 15800 18920 "POST /demo/api/comment/10/ HTTP/1.1" 500 22661
+WARNING 2024-04-02 12:32:40,367 log 12968 17248 Unauthorized: /auth/sign-in/
+WARNING 2024-04-02 12:32:40,367 basehttp 12968 17248 "POST /auth/sign-in/ HTTP/1.1" 401 63
+ERROR 2024-04-02 12:33:59,736 log 12968 17248 Internal Server Error: /demo/api/comment/10/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 528, in post
+    task_test = Task.objects.get(id=task_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Task.DoesNotExist: Task matching query does not exist.
+ERROR 2024-04-02 12:33:59,740 basehttp 12968 17248 "POST /demo/api/comment/10/ HTTP/1.1" 500 22366
+WARNING 2024-04-02 12:35:04,735 views 10848 13640 Failed to get comments. Task not found.
+WARNING 2024-04-02 12:35:04,736 log 10848 13640 Not Found: /demo/api/comment/10/
+WARNING 2024-04-02 12:35:04,736 basehttp 10848 13640 "POST /demo/api/comment/10/ HTTP/1.1" 404 28
+ERROR 2024-04-02 12:35:12,957 views 10848 13640 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-02 12:35:12,958 log 10848 13640 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:35:12,958 basehttp 10848 13640 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-02 12:36:42,068 views 18444 3544 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-02 12:36:42,069 log 18444 3544 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:36:42,069 basehttp 18444 3544 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-02 12:36:45,284 views 18444 3544 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-02 12:36:45,285 log 18444 3544 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:36:45,285 basehttp 18444 3544 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-02 12:37:20,222 views 16012 15240 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
+ERROR 2024-04-02 12:37:20,223 log 16012 15240 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 12:37:20,223 basehttp 16012 15240 "POST /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-02 16:29:07,513 views 1844 19396 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
+ERROR 2024-04-02 16:29:07,517 log 1844 19396 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-02 16:29:07,519 basehttp 1844 19396 "GET /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:25:23,953 views 5220 10484 An error occurred while processing the request: Field name `children` is not valid for model `Comment` in `ToDoSource.api.serializers.CommentsSerializer`.
+ERROR 2024-04-03 10:25:23,954 log 5220 10484 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:25:23,954 basehttp 5220 10484 "POST /demo/api/comment/1/ HTTP/1.1" 500 118
+ERROR 2024-04-03 10:28:11,072 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:11,073 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:11,074 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:28:13,122 views 8088 6800 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:28:13,123 log 8088 6800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:28:13,123 basehttp 8088 6800 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:29:14,107 views 10904 9412 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:29:14,108 log 10904 9412 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:29:14,108 basehttp 10904 9412 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:32:51,355 views 11164 8816 An error occurred while processing the request: 'Comment' object has no attribute 'children'
+ERROR 2024-04-03 10:32:51,355 log 11164 8816 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:32:51,356 basehttp 11164 8816 "POST /demo/api/comment/1/ HTTP/1.1" 500 56
+ERROR 2024-04-03 10:38:06,053 views 7380 8928 An error occurred while processing the request: 'RelatedManager' object has no attribute 'append'
+ERROR 2024-04-03 10:38:06,055 log 7380 8928 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:38:06,056 basehttp 7380 8928 "POST /demo/api/comment/1/ HTTP/1.1" 500 61
+ERROR 2024-04-03 10:39:28,017 views 8964 2800 An error occurred while processing the request: 'Comment' object has no attribute 'add_child'
+ERROR 2024-04-03 10:39:28,018 log 8964 2800 Internal Server Error: /demo/api/comment/1/
+ERROR 2024-04-03 10:39:28,019 basehttp 8964 2800 "POST /demo/api/comment/1/ HTTP/1.1" 500 57
+ERROR 2024-04-03 11:58:15,404 exception 8392 3328 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2024-04-03 11:58:15,540 log 8392 3328 Bad Request: /
+WARNING 2024-04-03 11:58:15,541 basehttp 8392 3328 "GET / HTTP/1.1" 400 76230
+WARNING 2024-04-03 17:38:28,041 log 12900 3328 Method Not Allowed: /auth/sign-up/
+WARNING 2024-04-03 17:38:28,042 basehttp 12900 3328 "GET /auth/sign-up/ HTTP/1.1" 405 5948
+WARNING 2024-04-03 17:40:37,436 views 12900 12872 Failed to delete Comment. Comment with ID 1 not found.
+WARNING 2024-04-03 17:40:37,437 log 12900 12872 Not Found: /demo/api/comment/1/detail/
+WARNING 2024-04-03 17:40:37,437 basehttp 12900 12872 "DELETE /demo/api/comment/1/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 17:40:44,586 views 12900 12872 Failed to delete Comment. Comment with ID 2 not found.
+WARNING 2024-04-03 17:40:44,586 log 12900 12872 Not Found: /demo/api/comment/2/detail/
+WARNING 2024-04-03 17:40:44,587 basehttp 12900 12872 "DELETE /demo/api/comment/2/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 20:52:28,941 views 9920 4500 Failed to delete Comment. Comment with ID 1 not found.
+WARNING 2024-04-03 20:52:28,941 log 9920 4500 Not Found: /demo/api/comment/1/detail/
+WARNING 2024-04-03 20:52:28,941 basehttp 9920 4500 "DELETE /demo/api/comment/1/detail/ HTTP/1.1" 404 31
+WARNING 2024-04-03 20:53:03,955 views 9920 1644 Failed to delete Comment. Comment with ID 2 not found.
+WARNING 2024-04-03 20:53:03,956 log 9920 1644 Not Found: /demo/api/comment/2/detail/
+WARNING 2024-04-03 20:53:03,956 basehttp 9920 1644 "DELETE /demo/api/comment/2/detail/ HTTP/1.1" 404 31
+ERROR 2024-04-03 22:00:14,516 log 3024 10200 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:14,520 basehttp 3024 10200 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:00:43,078 log 3024 9908 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:43,080 basehttp 3024 9908 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:00:46,680 log 3024 9784 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'SavedEnvironment' has no attribute 'objects'
+ERROR 2024-04-03 22:00:46,682 basehttp 3024 9784 "GET /demo/api/environment/1/ HTTP/1.1" 500 22243
+ERROR 2024-04-03 22:01:43,370 log 5568 1256 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: QuerySet.create() takes 1 positional argument but 2 were given
+ERROR 2024-04-03 22:01:43,373 basehttp 5568 1256 "GET /demo/api/environment/1/ HTTP/1.1" 500 22503
+ERROR 2024-04-03 22:02:24,158 log 10716 4480 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironment.objects.create(data)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: QuerySet.create() takes 1 positional argument but 2 were given
+ERROR 2024-04-03 22:02:24,160 basehttp 10716 4480 "GET /demo/api/environment/1/ HTTP/1.1" 500 22503
+ERROR 2024-04-03 22:03:09,976 log 11224 7228 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 299, in get
+    SavedEnvironmentSerializer(data=data).save()
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 176, in save
+    assert hasattr(self, '_errors'), (
+AssertionError: You must call `.is_valid()` before calling `.save()`.
+ERROR 2024-04-03 22:03:09,979 basehttp 11224 7228 "GET /demo/api/environment/1/ HTTP/1.1" 500 22421
+WARNING 2024-04-03 22:07:30,864 log 2884 5944 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:07:30,864 basehttp 2884 5944 "GET /demo/api/environment/ HTTP/1.1" 404 35
+WARNING 2024-04-03 22:08:08,624 log 732 10700 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:08,625 basehttp 732 10700 "GET /demo/api/environment/ HTTP/1.1" 404 45
+WARNING 2024-04-03 22:08:29,286 log 392 9572 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:29,287 basehttp 392 9572 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:08:46,917 log 392 10068 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:08:46,917 basehttp 392 10068 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:40:31,749 log 7416 2248 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:40:31,749 basehttp 7416 2248 "GET /demo/api/environment/ HTTP/1.1" 404 46
+WARNING 2024-04-03 22:41:01,574 log 10700 2420 Not Found: /demo/api/environment/
+WARNING 2024-04-03 22:41:01,575 basehttp 10700 2420 "GET /demo/api/environment/ HTTP/1.1" 404 46
+ERROR 2024-04-03 22:41:07,274 log 10700 2420 Internal Server Error: /demo/api/environment/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 134, in __init__
+    self.status_code = int(status)
+                       ^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 303, in get
+    return Response(saving_environment.errors, status=status)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\response.py", line 30, in __init__
+    super().__init__(None, status=status)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\template\response.py", line 44, in __init__
+    super().__init__("", content_type, status, charset=charset, headers=headers)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 374, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\http\response.py", line 136, in __init__
+    raise TypeError("HTTP status code must be an integer.")
+TypeError: HTTP status code must be an integer.
+ERROR 2024-04-03 22:41:07,278 basehttp 10700 2420 "GET /demo/api/environment/1/ HTTP/1.1" 500 23476
+WARNING 2024-04-03 22:41:25,707 log 11348 9448 Not Found: /demo/api/environment/1/
+WARNING 2024-04-03 22:41:25,707 basehttp 11348 9448 "GET /demo/api/environment/1/ HTTP/1.1" 404 144
+WARNING 2024-04-03 22:42:03,274 log 252 11884 Not Found: /demo/api/environment/1/
+WARNING 2024-04-03 22:42:03,274 basehttp 252 11884 "GET /demo/api/environment/1/ HTTP/1.1" 404 143
+ERROR 2024-04-03 22:44:46,305 log 7352 8356 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 247, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+TypeError: 'SavedEnvironment' object is not iterable
+ERROR 2024-04-03 22:44:46,307 basehttp 7352 8356 "GET /demo/api/environment/ HTTP/1.1" 500 22756WARNING 2024-04-06 14:55:59,693 log 5272 2380 Not Found: /accounts/login/
+WARNING 2024-04-06 14:55:59,694 basehttp 5272 2380 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,700 log 5272 2380 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-06 14:56:01,702 log 5272 9380 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-06 14:56:01,703 log 5272 7252 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-06 14:56:01,704 basehttp 5272 9380 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,704 basehttp 5272 2380 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,705 basehttp 5272 7252 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,711 log 5272 2380 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-06 14:56:01,713 log 5272 9380 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-06 14:56:01,714 log 5272 7252 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-06 14:56:01,715 basehttp 5272 2380 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,715 basehttp 5272 9380 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,715 basehttp 5272 7252 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:01,721 log 5272 2380 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-06 14:56:01,721 basehttp 5272 2380 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:03,120 log 5272 2380 Not Found: /accounts/login/
+WARNING 2024-04-06 14:56:03,121 basehttp 5272 2380 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,672 log 5760 10524 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-06 14:56:57,673 basehttp 5760 10524 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,680 log 5760 10524 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-06 14:56:57,682 log 5760 1472 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-06 14:56:57,683 basehttp 5760 1472 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,683 basehttp 5760 10524 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,687 log 5760 10524 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-06 14:56:57,688 log 5760 1472 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-06 14:56:57,689 basehttp 5760 10524 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,690 basehttp 5760 1472 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,693 log 5760 10524 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-06 14:56:57,694 log 5760 1472 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-06 14:56:57,695 basehttp 5760 10524 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:57,696 basehttp 5760 1472 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:56:58,912 log 5760 1472 Not Found: /accounts/login/
+WARNING 2024-04-06 14:56:58,912 basehttp 5760 1472 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,327 log 5760 6120 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-06 14:57:09,328 basehttp 5760 6120 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,332 log 5760 7308 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-06 14:57:09,335 log 5760 11028 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-06 14:57:09,335 basehttp 5760 7308 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,336 basehttp 5760 11028 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,360 log 5760 11028 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-06 14:57:09,360 basehttp 5760 11028 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,375 log 5760 11028 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-06 14:57:09,378 log 5760 7308 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-06 14:57:09,379 log 5760 6120 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-06 14:57:09,381 basehttp 5760 11028 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,381 basehttp 5760 6120 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:09,381 basehttp 5760 7308 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-06 14:57:11,065 log 5760 6120 Not Found: /accounts/login/
+WARNING 2024-04-06 14:57:11,067 basehttp 5760 6120 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-06 14:58:29,328 log 11124 6236 Not Found: /accounts/login/
+WARNING 2024-04-06 14:58:29,329 basehttp 11124 6236 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
+ERROR 2024-04-06 15:00:37,809 exception 9788 11156 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\aldiy\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldiy\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldiy\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldiy\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-06 15:00:37,831 log 9788 11156 Bad Request: /
+WARNING 2024-04-06 15:00:37,831 basehttp 9788 11156 "GET / HTTP/1.1" 400 143
