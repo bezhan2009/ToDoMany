@@ -1281,3 +1281,53 @@ WARNING 2024-04-07 02:18:26,862 log 16804 8260 Method Not Allowed: /api/token/
 WARNING 2024-04-07 02:18:26,884 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40
 WARNING 2024-04-07 02:20:51,180 log 16804 8260 Method Not Allowed: /api/token/
 WARNING 2024-04-07 02:20:51,180 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40
+ERROR 2024-04-07 12:43:09,868 exception 2732 6784 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-07 12:43:09,943 log 2732 6784 Bad Request: /
+WARNING 2024-04-07 12:43:09,944 basehttp 2732 6784 "GET / HTTP/1.1" 400 80258
+ERROR 2024-04-07 12:43:11,978 exception 2732 14700 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-07 12:43:12,010 log 2732 14700 Bad Request: /favicon.ico
+WARNING 2024-04-07 12:43:12,010 basehttp 2732 14700 "GET /favicon.ico HTTP/1.1" 400 80092
+WARNING 2024-04-07 13:05:30,846 log 2732 20208 Not Found: /favicon.ico
+WARNING 2024-04-07 13:05:30,847 basehttp 2732 20208 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 13:29:26,873 log 2732 12716 Unauthorized: /demo/api/environment/1/
+WARNING 2024-04-07 13:29:26,873 basehttp 2732 12716 "GET /demo/api/environment/1/ HTTP/1.1" 401 58
+WARNING 2024-04-07 13:32:57,186 log 2732 12716 Unauthorized: /demo/api/environment/
+WARNING 2024-04-07 13:32:57,186 basehttp 2732 12716 "GET /demo/api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-07 13:33:34,262 log 2732 12716 Unauthorized: /demo/api/environment/admin/action/1/
+WARNING 2024-04-07 13:33:34,263 basehttp 2732 12716 "GET /demo/api/environment/admin/action/1/ HTTP/1.1" 401 58
+WARNING 2024-04-07 14:21:14,574 log 2732 12884 Not Found: /info
+WARNING 2024-04-07 14:21:14,574 basehttp 2732 12884 "GET /info HTTP/1.1" 404 3008
+WARNING 2024-04-07 14:28:51,847 log 2732 6808 Not Found: /data/info/
+WARNING 2024-04-07 14:28:51,847 basehttp 2732 6808 "GET /data/info/ HTTP/1.1" 404 3026
+WARNING 2024-04-07 14:35:39,361 log 2732 6808 Not Found: /2/
+WARNING 2024-04-07 14:35:39,362 basehttp 2732 6808 "GET /2/ HTTP/1.1" 404 3002
+WARNING 2024-04-07 14:35:40,993 log 2732 6808 Not Found: /2/
+WARNING 2024-04-07 14:35:40,994 basehttp 2732 6808 "GET /2/ HTTP/1.1" 404 3002
+WARNING 2024-04-07 14:59:26,852 log 2732 1524 Not Found: /1
+WARNING 2024-04-07 14:59:26,852 basehttp 2732 1524 "GET /1 HTTP/1.1" 404 2999
