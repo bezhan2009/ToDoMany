@@ -69,3 +69,8 @@ class SavedEnvironmentSerializer(serializers.ModelSerializer):
         model = SavedEnvironment
         fields = '__all__'
 
+
+class AdminEnvironmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Admin
+        fields = '__all__'

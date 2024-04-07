@@ -132,6 +132,8 @@ class TaskEnvironmentAction(APIView):
         """
         user_pk = get_user_id_from_token(request)
         task_user_pk = request.data.get('user')
+        if not task_user_pk:
+            return Response({'message': 'user has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
         serializer = TaskSerializer(data=request.data)
         try:
             environment = Environment.objects.get(id=pk, user=UserProfile.objects.get(id=user_pk))
@@ -145,7 +147,7 @@ class TaskEnvironmentAction(APIView):
                                           user=UserProfile.objects.get(id=get_user_id_from_token(request)),
                                           is_admin=True)
             except Admin.DoesNotExist:
-                return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
             except UserProfile.DoesNotExist:
                 return Response({'message': 'You have to chose one of the admins'}, status=status.HTTP_404_NOT_FOUND)
         except UserProfile.DoesNotExist:
@@ -197,6 +199,7 @@ class TaskDetail(APIView):
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
         task.is_deleted = True
+        task.save()
         return Response({'message': 'Task has been successfully removed'}, status=status.HTTP_204_NO_CONTENT)
 
     @swagger_auto_schema(
@@ -232,7 +235,7 @@ class EnvironmentList(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        responses={200: SavedEnvironmentSerializer(many=True)},
+        responses={200: EnvironmentSerializer(many=True)},
     )
     def get(self, request):
         """
@@ -240,11 +243,11 @@ class EnvironmentList(APIView):
         """
         try:
             user_id = get_user_id_from_token(request)
-            saved_environments = SavedEnvironment.objects.filter(user=user_id)
-        except SavedEnvironment.DoesNotExist:
+            environments = Environment.objects.filter(user=user_id)
+        except Environment.DoesNotExist:
             return Response({'message': 'You have not saved environments.'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = SavedEnvironmentSerializer(saved_environments, many=True)
+        serializer = EnvironmentSerializer(environments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
@@ -253,16 +256,28 @@ class EnvironmentList(APIView):
                               type=openapi.TYPE_STRING),
         ],
         request_body=EnvironmentSerializer,
-        responses={201: 'Environment has been successfully created'},
+        responses={
+            201: 'Environment has been successfully created',
+            400: 'Environment with this name is already taken. Please try again.'
+        },
     )
     def post(self, request):
         """
         Создает новое окружение.
         """
+
         user_pk = get_user_id_from_token(request)
         serializer = EnvironmentSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=UserProfile.objects.get(id=user_pk))
+            user = UserProfile.objects.get(id=user_pk)
+            if Environment.objects.filter(name=serializer.validated_data['name'], user=user):
+                return Response({'message': 'Environment with this name is already taken. Please try again.'},
+                                status=status.HTTP_400_BAD_REQUEST)
+            serializer.save(user=user)
+            saving_environment = SavedEnvironment.objects.create(user=user,
+                                                                 environment=Environment.objects.get(
+                                                                     id=serializer.data.get('id')))
+            saving_environment.save()
             return Response(
                 {'message': 'Environment has been successfully created'}, status=status.HTTP_201_CREATED
             )
@@ -274,13 +289,21 @@ class EnvironmentDetail(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk):
-        return get_object_or_404(Environment, pk=pk)
+        return get_object_or_404(Environment, pk=pk, is_deleted=False)
 
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'password': openapi.Schema(type=openapi.TYPE_STRING,
+                                           description="пароль от окружения для доступа к нему"),
+            },
+            required=['password']
+        ),
         responses={200: EnvironmentSerializer()},
     )
     def get(self, request, pk):
@@ -303,10 +326,21 @@ class EnvironmentDetail(APIView):
             saved_environment.date = timezone.now()  # Обновляем дату
         else:
             # Если запись не существует, создаем новую запись
-            data = {
-                'user': user_id,
-                'environment': pk,
-            }
+            password = request.data.get('password')
+            if not password:
+                return Response({'message': 'Password has no provided'})
+            environment = Environment.objects.filter(id=pk)
+            if environment.exists():
+                environment = Environment.objects.filter(id=pk, password=password)
+                if environment.exists():
+                    data = {
+                        'user': user_id,
+                        'environment': pk,
+                    }
+                else:
+                    return Response({'message': 'Incorrect password'}, status=status.HTTP_403_FORBIDDEN)
+            else:
+                return Response({'message': 'Environment Not Found'}, status=status.HTTP_404_NOT_FOUND)
             saving_environment = SavedEnvironmentSerializer(data=data)
             if saving_environment.is_valid():
                 saved_environment = saving_environment.save()
@@ -323,29 +357,77 @@ class EnvironmentDetail(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        responses={200: 'Environment has been removed successfully'},
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'password': openapi.Schema(type=openapi.TYPE_STRING,
+                                           description="пароль от окружения для его удаления"),
+            },
+            required=['password']
+        ),
+        responses={
+            200: 'Environment has been removed successfully.',
+            400: 'Password has no provided.',
+            403: 'You do not have permission to delete this environment.',
+            404: 'Environment not found',
+        },
     )
     def delete(self, request, pk):
         """
         Удаляет окружение.
         """
+
+        is_access = False
         try:
+            password = request.data.get('password')
+            if password:
+                if Environment.objects.filter(id=pk, user=UserProfile.objects.get(
+                        id=get_user_id_from_token(request))):
+                    if Environment.objects.filter(id=pk, password=password):
+                        is_access = True
+                    else:
+                        return Response({'message': 'Incorrect password.'}, status=status.HTTP_403_FORBIDDEN)
+                else:
+                    pass
+            else:
+                return Response({'message': 'Password has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
             environment = self.get_object(pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-
-        environment.is_deleted = True
-        return Response({'message': 'Environment has been removed successfully'}, status=status.HTTP_200_OK)
+        if is_access:
+            environment.is_deleted = True
+            environment.save()
+        else:
+            return Response({'message': 'You do not have permission to delete this environment'},
+                            status=status.HTTP_403_FORBIDDEN)
+        return Response({'message': 'Environment has been removed successfully.'}, status=status.HTTP_200_OK)
 
 
 class EnvironmentAction(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk, user_pk):
+    def get_object(self, pk):
         return get_object_or_404(Environment,
-                                 id=pk,
-                                 user=UserProfile.objects.get(id=user_pk))
+                                 id=pk)
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+        responses={
+            200: AdminEnvironmentSerializer()
+        },
+    )
+    def get(self, request, pk):
+        try:
+            admins = Admin.objects.filter(
+                environment=Environment.objects.get(id=pk))
+        except Http404:
+            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+        serializer = AdminEnvironmentSerializer(admins, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -366,24 +448,56 @@ class EnvironmentAction(APIView):
         Добавляет пользователя в окружение в качестве администратора.
         """
         user_pk = get_user_id_from_token(request)
+        user = UserProfile.objects.get(id=user_pk)
+        is_access = False
         try:
-            environment = self.get_object(pk, user_pk)
+            environment = self.get_object(pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
         admin_pk = request.data.get('admin_pk')
-        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
-        return Response({'message': 'You have successfully added your friend to environment'},
-                        status=status.HTTP_201_CREATED)
+        if admin_pk is None:
+            return Response({'message': 'admin_pk has no provided'}, status=status.HTTP_400_BAD_REQUEST)
+        environment_check = Environment.objects.filter(user=user)
+        if environment_check:
+            is_access = True
+        elif Admin.objects.filter(user=user):
+            is_access = True
+        elif not is_access:
+            return Response({'message': 'You do not have permission to add your friend!!!'},
+                            status=status.HTTP_403_FORBIDDEN)
+        try:
+            user_admin_pk = UserProfile.objects.get(id=admin_pk)
+            admin = Admin.objects.filter(user=user_admin_pk, environment=environment).first()
+            if admin is None:
+                if is_access:
+                    admin = Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
+                    if request.data.get('is_superadmin'):
+                        admin.save(is_superadmin=True, is_admin=True)
+                    return Response({'message': 'You have successfully added your friend to environment'},
+                                    status=status.HTTP_201_CREATED)
+                else:
+                    return Response({'message': 'You do not have permission to add your friend!'},
+                                    status=status.HTTP_403_FORBIDDEN)
+            return Response({'message': 'This admin is already associated with this environment'},
+                            status=status.HTTP_200_OK)
+        except UserProfile.DoesNotExist:
+            return Response({'message': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class EnvironmentAdminAction(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk, user_pk):
-        return get_object_or_404(Environment,
-                                 pk=pk,
-                                 user=UserProfile.objects.get(id=user_pk))
+    def get_object(self, pk, user_pk, is_superadmin):
+        if is_superadmin:
+            return get_object_or_404(Environment,
+                                     pk=pk, )
+        else:
+            return get_object_or_404(Environment,
+                                     pk=pk,
+                                     user=UserProfile.objects.get(id=user_pk))
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -398,11 +512,32 @@ class EnvironmentAdminAction(APIView):
         """
         user_pk = get_user_id_from_token(request)
         try:
-            environment = self.get_object(pk, user_pk)
+            environment = self.get_object(pk, user_pk, False)
+            is_access_to_delete_superadmin = True
         except Http404:
+            try:
+                environment = self.get_object(pk, user_pk, True)
+                Admin.objects.get(id=get_user_id_from_token(request), is_superadmin=True, environment=environment)
+                is_access_to_delete_superadmin = False
+            except Admin.DoesNotExist:
+                return Response({'message': 'You Do Not Have access.'}, status=status.HTTP_403_FORBIDDEN)
+            except Http404:
+                return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-
-        Admin.objects.get(id=admin_pk).delete()
+        if is_access_to_delete_superadmin:
+            try:
+                admin = Admin.objects.get(id=admin_pk, environment=environment)
+            except Admin.DoesNotExist:
+                return Response({'message': 'Admin not found'}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            try:
+                admin = Admin.objects.get(id=admin_pk, is_superadmin=True, environment=environment)
+            except Admin.DoesNotExist:
+                try:
+                    admin = Admin.objects.get(id=admin_pk, environment=environment)
+                except Admin.DoesNotExist:
+                    return Response({'message': 'You do not have access'}, status=status.HTTP_403_FORBIDDEN)
+        admin.delete()
         return Response({'message': 'Admin deleted successfully'}, status=status.HTTP_200_OK)
 
 
@@ -421,17 +556,31 @@ class AdminActionsView(APIView):
         """
         Получает список задач для текущего пользователя в указанном окружении.
         """
+
+        is_admin = False
         try:
             environment = Environment.objects.get(id=environment_pk)
-            admin = Admin.objects.get(user=UserProfile.objects.get(id=get_user_id_from_token(request)))
+            admin = Admin.objects.filter(user=UserProfile.objects.get(id=get_user_id_from_token(request)))
         except Environment.DoesNotExist:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        except Admin.DoesNotExist:
-            return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
-        task = Task.objects.filter(environment=environment,
-                                   user=UserProfile.objects.get(id=get_user_id_from_token(request)),
-                                   is_deleted=False,
-                                   completed=False)
+        if not admin.exists():
+            if Environment.objects.filter(id=environment_pk,
+                                          user=UserProfile.objects.get(id=get_user_id_from_token(request))):
+                is_admin = True
+            else:
+                return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
+        if is_admin:
+            task = Task.objects.filter(environment=environment,
+                                       is_deleted=False,
+                                       completed=False)
+        else:
+            task = Task.objects.filter(environment=environment,
+                                       user=UserProfile.objects.get(id=get_user_id_from_token(request)),
+                                       is_deleted=False,
+                                       completed=False)
+
+        if not task:
+            return Response({'message': 'You have not any tasks.'}, status=status.HTTP_404_NOT_FOUND)
         serializer = TaskSerializer(task, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
@@ -486,6 +635,7 @@ class EnvironmentTaskView(APIView):
                 {'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND
             )
         task.completed = True
+        task.save()
         return Response({'message': 'Task has been completed'}, status=status.HTTP_200_OK)
 
 

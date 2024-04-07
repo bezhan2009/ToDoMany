@@ -1253,3 +1253,1339 @@ WARNING 2024-04-05 12:06:52,078 log 9676 4396 Not Found: /demo/api/tasks/10/
 WARNING 2024-04-05 12:06:52,079 basehttp 9676 4396 "GET /demo/api/tasks/10/ HTTP/1.1" 404 28
 WARNING 2024-04-06 12:06:43,951 log 14400 5024 Not Found: /favicon.ico
 WARNING 2024-04-06 12:06:43,952 basehttp 14400 5024 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 07:09:35,081 log 17108 16524 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:09:35,086 log 17108 13116 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:09:35,088 log 17108 11948 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:09:35,089 basehttp 17108 16524 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,090 basehttp 17108 13116 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,090 basehttp 17108 11948 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,111 log 17108 16524 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:09:35,113 log 17108 13116 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:09:35,115 log 17108 11948 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:09:35,116 basehttp 17108 16524 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,116 basehttp 17108 13116 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,116 basehttp 17108 11948 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:35,127 log 17108 16524 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:09:35,128 basehttp 17108 16524 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,699 log 17108 16524 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:09:38,700 log 17108 11948 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:09:38,701 log 17108 13116 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:09:38,702 log 17108 10640 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:09:38,704 log 17108 16992 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:09:38,706 log 17108 4936 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:09:38,707 basehttp 17108 16524 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,707 basehttp 17108 11948 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,708 basehttp 17108 13116 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,708 basehttp 17108 10640 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,709 basehttp 17108 16992 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,709 basehttp 17108 4936 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,721 log 17108 16524 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:09:38,721 basehttp 17108 16524 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:38,778 log 17108 16524 Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+WARNING 2024-04-07 07:09:38,779 basehttp 17108 16524 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:39,579 log 17108 16524 Not Found: /accounts/login/
+WARNING 2024-04-07 07:09:39,579 basehttp 17108 16524 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:09:39,671 log 17108 16524 Not Found: /favicon.ico
+WARNING 2024-04-07 07:09:39,672 basehttp 17108 16524 "GET /favicon.ico HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,875 log 8972 1720 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:10:36,876 log 8972 11020 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:10:36,876 basehttp 8972 1720 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,877 basehttp 8972 11020 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,881 log 8972 1720 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:10:36,882 log 8972 11020 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:10:36,883 basehttp 8972 1720 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,883 basehttp 8972 11020 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,886 log 8972 1720 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:10:36,887 log 8972 11020 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:10:36,888 basehttp 8972 1720 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,888 basehttp 8972 11020 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:36,893 log 8972 1720 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:10:36,893 basehttp 8972 1720 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:37,892 log 8972 1720 Not Found: /accounts/login/
+WARNING 2024-04-07 07:10:37,893 basehttp 8972 1720 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:47,163 log 8972 1720 Not Found: /accounts/1
+WARNING 2024-04-07 07:10:47,163 basehttp 8972 1720 "GET /accounts/1 HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,142 log 8972 1720 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:10:53,144 log 8972 11020 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:10:53,145 log 8972 7316 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:10:53,146 log 8972 3488 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:10:53,147 log 8972 14576 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:10:53,148 log 8972 15380 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:10:53,149 basehttp 8972 7316 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,149 basehttp 8972 1720 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,149 basehttp 8972 11020 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,150 basehttp 8972 14576 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,150 basehttp 8972 3488 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,151 basehttp 8972 15380 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:10:53,153 log 8972 1720 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:10:53,154 basehttp 8972 1720 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,245 log 8972 1720 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:11:01,245 basehttp 8972 1720 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,248 log 8972 15380 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:11:01,249 log 8972 14576 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:11:01,251 log 8972 3488 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:11:01,253 log 8972 7316 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:11:01,254 log 8972 11020 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:11:01,256 log 8972 1720 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:11:01,256 basehttp 8972 15380 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,257 basehttp 8972 14576 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,257 basehttp 8972 7316 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,258 basehttp 8972 3488 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,258 basehttp 8972 11020 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:01,259 basehttp 8972 1720 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:35,634 log 8972 1720 Not Found: /demo/api/task
+WARNING 2024-04-07 07:11:35,635 basehttp 8972 1720 "GET /demo/api/task HTTP/1.1" 404 179
+WARNING 2024-04-07 07:11:38,622 log 8972 1720 Not Found: /demo/api/task/
+WARNING 2024-04-07 07:11:38,623 basehttp 8972 1720 "GET /demo/api/task/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,793 log 8972 1720 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:13:06,794 basehttp 8972 1720 "GET /demo/api/tasks/ HTTP/1.1" 401 5200
+WARNING 2024-04-07 07:13:06,834 log 8972 1720 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2024-04-07 07:13:06,835 log 8972 11020 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2024-04-07 07:13:06,836 log 8972 3488 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2024-04-07 07:13:06,837 log 8972 7316 Not Found: /static/rest_framework/css/default.css
+WARNING 2024-04-07 07:13:06,838 log 8972 14576 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2024-04-07 07:13:06,840 log 8972 15380 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2024-04-07 07:13:06,841 basehttp 8972 1720 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,841 basehttp 8972 7316 "GET /static/rest_framework/css/default.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,841 basehttp 8972 11020 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,842 basehttp 8972 3488 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,842 basehttp 8972 14576 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,843 log 8972 1720 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2024-04-07 07:13:06,844 basehttp 8972 15380 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,846 log 8972 11020 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2024-04-07 07:13:06,847 log 8972 7316 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2024-04-07 07:13:06,849 log 8972 3488 Not Found: /static/rest_framework/js/default.js
+WARNING 2024-04-07 07:13:06,849 basehttp 8972 11020 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,849 basehttp 8972 1720 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,850 basehttp 8972 3488 "GET /static/rest_framework/js/default.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:06,850 basehttp 8972 7316 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:17,796 log 8972 7316 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:13:17,797 basehttp 8972 7316 "GET /demo/api/tasks/?format=json HTTP/1.1" 401 58
+WARNING 2024-04-07 07:13:21,104 log 8972 7316 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:13:21,105 basehttp 8972 7316 "GET /demo/api/tasks/ HTTP/1.1" 401 5200
+WARNING 2024-04-07 07:13:27,921 log 8972 7316 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:13:27,921 basehttp 8972 7316 "GET /demo/api/tasks/ HTTP/1.1" 401 5200
+WARNING 2024-04-07 07:13:27,962 log 8972 7316 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2024-04-07 07:13:27,962 basehttp 8972 7316 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,964 log 8972 3488 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2024-04-07 07:13:27,965 log 8972 11020 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2024-04-07 07:13:27,966 log 8972 1720 Not Found: /static/rest_framework/css/default.css
+WARNING 2024-04-07 07:13:27,968 log 8972 15380 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2024-04-07 07:13:27,969 log 8972 14576 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2024-04-07 07:13:27,970 log 8972 7316 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2024-04-07 07:13:27,971 basehttp 8972 3488 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,971 basehttp 8972 11020 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,971 basehttp 8972 1720 "GET /static/rest_framework/css/default.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,971 basehttp 8972 15380 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,972 basehttp 8972 14576 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,972 basehttp 8972 7316 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,974 log 8972 3488 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2024-04-07 07:13:27,975 log 8972 11020 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2024-04-07 07:13:27,976 log 8972 1720 Not Found: /static/rest_framework/js/default.js
+WARNING 2024-04-07 07:13:27,977 basehttp 8972 3488 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,977 basehttp 8972 11020 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:27,977 basehttp 8972 1720 "GET /static/rest_framework/js/default.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,829 log 8972 1720 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:13:30,829 basehttp 8972 1720 "GET /demo/api/tasks/?format=api HTTP/1.1" 401 5244
+WARNING 2024-04-07 07:13:30,871 log 8972 1720 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2024-04-07 07:13:30,872 log 8972 11020 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2024-04-07 07:13:30,874 log 8972 3488 Not Found: /static/rest_framework/css/default.css
+WARNING 2024-04-07 07:13:30,875 log 8972 14576 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2024-04-07 07:13:30,876 log 8972 7316 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2024-04-07 07:13:30,877 log 8972 15380 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2024-04-07 07:13:30,878 basehttp 8972 1720 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,879 basehttp 8972 11020 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,879 basehttp 8972 3488 "GET /static/rest_framework/css/default.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,879 basehttp 8972 14576 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,880 basehttp 8972 7316 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,880 basehttp 8972 15380 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,883 log 8972 1720 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2024-04-07 07:13:30,884 log 8972 11020 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2024-04-07 07:13:30,886 log 8972 3488 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2024-04-07 07:13:30,888 log 8972 14576 Not Found: /static/rest_framework/js/default.js
+WARNING 2024-04-07 07:13:30,888 basehttp 8972 1720 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,889 basehttp 8972 3488 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,889 basehttp 8972 11020 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:30,890 basehttp 8972 14576 "GET /static/rest_framework/js/default.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,938 log 8972 14576 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:13:53,938 basehttp 8972 14576 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,948 log 8972 11020 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:13:53,952 log 8972 1720 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:13:53,954 log 8972 3488 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:13:53,955 log 8972 14576 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:13:53,957 log 8972 15380 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:13:53,958 log 8972 7316 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:13:53,959 basehttp 8972 11020 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,959 basehttp 8972 3488 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,959 basehttp 8972 1720 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,960 basehttp 8972 14576 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,960 basehttp 8972 15380 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:53,961 basehttp 8972 7316 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:13:55,479 log 8972 7316 Not Found: /accounts/login/
+WARNING 2024-04-07 07:13:55,480 basehttp 8972 7316 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:15:21,652 log 8972 876 Not Found: /accounts/login/
+WARNING 2024-04-07 07:15:21,654 basehttp 8972 876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:15:24,213 log 8972 876 Not Found: /accounts/login/
+WARNING 2024-04-07 07:15:24,213 basehttp 8972 876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:33,060 log 8972 876 Not Found: /accounts/login/
+WARNING 2024-04-07 07:16:33,061 basehttp 8972 876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:35,411 log 8972 876 Not Found: /accounts/login/
+WARNING 2024-04-07 07:16:35,412 basehttp 8972 876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,726 log 8972 876 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:16:43,726 basehttp 8972 876 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,740 log 8972 14388 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:16:43,741 basehttp 8972 14388 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,745 log 8972 876 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:16:43,745 basehttp 8972 876 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,750 log 8972 14388 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:16:43,752 log 8972 876 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:16:43,754 basehttp 8972 876 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,754 basehttp 8972 14388 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,758 log 8972 876 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:16:43,759 log 8972 14388 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:16:43,759 basehttp 8972 876 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:43,760 basehttp 8972 14388 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:16:45,158 log 8972 14388 Not Found: /accounts/login/
+WARNING 2024-04-07 07:16:45,158 basehttp 8972 14388 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,357 log 8096 9972 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-07 07:17:02,359 log 8096 1528 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-07 07:17:02,360 basehttp 8096 9972 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,360 basehttp 8096 1528 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,370 log 8096 9972 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-07 07:17:02,371 log 8096 1528 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-07 07:17:02,372 basehttp 8096 9972 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,372 basehttp 8096 1528 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,374 log 8096 9972 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-07 07:17:02,375 log 8096 1528 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-07 07:17:02,376 basehttp 8096 9972 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,376 basehttp 8096 1528 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:02,379 log 8096 9972 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-07 07:17:02,379 basehttp 8096 9972 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:03,051 log 8096 9972 Not Found: /accounts/login/
+WARNING 2024-04-07 07:17:03,051 basehttp 8096 9972 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-07 07:17:14,196 log 5852 8124 Not Found: /accounts/login/
+WARNING 2024-04-07 07:17:14,196 basehttp 5852 8124 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
+WARNING 2024-04-07 07:18:08,182 log 5852 5480 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-07 07:18:08,183 basehttp 5852 5480 "GET /demo/api/tasks/?format=api HTTP/1.1" 401 5244
+WARNING 2024-04-07 12:52:29,669 log 10372 11920 Unauthorized: /auth/sign-in/
+WARNING 2024-04-07 12:52:29,670 basehttp 10372 11920 "POST /auth/sign-in/ HTTP/1.1" 401 63
+ERROR 2024-04-07 12:53:11,190 log 10372 11920 Internal Server Error: /demo/api/environment/admin/action/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 12:53:11,192 basehttp 10372 11920 "GET /demo/api/environment/admin/action/1/ HTTP/1.1" 500 21382
+ERROR 2024-04-07 12:55:03,287 log 10372 11920 Internal Server Error: /demo/api/environment/admin/action/10/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 12:55:03,289 basehttp 10372 11920 "GET /demo/api/environment/admin/action/10/ HTTP/1.1" 500 21386
+WARNING 2024-04-07 12:59:22,840 log 10916 8784 Unauthorized: /demo/api/environment/admin/action/1/
+WARNING 2024-04-07 12:59:22,841 basehttp 10916 8784 "GET /demo/api/environment/admin/action/1/ HTTP/1.1" 401 107
+ERROR 2024-04-07 12:59:36,909 log 10916 8784 Internal Server Error: /demo/api/environment/admin/action/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 12:59:36,911 basehttp 10916 8784 "GET /demo/api/environment/admin/action/1/ HTTP/1.1" 500 21285
+ERROR 2024-04-07 13:00:13,279 log 10916 8784 Internal Server Error: /demo/api/environment/admin/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 13:00:13,281 basehttp 10916 8784 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 500 21285
+WARNING 2024-04-07 13:00:50,113 log 10916 3700 Not Found: /favicon.ico
+WARNING 2024-04-07 13:00:50,114 basehttp 10916 3700 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 13:01:41,095 log 10916 11004 Not Found: /favicon.ico
+WARNING 2024-04-07 13:01:41,096 basehttp 10916 11004 "GET /favicon.ico HTTP/1.1" 404 3029
+ERROR 2024-04-07 13:07:09,203 log 6764 7028 Internal Server Error: /demo/api/environment/admin/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 13:07:09,205 basehttp 6764 7028 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 500 21154
+ERROR 2024-04-07 13:11:14,916 log 9860 9540 Internal Server Error: /demo/api/environment/admin/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 13:11:14,918 basehttp 9860 9540 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 500 21154
+ERROR 2024-04-07 13:12:05,753 log 9860 9540 Internal Server Error: /demo/api/environment/admin/action/20/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AdminActionsView.get() got an unexpected keyword argument 'pk'
+ERROR 2024-04-07 13:12:05,754 basehttp 9860 9540 "GET /demo/api/environment/admin/action/20/ HTTP/1.1" 500 21158
+WARNING 2024-04-07 13:13:03,775 log 4248 5360 Not Found: /demo/api/environment/admin/action/20/
+WARNING 2024-04-07 13:13:03,776 basehttp 4248 5360 "GET /demo/api/environment/admin/action/20/ HTTP/1.1" 404 35
+ERROR 2024-04-07 13:19:06,095 log 7848 2508 Internal Server Error: /demo/api/environment/action/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 388, in post
+    admin = Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2024-04-07 13:19:06,098 basehttp 7848 2508 "POST /demo/api/environment/action/1/ HTTP/1.1" 500 21862
+ERROR 2024-04-07 13:20:51,255 log 7848 2508 Internal Server Error: /demo/api/environment/action/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 388, in post
+    admin = Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2024-04-07 13:20:51,257 basehttp 7848 2508 "POST /demo/api/environment/action/1/ HTTP/1.1" 500 21862
+ERROR 2024-04-07 13:28:39,339 log 11044 5036 Internal Server Error: /demo/api/environment/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\__init__.py", line 2117, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'Request'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 366, in get
+    admins = self.get_object(request, pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 355, in get_object
+    return get_object_or_404(Environment,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 86, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1559, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1389, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\lookups.py", line 364, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\__init__.py", line 2119, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <rest_framework.request.Request: GET '/demo/api/environment/action/2/'>.
+ERROR 2024-04-07 13:28:39,345 basehttp 11044 5036 "GET /demo/api/environment/action/2/ HTTP/1.1" 500 24983
+WARNING 2024-04-07 13:35:25,687 log 10548 8412 Unauthorized: /auth/sign-in/
+WARNING 2024-04-07 13:35:25,687 basehttp 10548 8412 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-04-07 13:43:59,840 log 4588 7668 Not Found: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:43:59,840 basehttp 4588 7668 "POST /demo/api/environment/action/2/ HTTP/1.1" 404 35
+WARNING 2024-04-07 13:44:09,128 log 4588 7668 Not Found: /demo/api/environment/action/1/
+WARNING 2024-04-07 13:44:09,129 basehttp 4588 7668 "POST /demo/api/environment/action/1/ HTTP/1.1" 404 35
+WARNING 2024-04-07 13:44:09,418 log 4588 7668 Not Found: /demo/api/environment/action/1/
+WARNING 2024-04-07 13:44:09,419 basehttp 4588 7668 "POST /demo/api/environment/action/1/ HTTP/1.1" 404 35
+ERROR 2024-04-07 13:45:46,648 log 876 2608 Internal Server Error: /demo/api/environment/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 398, in post
+    if len(Environment.objects.filter(user=UserProfile.objects.filter(id=user_pk))) > 0 or len(Admin.objects.filter(id=user_pk, is_admin=True)) > 0:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1559, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 1389, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\related_lookups.py", line 158, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\lookups.py", line 360, in get_prep_lookup
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR 2024-04-07 13:45:46,655 basehttp 876 2608 "POST /demo/api/environment/action/2/ HTTP/1.1" 500 24071
+WARNING 2024-04-07 13:47:16,243 log 1220 2428 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:47:16,243 basehttp 1220 2428 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:53:20,187 log 3560 3880 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:53:20,188 basehttp 3560 3880 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:55:00,469 log 5040 3520 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:55:00,470 basehttp 5040 3520 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:55:19,289 log 5040 3520 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:55:19,289 basehttp 5040 3520 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:55:20,838 log 5040 3520 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:55:20,838 basehttp 5040 3520 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:56:58,728 log 11212 9484 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:56:58,728 basehttp 11212 9484 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:57:36,371 log 1208 8792 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:57:36,371 basehttp 1208 8792 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:57:47,335 log 1208 8792 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:57:47,336 basehttp 1208 8792 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 13:58:04,287 log 416 9844 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 13:58:04,288 basehttp 416 9844 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 14:00:44,812 log 8920 9336 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:00:44,813 basehttp 8920 9336 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 14:00:48,199 log 8920 9336 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:00:48,200 basehttp 8920 9336 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 14:00:58,912 log 10260 5528 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:00:58,912 basehttp 10260 5528 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 60
+WARNING 2024-04-07 14:01:07,769 log 2136 7824 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:01:07,769 basehttp 2136 7824 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 63
+WARNING 2024-04-07 14:01:30,140 log 828 3664 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:01:30,140 basehttp 828 3664 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 62
+WARNING 2024-04-07 14:01:32,318 log 828 3664 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:01:32,319 basehttp 828 3664 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 62
+WARNING 2024-04-07 14:01:41,399 log 2424 3320 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:01:41,399 basehttp 2424 3320 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 62
+ERROR 2024-04-07 14:03:46,507 log 1088 5908 Internal Server Error: /demo/api/environment/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 408, in post
+    admin = Admin.objects.get(id=admin_pk, environment=environment)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Admin.DoesNotExist: Admin matching query does not exist.
+ERROR 2024-04-07 14:03:46,511 basehttp 1088 5908 "POST /demo/api/environment/action/2/ HTTP/1.1" 500 21782
+WARNING 2024-04-07 14:04:39,757 log 10856 8828 Not Found: /demo/api/environment/action/2/
+WARNING 2024-04-07 14:04:39,757 basehttp 10856 8828 "POST /demo/api/environment/action/2/ HTTP/1.1" 404 29
+ERROR 2024-04-07 14:05:06,127 log 10856 8828 Internal Server Error: /demo/api/environment/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 410, in post
+    if len(admin) > 0 or admin.exists() or admin.count() > 0:
+       ^^^^^^^^^^
+TypeError: object of type 'Admin' has no len()
+ERROR 2024-04-07 14:05:06,130 basehttp 10856 8828 "POST /demo/api/environment/action/2/ HTTP/1.1" 500 21287
+ERROR 2024-04-07 14:06:47,813 log 3828 4272 Internal Server Error: /demo/api/environment/action/2/
+ERROR 2024-04-07 14:06:47,814 basehttp 3828 4272 "POST /demo/api/environment/action/2/ HTTP/1.1" 500 47
+ERROR 2024-04-07 18:14:08,332 log 3048 232 Internal Server Error: /demo/api/environment/admin/action/2/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 480, in get
+    if Environment.objects.get(id=environment_pk,
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Environment.DoesNotExist: Environment matching query does not exist.
+ERROR 2024-04-07 18:14:08,342 basehttp 3048 232 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 500 21780
+WARNING 2024-04-07 18:15:11,231 log 12152 8048 Not Found: /demo/api/environment/admin/action/2/
+WARNING 2024-04-07 18:15:11,231 basehttp 12152 8048 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 404 36
+WARNING 2024-04-07 18:15:20,924 log 8624 1724 Not Found: /demo/api/environment/admin/action/2/
+WARNING 2024-04-07 18:15:20,925 basehttp 8624 1724 "GET /demo/api/environment/admin/action/2/ HTTP/1.1" 404 36
+WARNING 2024-04-07 18:21:59,112 log 12000 3024 Forbidden: /demo/api/environment/action/2/
+WARNING 2024-04-07 18:21:59,113 basehttp 12000 3024 "POST /demo/api/environment/action/2/ HTTP/1.1" 403 62
+WARNING 2024-04-07 18:28:10,295 log 6536 6464 Not Found: /demo/api/environment/action/2/
+WARNING 2024-04-07 18:28:10,296 basehttp 6536 6464 "POST /demo/api/environment/action/2/ HTTP/1.1" 404 34
+WARNING 2024-04-07 19:51:35,135 log 6280 7080 Not Found: /favicon.ico
+WARNING 2024-04-07 19:51:35,136 basehttp 6280 7080 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 19:52:08,827 log 6280 8028 Not Found: /favicon.ico
+WARNING 2024-04-07 19:52:08,828 basehttp 6280 8028 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 20:02:28,662 log 12580 2516 Bad Request: /demo/api/environment/2/
+WARNING 2024-04-07 20:02:28,663 basehttp 12580 2516 "DELETE /demo/api/environment/2/ HTTP/1.1" 400 39
+WARNING 2024-04-07 20:16:23,060 log 14120 2584 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:16:23,060 basehttp 14120 2584 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 33
+WARNING 2024-04-07 20:16:34,156 log 14120 2584 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:16:34,156 basehttp 14120 2584 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 33
+WARNING 2024-04-07 20:16:41,706 log 14120 2584 Forbidden: /demo/api/environment/1/
+WARNING 2024-04-07 20:16:41,706 basehttp 14120 2584 "DELETE /demo/api/environment/1/ HTTP/1.1" 403 33
+WARNING 2024-04-07 20:30:12,205 log 10376 12136 Forbidden: /demo/api/environment/1/
+WARNING 2024-04-07 20:30:12,205 basehttp 10376 12136 "DELETE /demo/api/environment/1/ HTTP/1.1" 403 67
+WARNING 2024-04-07 20:30:16,846 log 10376 12136 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:30:16,846 basehttp 10376 12136 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 33
+WARNING 2024-04-07 20:30:25,889 log 10376 12136 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:30:25,890 basehttp 10376 12136 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 67
+WARNING 2024-04-07 20:33:04,894 log 3684 7864 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:33:04,895 basehttp 3684 7864 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 67
+WARNING 2024-04-07 20:33:09,124 log 3684 7864 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:33:09,125 basehttp 3684 7864 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 67
+WARNING 2024-04-07 20:33:43,026 log 3684 7864 Forbidden: /demo/api/environment/2/
+WARNING 2024-04-07 20:33:43,026 basehttp 3684 7864 "DELETE /demo/api/environment/2/ HTTP/1.1" 403 33
+WARNING 2024-04-07 20:34:34,917 log 11832 14204 Not Found: /demo/api/environment/2/
+WARNING 2024-04-07 20:34:34,917 basehttp 11832 14204 "DELETE /demo/api/environment/2/ HTTP/1.1" 404 35
+WARNING 2024-04-07 20:34:45,721 log 11832 14204 Not Found: /demo/api/environment/2/
+WARNING 2024-04-07 20:34:45,722 basehttp 11832 14204 "GET /demo/api/environment/2/ HTTP/1.1" 404 35
+WARNING 2024-04-07 20:38:23,870 log 11616 12644 Not Found: /demo/api/environment/3/
+WARNING 2024-04-07 20:38:23,871 basehttp 11616 12644 "GET /demo/api/environment/3/ HTTP/1.1" 404 35
+ERROR 2024-04-07 20:41:04,628 log 13800 10144 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 268, in post
+    saved_environment_serializer = SavedEnvironmentSerializer(user=UserProfile.objects.get(id=user_pk),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 116, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'user'
+ERROR 2024-04-07 20:41:04,631 basehttp 13800 10144 "POST /demo/api/environment/ HTTP/1.1" 500 21610
+ERROR 2024-04-07 20:41:31,856 log 10316 9136 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 268, in post
+    saved_environment_serializer = SavedEnvironmentSerializer(user=user_pk,
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 116, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'user'
+ERROR 2024-04-07 20:41:31,860 basehttp 10316 9136 "POST /demo/api/environment/ HTTP/1.1" 500 21582
+ERROR 2024-04-07 20:42:24,468 log 1336 10976 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 268, in post
+    saved_environment_serializer = SavedEnvironmentSerializer(user=serializer.validated_data['user'],
+                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'user'
+ERROR 2024-04-07 20:42:24,470 basehttp 1336 10976 "POST /demo/api/environment/ HTTP/1.1" 500 21315
+ERROR 2024-04-07 20:43:51,474 log 7512 12208 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 268, in post
+    saving_environment = SavedEnvironment.objects.create(user=user_pk,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
+    raise ValueError(
+ValueError: Cannot assign "11": "SavedEnvironment.user" must be a "User" instance.
+ERROR 2024-04-07 20:43:51,479 basehttp 7512 12208 "POST /demo/api/environment/ HTTP/1.1" 500 22245
+ERROR 2024-04-07 20:44:02,743 log 9884 10932 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 268, in post
+    saving_environment = SavedEnvironment.objects.create(user=serializer.validated_data['user'],
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'user'
+ERROR 2024-04-07 20:44:02,746 basehttp 9884 10932 "POST /demo/api/environment/ HTTP/1.1" 500 21305
+ERROR 2024-04-07 20:44:38,949 log 5136 7520 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 269, in post
+    saving_environment = SavedEnvironment.objects.create(user=user,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
+    raise ValueError(
+ValueError: Cannot assign "{'id': 8, 'name': 'test', 'password': 'tester', 'date': '2024-04-07T17:44:38.901517Z', 'is_deleted': False}": "SavedEnvironment.environment" must be a "Environment" instance.
+ERROR 2024-04-07 20:44:38,954 basehttp 5136 7520 "POST /demo/api/environment/ HTTP/1.1" 500 22480
+ERROR 2024-04-07 20:45:16,097 log 10700 1584 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 270, in post
+    environment=Environment.objects.get(id=serializer.id))
+                                           ^^^^^^^^^^^^^
+AttributeError: 'EnvironmentSerializer' object has no attribute 'id'
+ERROR 2024-04-07 20:45:16,101 basehttp 10700 1584 "POST /demo/api/environment/ HTTP/1.1" 500 21332
+ERROR 2024-04-07 20:45:18,629 log 10700 1584 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 270, in post
+    environment=Environment.objects.get(id=serializer.id))
+                                           ^^^^^^^^^^^^^
+AttributeError: 'EnvironmentSerializer' object has no attribute 'id'
+ERROR 2024-04-07 20:45:18,632 basehttp 10700 1584 "POST /demo/api/environment/ HTTP/1.1" 500 21332
+WARNING 2024-04-07 20:56:05,218 log 1256 8080 Bad Request: /demo/api/environment/
+WARNING 2024-04-07 20:56:05,219 basehttp 1256 8080 "POST /demo/api/environment/ HTTP/1.1" 400 76
+ERROR 2024-04-07 20:56:13,506 log 1256 8080 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 275, in post
+    serializer.save(user=user)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 198, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-07 20:56:13,510 basehttp 1256 8080 "POST /demo/api/environment/ HTTP/1.1" 500 21694
+ERROR 2024-04-07 20:56:40,900 log 11800 5592 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 276, in post
+    environment=Environment.objects.get(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Environment.DoesNotExist: Environment matching query does not exist.
+ERROR 2024-04-07 20:56:40,904 basehttp 11800 5592 "POST /demo/api/environment/ HTTP/1.1" 500 21702
+ERROR 2024-04-07 20:58:33,178 log 10928 3804 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 276, in post
+    environment=Environment.objects.get(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Environment.DoesNotExist: Environment matching query does not exist.
+ERROR 2024-04-07 20:58:33,184 basehttp 10928 3804 "POST /demo/api/environment/ HTTP/1.1" 500 21699
+ERROR 2024-04-07 20:58:57,821 log 12540 2600 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 275, in post
+    serializer.save(user=user)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 198, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-07 20:58:57,826 basehttp 12540 2600 "POST /demo/api/environment/ HTTP/1.1" 500 21694
+ERROR 2024-04-07 20:59:39,249 log 10004 1168 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 275, in post
+    serializer.save(user=user)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 198, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-07 20:59:39,252 basehttp 10004 1168 "POST /demo/api/environment/ HTTP/1.1" 500 21694
+ERROR 2024-04-07 21:00:53,911 log 7188 6448 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 277, in post
+    id=serializer.validated_data['id']))
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+ERROR 2024-04-07 21:00:53,915 basehttp 7188 6448 "POST /demo/api/environment/ HTTP/1.1" 500 21188
+ERROR 2024-04-07 21:03:03,817 log 7792 12072 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 275, in post
+    serializer.save(user=user)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 198, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-07 21:03:03,820 basehttp 7792 12072 "POST /demo/api/environment/ HTTP/1.1" 500 21694
+ERROR 2024-04-07 21:03:34,677 log 9908 9664 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 275, in post
+    serializer.save(user=user)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 198, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-07 21:03:34,682 basehttp 9908 9664 "POST /demo/api/environment/ HTTP/1.1" 500 21694
+ERROR 2024-04-07 21:04:29,565 log 464 6012 Internal Server Error: /demo/api/environment/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 278, in post
+    id=serializer.validated_data['id']))
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+ERROR 2024-04-07 21:04:29,567 basehttp 464 6012 "POST /demo/api/environment/ HTTP/1.1" 500 21188
+WARNING 2024-04-07 21:04:59,580 log 10568 8980 Bad Request: /demo/api/environment/
+WARNING 2024-04-07 21:04:59,580 basehttp 10568 8980 "POST /demo/api/environment/ HTTP/1.1" 400 76
+WARNING 2024-04-07 21:05:09,395 log 10568 8980 Bad Request: /demo/api/environment/
+WARNING 2024-04-07 21:05:09,395 basehttp 10568 8980 "POST /demo/api/environment/ HTTP/1.1" 400 76
+WARNING 2024-04-07 21:05:17,341 log 10568 8980 Bad Request: /demo/api/environment/
+WARNING 2024-04-07 21:05:17,341 basehttp 10568 8980 "POST /demo/api/environment/ HTTP/1.1" 400 75
+ERROR 2024-04-07 21:08:50,238 log 11500 516 Internal Server Error: /demo/api/environment/action/3/
+ERROR 2024-04-07 21:08:50,239 basehttp 11500 516 "POST /demo/api/environment/action/3/ HTTP/1.1" 500 64
+ERROR 2024-04-07 21:09:14,029 log 8608 5592 Internal Server Error: /demo/api/environment/action/3/
+ERROR 2024-04-07 21:09:14,030 basehttp 8608 5592 "POST /demo/api/environment/action/3/ HTTP/1.1" 500 64
+WARNING 2024-04-07 21:13:17,475 log 516 6328 Not Found: /demo/api/environment/admin/action/3/
+WARNING 2024-04-07 21:13:17,476 basehttp 516 6328 "GET /demo/api/environment/admin/action/3/ HTTP/1.1" 404 36
+WARNING 2024-04-07 21:15:22,256 log 13840 9048 Not Found: /demo/api/environment/admin/action/3/
+WARNING 2024-04-07 21:15:22,256 basehttp 13840 9048 "GET /demo/api/environment/admin/action/3/ HTTP/1.1" 404 37
