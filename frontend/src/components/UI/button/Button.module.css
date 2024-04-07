@@ -1,0 +1,31 @@
+.button {
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+}
+
+.button-icon {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-button {
+    width: 100%;
+    padding: 10px 0;
+}
+  
+.nav-button:hover {
+    background-color: #F1F1F1;
+}
+
+.disabled-nav-button {
+    cursor: default;
+    background-color: inherit;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.disabled-nav-button:hover {
+    background-color: inherit;
+}

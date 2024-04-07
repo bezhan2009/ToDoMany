@@ -1215,3 +1215,69 @@ Traceback (most recent call last):
            ^
 TypeError: 'SavedEnvironment' object is not iterable
 ERROR 2024-04-03 22:44:46,307 basehttp 7352 8356 "GET /demo/api/environment/ HTTP/1.1" 500 22756
+ERROR 2024-04-07 01:06:06,106 exception 7804 2852 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-07 01:06:06,894 log 7804 2852 Bad Request: /
+WARNING 2024-04-07 01:06:06,895 basehttp 7804 2852 "GET / HTTP/1.1" 400 71160
+ERROR 2024-04-07 01:06:07,404 exception 7804 13256 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-07 01:06:07,435 log 7804 13256 Bad Request: /favicon.ico
+WARNING 2024-04-07 01:06:07,436 basehttp 7804 13256 "GET /favicon.ico HTTP/1.1" 400 70994
+ERROR 2024-04-07 01:09:30,601 exception 7804 20416 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-04-07 01:09:30,634 log 7804 20416 Bad Request: /favicon.ico
+WARNING 2024-04-07 01:09:30,634 basehttp 7804 20416 "GET /favicon.ico HTTP/1.1" 400 70994
+WARNING 2024-04-07 01:12:19,773 log 7804 7460 Not Found: /accounts/login/
+WARNING 2024-04-07 01:12:19,773 basehttp 7804 7460 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
+WARNING 2024-04-07 01:12:20,043 log 7804 7460 Not Found: /favicon.ico
+WARNING 2024-04-07 01:12:20,043 basehttp 7804 7460 "GET /favicon.ico HTTP/1.1" 404 3029
+WARNING 2024-04-07 01:39:15,027 log 7804 4104 Not Found: /accounts/login/
+WARNING 2024-04-07 01:39:15,028 basehttp 7804 4104 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
+WARNING 2024-04-07 01:40:12,949 log 7804 7924 Not Found: /demo/
+WARNING 2024-04-07 01:40:12,949 basehttp 7804 7924 "GET /demo/ HTTP/1.1" 404 3062
+WARNING 2024-04-07 01:58:24,284 log 7804 20224 Method Not Allowed: /api/token/
+WARNING 2024-04-07 01:58:24,285 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
+WARNING 2024-04-07 01:58:24,287 log 7804 20224 Method Not Allowed: /api/token/
+WARNING 2024-04-07 01:58:24,287 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
+WARNING 2024-04-07 01:58:24,288 log 7804 20224 Method Not Allowed: /api/token/
+WARNING 2024-04-07 01:58:24,289 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
+WARNING 2024-04-07 02:18:26,862 log 16804 8260 Method Not Allowed: /api/token/
+WARNING 2024-04-07 02:18:26,884 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40
+WARNING 2024-04-07 02:20:51,180 log 16804 8260 Method Not Allowed: /api/token/
+WARNING 2024-04-07 02:20:51,180 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40

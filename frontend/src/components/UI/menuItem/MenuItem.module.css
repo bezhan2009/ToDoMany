@@ -1,0 +1,11 @@
+.nav-item-wrapper {
+    display: flex;
+    padding-left: 26px;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+}
+  
+.nav-item-wrapper img {
+    margin-right: 20px;
+}
