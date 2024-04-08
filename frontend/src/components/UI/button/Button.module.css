@@ -4,16 +4,36 @@
     border: none;
 }
 
-.button-icon {
-    padding: 0;
-    margin: 0;
+.outline-button {
+    background-color: inherit;
+    border: #466CF5 1px solid;
+    color:#466CF5;
+    transition: background-color .2s ease-in-out;
+}
+
+.outline-button:hover {
+    background-color: #466CF5;
+    color: white;
+}
+
+.field-button {
+    background-color: #466CF5;
+    color: white;
+    padding: 12px 36px;
+    border-radius: 20px;
+    transition: padding .2s ease-in-out;
+}
+
+.field-button:hover {
+    padding: 12px 40px;
 }
 
 .nav-button {
     width: 100%;
+    height: 42px;
     padding: 10px 0;
 }
-  
+
 .nav-button:hover {
     background-color: #F1F1F1;
 }
@@ -28,4 +48,11 @@
 
 .disabled-nav-button:hover {
     background-color: inherit;
+}
+
+
+
+.button-icon {
+    padding: 0;
+    margin: 0;
 }

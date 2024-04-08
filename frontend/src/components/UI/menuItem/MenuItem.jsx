@@ -6,7 +6,11 @@ export default function MenuItem({ mode, partialOpen, icon, label, to }) {
   if (partialOpen) {
     navbarContent = (
       <div className={style["nav-item-wrapper"]}>
-        <img src={icon} alt={label} />
+        <img
+          src={icon}
+          alt={label}
+          className={[style["nav-item-img"]]}
+        />
         <span>{label}</span>
       </div>
     );
@@ -18,7 +22,7 @@ export default function MenuItem({ mode, partialOpen, icon, label, to }) {
     <li>
       {/* Заменить на Link BrowserRouter*/}
       <a href={to}>
-        <Button mode={mode} aria-label={ariaLabel} >
+        <Button mode={mode} aria-label={ariaLabel}>
           {navbarContent}
         </Button>
       </a>

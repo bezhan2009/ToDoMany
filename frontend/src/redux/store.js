@@ -1,13 +1,13 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import thunkMiddleware from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { todoApi } from "./services/dataSlice";
 
 import rootReducer from "./rootReducer";
 
-const middleware = [...getDefaultMiddleware(), thunkMiddleware];
-
-const store = configureStore({
+export const store = configureStore({
   reducer: rootReducer,
-  middleware,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(todoApi.middleware),
 });
 
-export default store;
+setupListeners(store.dispatch);

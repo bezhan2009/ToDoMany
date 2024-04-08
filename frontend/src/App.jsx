@@ -1,24 +1,19 @@
-import { useState, useEffect } from "react";
+//import { useGetAllDataQuery } from "./redux/services/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAPIData } from "./redux/slices/dataSlice";
+import { toggleMenu, selectIsMenuOpen } from "./redux/slices/menuOpenSlice";
 
 import Home from "./pages/home/Home";
 import Header from "./components/Header";
 import "./App.css";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const menuOpen = useSelector(selectIsMenuOpen);
   const dispatch = useDispatch();
-  const data = useSelector(state => state.data.data);
-  const isLoading = useSelector(state => state.data.isLoading);
-  const error = useSelector(state => state.data.error);
 
-  useEffect(() => {
-    dispatch(fetchAPIData());
-  }, [dispatch]);
+  //const { isLoading, error, data } = useGetAllDataQuery("/");
 
   const handleChangeHeaderToggleSwitch = () => {
-    setMenuOpen((prevState) => !prevState);
+    dispatch(toggleMenu());
   };
 
   return (
@@ -29,13 +24,16 @@ function App() {
         nameOfPage={"Главная страница"}
       />
       <div className={`content-container ${menuOpen ? "menu-open" : ""}`}>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : error ? (
-          <div>Error: {error}</div>
-        ) : (
-          <Home data={data} />
-        )}
+        {/* {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <Home />
+        </>
+      ) : null} */}
+        <Home />
       </div>
     </>
   );

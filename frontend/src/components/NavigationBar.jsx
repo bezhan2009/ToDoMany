@@ -1,4 +1,7 @@
 import MenuItem from "./UI/menuItem/MenuItem";
+import homeIco from "../assets/lucide_home.png";
+import tasksIco from "../assets/iconoir_task-list.png";
+import calendarIco from "../assets/calendar.png";
 
 export default function NavigationBar({ partialOpen }) {
   return (
@@ -7,15 +10,15 @@ export default function NavigationBar({ partialOpen }) {
         <ul>
           <MenuItem
             partialOpen={partialOpen}
-            icon="https://placehold.co/18x20"
+            icon={homeIco}
             label="Главная страница"
             mode="nav"
             to="/"
           />
           <MenuItem
             partialOpen={partialOpen}
-            icon="https://placehold.co/18x20"
             label="Календарь"
+            icon={calendarIco}
             mode="nav"
             to="/calendar"
           />
@@ -26,7 +29,7 @@ export default function NavigationBar({ partialOpen }) {
           <MenuItem
             partialOpen={partialOpen}
             label="Список заданий"
-            icon="https://placehold.co/18x20"
+            icon={tasksIco}
             mode="disabled-nav"
           />
           {/* 

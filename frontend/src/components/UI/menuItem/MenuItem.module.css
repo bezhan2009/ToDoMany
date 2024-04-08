@@ -6,6 +6,8 @@
     align-items: center;
 }
   
-.nav-item-wrapper img {
+.nav-item-img {
     margin-right: 20px;
+    width: 20px;
+    height: 22px;
 }
