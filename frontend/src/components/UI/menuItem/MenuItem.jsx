@@ -1,16 +1,15 @@
+import { Link } from "react-router-dom";
 import Button from "../button/Button";
 import style from "./MenuItem.module.css";
 
 export default function MenuItem({ mode, partialOpen, icon, label, to }) {
-  let navbarContent = <img src={icon} alt={label} />;
+  let navbarContent = (
+    <img src={icon} alt={label} className={[style["nav-item-img"]]} />
+  );
   if (partialOpen) {
     navbarContent = (
       <div className={style["nav-item-wrapper"]}>
-        <img
-          src={icon}
-          alt={label}
-          className={[style["nav-item-img"]]}
-        />
+        <img src={icon} alt={label} className={[style["nav-item-partial"]]} />
         <span>{label}</span>
       </div>
     );
@@ -20,12 +19,11 @@ export default function MenuItem({ mode, partialOpen, icon, label, to }) {
 
   return (
     <li>
-      {/* Заменить на Link BrowserRouter*/}
-      <a href={to}>
+      <Link to={to}>
         <Button mode={mode} aria-label={ariaLabel}>
           {navbarContent}
         </Button>
-      </a>
+      </Link>
     </li>
   );
 }
