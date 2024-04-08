@@ -29,8 +29,8 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UniqueViolation: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
-DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+psycopg2.errors.UniqueViolation: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "auth_user_username_key"
+DETAIL:  пїЅпїЅпїЅпїЅ "(username)=(testing_project)" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 
 The above exception was the direct cause of the following exception:
@@ -108,8 +108,8 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.IntegrityError: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
-DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+django.db.utils.IntegrityError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "auth_user_username_key"
+DETAIL:  пїЅпїЅпїЅпїЅ "(username)=(testing_project)" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 ERROR 2024-03-31 18:12:32,712 basehttp 13080 11724 "POST /auth/sign-up/ HTTP/1.1" 500 199034
 WARNING 2024-03-31 18:13:18,803 log 13080 11724 Unauthorized: /auth/sign-in/
@@ -130,7 +130,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец ToDoSource_environment.password не существует
+psycopg2.errors.UndefinedColumn: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_environment.password пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
                                                              ^
 
@@ -198,7 +198,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.ProgrammingError: ОШИБКА:  столбец ToDoSource_environment.password не существует
+django.db.utils.ProgrammingError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_environment.password пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
                                                              ^
 
@@ -733,13 +733,13 @@ TypeError: Comment() got unexpected keyword arguments: 'product'
 
 ERROR 2024-04-02 12:19:16,613 log 17436 1560 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 12:19:16,613 basehttp 17436 1560 "POST /demo/api/comment/1/ HTTP/1.1" 500 1317
-ERROR 2024-04-02 12:20:12,644 views 12564 14732 An error occurred while processing the request: ОШИБКА:  отношение "ToDoSource_comment" не существует
+ERROR 2024-04-02 12:20:12,644 views 12564 14732 An error occurred while processing the request: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_comment" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: INSERT INTO "ToDoSource_comment" ("user_id", "task_id", "par...
                     ^
 
 ERROR 2024-04-02 12:20:12,645 log 12564 14732 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 12:20:12,645 basehttp 12564 14732 "POST /demo/api/comment/1/ HTTP/1.1" 500 199
-ERROR 2024-04-02 12:20:33,452 views 12564 14732 An error occurred while processing the request: ОШИБКА:  столбец "date" в таблице "ToDoSource_comment" не существует
+ERROR 2024-04-02 12:20:33,452 views 12564 14732 An error occurred while processing the request: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "date" пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_comment" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...user_id", "task_id", "parent_id", "comment_text", "date") VA...
                                                              ^
 
@@ -1215,119 +1215,3 @@ Traceback (most recent call last):
            ^
 TypeError: 'SavedEnvironment' object is not iterable
 ERROR 2024-04-03 22:44:46,307 basehttp 7352 8356 "GET /demo/api/environment/ HTTP/1.1" 500 22756
-ERROR 2024-04-07 01:06:06,106 exception 7804 2852 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-Traceback (most recent call last):
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
-    response = self.process_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
-    host = request.get_host()
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
-    raise DisallowedHost(msg)
-django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-WARNING 2024-04-07 01:06:06,894 log 7804 2852 Bad Request: /
-WARNING 2024-04-07 01:06:06,895 basehttp 7804 2852 "GET / HTTP/1.1" 400 71160
-ERROR 2024-04-07 01:06:07,404 exception 7804 13256 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-Traceback (most recent call last):
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
-    response = self.process_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
-    host = request.get_host()
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
-    raise DisallowedHost(msg)
-django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-WARNING 2024-04-07 01:06:07,435 log 7804 13256 Bad Request: /favicon.ico
-WARNING 2024-04-07 01:06:07,436 basehttp 7804 13256 "GET /favicon.ico HTTP/1.1" 400 70994
-ERROR 2024-04-07 01:09:30,601 exception 7804 20416 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-Traceback (most recent call last):
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
-    response = self.process_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
-    host = request.get_host()
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
-    raise DisallowedHost(msg)
-django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-WARNING 2024-04-07 01:09:30,634 log 7804 20416 Bad Request: /favicon.ico
-WARNING 2024-04-07 01:09:30,634 basehttp 7804 20416 "GET /favicon.ico HTTP/1.1" 400 70994
-WARNING 2024-04-07 01:12:19,773 log 7804 7460 Not Found: /accounts/login/
-WARNING 2024-04-07 01:12:19,773 basehttp 7804 7460 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
-WARNING 2024-04-07 01:12:20,043 log 7804 7460 Not Found: /favicon.ico
-WARNING 2024-04-07 01:12:20,043 basehttp 7804 7460 "GET /favicon.ico HTTP/1.1" 404 3029
-WARNING 2024-04-07 01:39:15,027 log 7804 4104 Not Found: /accounts/login/
-WARNING 2024-04-07 01:39:15,028 basehttp 7804 4104 "GET /accounts/login/?next=/ HTTP/1.1" 404 3048
-WARNING 2024-04-07 01:40:12,949 log 7804 7924 Not Found: /demo/
-WARNING 2024-04-07 01:40:12,949 basehttp 7804 7924 "GET /demo/ HTTP/1.1" 404 3062
-WARNING 2024-04-07 01:58:24,284 log 7804 20224 Method Not Allowed: /api/token/
-WARNING 2024-04-07 01:58:24,285 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
-WARNING 2024-04-07 01:58:24,287 log 7804 20224 Method Not Allowed: /api/token/
-WARNING 2024-04-07 01:58:24,287 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
-WARNING 2024-04-07 01:58:24,288 log 7804 20224 Method Not Allowed: /api/token/
-WARNING 2024-04-07 01:58:24,289 basehttp 7804 20224 "GET /api/token/ HTTP/1.1" 405 40
-WARNING 2024-04-07 02:18:26,862 log 16804 8260 Method Not Allowed: /api/token/
-WARNING 2024-04-07 02:18:26,884 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40
-WARNING 2024-04-07 02:20:51,180 log 16804 8260 Method Not Allowed: /api/token/
-WARNING 2024-04-07 02:20:51,180 basehttp 16804 8260 "GET /api/token/ HTTP/1.1" 405 40
-ERROR 2024-04-07 12:43:09,868 exception 2732 6784 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-Traceback (most recent call last):
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
-    response = self.process_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
-    host = request.get_host()
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
-    raise DisallowedHost(msg)
-django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-WARNING 2024-04-07 12:43:09,943 log 2732 6784 Bad Request: /
-WARNING 2024-04-07 12:43:09,944 basehttp 2732 6784 "GET / HTTP/1.1" 400 80258
-ERROR 2024-04-07 12:43:11,978 exception 2732 14700 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-Traceback (most recent call last):
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\deprecation.py", line 133, in __call__
-    response = self.process_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\middleware\common.py", line 48, in process_request
-    host = request.get_host()
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\miner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\request.py", line 151, in get_host
-    raise DisallowedHost(msg)
-django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-WARNING 2024-04-07 12:43:12,010 log 2732 14700 Bad Request: /favicon.ico
-WARNING 2024-04-07 12:43:12,010 basehttp 2732 14700 "GET /favicon.ico HTTP/1.1" 400 80092
-WARNING 2024-04-07 13:05:30,846 log 2732 20208 Not Found: /favicon.ico
-WARNING 2024-04-07 13:05:30,847 basehttp 2732 20208 "GET /favicon.ico HTTP/1.1" 404 3029
-WARNING 2024-04-07 13:29:26,873 log 2732 12716 Unauthorized: /demo/api/environment/1/
-WARNING 2024-04-07 13:29:26,873 basehttp 2732 12716 "GET /demo/api/environment/1/ HTTP/1.1" 401 58
-WARNING 2024-04-07 13:32:57,186 log 2732 12716 Unauthorized: /demo/api/environment/
-WARNING 2024-04-07 13:32:57,186 basehttp 2732 12716 "GET /demo/api/environment/ HTTP/1.1" 401 58
-WARNING 2024-04-07 13:33:34,262 log 2732 12716 Unauthorized: /demo/api/environment/admin/action/1/
-WARNING 2024-04-07 13:33:34,263 basehttp 2732 12716 "GET /demo/api/environment/admin/action/1/ HTTP/1.1" 401 58
-WARNING 2024-04-07 14:21:14,574 log 2732 12884 Not Found: /info
-WARNING 2024-04-07 14:21:14,574 basehttp 2732 12884 "GET /info HTTP/1.1" 404 3008
-WARNING 2024-04-07 14:28:51,847 log 2732 6808 Not Found: /data/info/
-WARNING 2024-04-07 14:28:51,847 basehttp 2732 6808 "GET /data/info/ HTTP/1.1" 404 3026
-WARNING 2024-04-07 14:35:39,361 log 2732 6808 Not Found: /2/
-WARNING 2024-04-07 14:35:39,362 basehttp 2732 6808 "GET /2/ HTTP/1.1" 404 3002
-WARNING 2024-04-07 14:35:40,993 log 2732 6808 Not Found: /2/
-WARNING 2024-04-07 14:35:40,994 basehttp 2732 6808 "GET /2/ HTTP/1.1" 404 3002
-WARNING 2024-04-07 14:59:26,852 log 2732 1524 Not Found: /1
-WARNING 2024-04-07 14:59:26,852 basehttp 2732 1524 "GET /1 HTTP/1.1" 404 2999

@@ -1,6 +1,5 @@
 
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from ToDoSource.api.views import *
 
 urlpatterns = [
@@ -12,7 +11,7 @@ urlpatterns = [
     path('environment/<int:pk>/', EnvironmentDetail.as_view()),
 
     path('environment/action/<int:pk>/', EnvironmentAction.as_view(), name='environment-action'),
-    path('environment/admin/action/<int:pk>/', AdminActionsView.as_view(), name='admin-action'),
+    path('environment/admin/action/<int:environment_pk>/', AdminActionsView.as_view(), name='admin-action'),
 
     path('environment/task/<int:pk>/', EnvironmentTaskView.as_view(), name='environment-task'),
 
