@@ -3417,3 +3417,269 @@ Traceback (most recent call last):
     raise SwaggerGenerationError("request_body can only be applied to (" + ','.join(self.body_methods) +
 drf_yasg.errors.SwaggerGenerationError: request_body can only be applied to (PUT,PATCH,POST,DELETE); are you looking for query_serializer or manual_parameters?
 ERROR 2024-04-08 01:08:15,301 basehttp 14528 14548 "GET /?format=openapi HTTP/1.1" 500 153850
+WARNING 2024-04-08 19:13:00,025 log 6692 884 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-08 19:13:00,026 basehttp 6692 884 "GET /demo/api/tasks/ HTTP/1.1" 401 107
+WARNING 2024-04-08 19:13:14,260 log 6692 884 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-08 19:13:14,260 basehttp 6692 884 "GET /demo/api/tasks/ HTTP/1.1" 401 107
+WARNING 2024-04-08 19:13:32,267 log 6692 884 Unauthorized: /demo/api/tasks/
+WARNING 2024-04-08 19:13:32,268 basehttp 6692 884 "POST /demo/api/tasks/ HTTP/1.1" 401 107
+WARNING 2024-04-08 19:15:21,640 log 6692 884 Unauthorized: /demo/api/tasks/3/
+WARNING 2024-04-08 19:15:21,641 basehttp 6692 884 "DELETE /demo/api/tasks/3/ HTTP/1.1" 401 107
+WARNING 2024-04-08 19:15:37,315 log 6692 884 Not Found: /demo/api/tasks/3/
+WARNING 2024-04-08 19:15:37,316 basehttp 6692 884 "DELETE /demo/api/tasks/3/ HTTP/1.1" 404 28
+WARNING 2024-04-09 06:41:38,049 log 6692 8932 Bad Request: /demo/api/environment/
+WARNING 2024-04-09 06:41:38,055 basehttp 6692 8932 "POST /demo/api/environment/ HTTP/1.1" 400 76
+WARNING 2024-04-09 06:41:51,044 log 6692 8932 Bad Request: /demo/api/environment/
+WARNING 2024-04-09 06:41:51,045 basehttp 6692 8932 "POST /demo/api/environment/ HTTP/1.1" 400 76
+ERROR 2024-04-09 06:42:39,283 log 6692 8932 Internal Server Error: /demo/api/environment/action/100/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 414, in get
+    environment=Environment.objects.get(id=pk))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+ToDoSource.models.Environment.DoesNotExist: Environment matching query does not exist.
+ERROR 2024-04-09 06:42:39,308 basehttp 6692 8932 "GET /demo/api/environment/action/100/ HTTP/1.1" 500 21812
+WARNING 2024-04-09 06:45:32,041 log 7576 14040 Not Found: /demo/api/environment/action/100/
+WARNING 2024-04-09 06:45:32,042 basehttp 7576 14040 "GET /demo/api/environment/action/100/ HTTP/1.1" 404 35
+WARNING 2024-04-09 06:45:39,549 log 7576 14040 Not Found: /demo/api/environment/action/5/
+WARNING 2024-04-09 06:45:39,549 basehttp 7576 14040 "GET /demo/api/environment/action/5/ HTTP/1.1" 404 53
+WARNING 2024-04-09 06:50:41,083 log 240 14988 Forbidden: /demo/api/environment/action/5/
+WARNING 2024-04-09 06:50:41,083 basehttp 240 14988 "GET /demo/api/environment/action/5/ HTTP/1.1" 403 60
+WARNING 2024-04-09 06:50:44,993 log 240 14988 Forbidden: /demo/api/environment/action/3/
+WARNING 2024-04-09 06:50:44,993 basehttp 240 14988 "GET /demo/api/environment/action/3/ HTTP/1.1" 403 60
+WARNING 2024-04-09 06:53:03,011 log 13920 8028 Forbidden: /demo/api/environment/action/18/
+WARNING 2024-04-09 06:53:03,012 basehttp 13920 8028 "GET /demo/api/environment/action/18/ HTTP/1.1" 403 60
+WARNING 2024-04-09 06:53:51,961 log 6048 7004 Not Found: /demo/api/environment/action/18/
+WARNING 2024-04-09 06:53:51,962 basehttp 6048 7004 "GET /demo/api/environment/action/18/ HTTP/1.1" 404 53
+WARNING 2024-04-09 06:54:28,257 log 6048 7004 Bad Request: /demo/api/environment/
+WARNING 2024-04-09 06:54:28,258 basehttp 6048 7004 "POST /demo/api/environment/ HTTP/1.1" 400 76
+WARNING 2024-04-09 06:55:18,233 log 6048 7004 Unauthorized: /demo/api/environment/18/
+WARNING 2024-04-09 06:55:18,233 basehttp 6048 7004 "GET /demo/api/environment/18/ HTTP/1.1" 401 107
+WARNING 2024-04-09 08:41:57,371 log 11156 5900 Forbidden: /demo/api/environment/18/
+WARNING 2024-04-09 08:41:57,372 basehttp 11156 5900 "GET /demo/api/environment/18/?password=bezhan2009 HTTP/1.1" 403 32
+ERROR 2024-04-09 08:42:04,486 log 11156 5900 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 349, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `name` on serializer `EnvironmentSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'name'.
+ERROR 2024-04-09 08:42:04,491 basehttp 11156 5900 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 23293
+ERROR 2024-04-09 08:46:28,491 log 10964 15104 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 348, in get
+    serializer = EnvironmentSerializer(environment.first(), many=False)
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'Environment' object has no attribute 'first'
+ERROR 2024-04-09 08:46:28,498 basehttp 10964 15104 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 21429
+ERROR 2024-04-09 08:47:29,754 log 14248 12744 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 347, in get
+    environment_instance = environment.first()
+                           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Environment' object has no attribute 'first'
+ERROR 2024-04-09 08:47:29,759 basehttp 14248 12744 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 21392
+ERROR 2024-04-09 08:47:33,537 log 14248 12744 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 347, in get
+    environment_instance = environment.first()
+                           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Environment' object has no attribute 'first'
+ERROR 2024-04-09 08:47:33,539 basehttp 14248 12744 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 21392
+ERROR 2024-04-09 08:54:29,138 log 6396 7952 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 347, in get
+    environment_instance = environment.first()
+                           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Environment' object has no attribute 'first'
+ERROR 2024-04-09 08:54:29,142 basehttp 6396 7952 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 21392
+ERROR 2024-04-09 08:54:35,250 log 6396 7952 Internal Server Error: /demo/api/environment/18/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 347, in get
+    environment_instance = environment.first()
+                           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Environment' object has no attribute 'first'
+ERROR 2024-04-09 08:54:35,253 basehttp 6396 7952 "GET /demo/api/environment/18/?password=string HTTP/1.1" 500 21392
+WARNING 2024-04-09 08:58:06,144 log 12780 9612 Forbidden: /demo/api/environment/18/
+WARNING 2024-04-09 08:58:06,145 basehttp 12780 9612 "DELETE /demo/api/environment/18/ HTTP/1.1" 403 67
