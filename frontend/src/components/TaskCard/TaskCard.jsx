@@ -15,7 +15,7 @@ import styles from "./TaskCard.module.scss";
 import { TaskButton } from "../TaskButton/TaskButton";
 import { TaskTemp } from "../TaskTemp/TaskTemp";
 
-export function TaskCard({ taskHeading, taskContent, taskStatus }) {
+export function TaskCard({ taskHeading, taskContent, taskStatus, taskDate }) {
 
     let containerClassName = `${styles.task_container} ${styles[taskStatus]}`
 
@@ -37,18 +37,16 @@ export function TaskCard({ taskHeading, taskContent, taskStatus }) {
     }
 
     return (
-        <div className={styles.task_item}>
             <div className={containerClassName}>
                 <h3 className={styles.task_heading}>{taskHeading}</h3>
                 <p className={styles.task_content}>{taskContent}</p>
                 <div className={styles.task_management}>
-                   <div> <TaskTemp /></div>
+                   <div> <TaskTemp taskDate={taskDate} taskStatus={taskStatus}/></div>
                     <div><TaskButton
                         taskStatus={taskStatus}
                         taskButtonName={taskButtonName}
                     /></div>
                 </div>
             </div>
-        </div>
     );
 }

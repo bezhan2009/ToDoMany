@@ -1,27 +1,34 @@
 import styles from "./TaskTemp.module.scss";
 
-export function TaskTemp({ taskStatus }) {
+const taskTempClassName = `${styles.task_temp} ${styles.task_temp_value}`;
+
+export function TaskTemp({ taskStatus, taskDate }) {
     let taskTemp = "";
 
-    switch (taskStatus) {
-        case "active":
+    if (taskStatus === "overdue") {
+        taskTemp = "исчерпан";
+    } else if (taskStatus === "completed") {
+        taskTemp = "выполнено";
+    } else {
+        const dateFromServer = new Date(taskDate);
+        const currentDate = new Date();
+        if (
+            dateFromServer.getDate() === currentDate.getDate() &&
+            dateFromServer.getMonth() === currentDate.getMonth() &&
+            dateFromServer.getFullYear() === currentDate.getFullYear()
+        ) {
+            taskTemp = "сегодня";
+        } else if (dateFromServer.getDate() - currentDate.getDate() === 1) {
             taskTemp = "завтра";
-            break;
-        case "completed":
-            taskTemp = "выполнено";
-            break;
-        case "overdue":
-            taskTemp = "исчерпан";
-            break;
-        default:
-            taskTemp = "";
-            break;
+        } else {
+            taskTemp = `${dateFromServer.getDate()}.${dateFromServer.getMonth()}.${dateFromServer.getFullYear()}`;
+        }
     }
 
     return (
         <>
-            <span className={styles.task_temp}>Срок: &nbsp;</span>
-            <span className={styles.task_temp}>{taskTemp}</span>
+            <span className={styles.task_temp}>Срок:</span>
+            <span className={taskTempClassName}>{taskTemp}</span>
         </>
     );
 }

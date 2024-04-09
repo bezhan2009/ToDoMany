@@ -4,8 +4,8 @@ import viteLogo from "/vite.svg";
 import "./null.css";
 import "./App.css";
 
+import { UserTaskComponent } from "./components/UserTaskComponent/UserTaskComponent";
 
-import { TaskCard } from "./components/TaskCard/TaskCard";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -36,6 +36,7 @@ function App() {
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
+            <UserTaskComponent/>
         </>
     );
 }
