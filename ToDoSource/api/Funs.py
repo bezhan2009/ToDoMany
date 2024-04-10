@@ -11,8 +11,9 @@ class ApplicationFun:
         self.pk = pk
 
     def get_application(self, request):
-        applications = Application.objects.filter(environment=Environment.objects.get(id=pk))
-        if applications.exists():
+        applications = Application.objects.filter(environment=self.environment)
+        print(applications)
+        if not applications:
             return 404
 
         applications_accepts = {

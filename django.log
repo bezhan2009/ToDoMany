@@ -4194,3 +4194,81 @@ Traceback (most recent call last):
                                                                                      ^^
 NameError: name 'pk' is not defined. Did you mean: 'self.pk'?
 ERROR 2024-04-10 21:26:05,019 basehttp 13068 7908 "GET /demo/api/application/18/?get=true&create=false&delete=false&accept=false HTTP/1.1" 500 21746
+ERROR 2024-04-10 21:28:22,200 log 13068 3832 Internal Server Error: /demo/api/application/1/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 111, in get
+    get_method = applicationfun.get_application(request)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\Funs.py", line 14, in get_application
+    applications = Application.objects.filter(environment=Environment.objects.get(id=pk))
+                                                                                     ^^
+NameError: name 'pk' is not defined. Did you mean: 'self.pk'?
+ERROR 2024-04-10 21:28:22,202 basehttp 13068 3832 "GET /demo/api/application/1/?get=true&create=false&delete=false&accept=false HTTP/1.1" 500 21742
+WARNING 2024-04-10 21:28:41,175 log 7444 15656 Not Found: /demo/api/application/18/
+WARNING 2024-04-10 21:28:41,175 basehttp 7444 15656 "GET /demo/api/application/18/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+WARNING 2024-04-10 21:30:54,107 log 7444 6812 Not Found: /demo/api/application/18/
+WARNING 2024-04-10 21:30:54,108 basehttp 7444 6812 "GET /demo/api/application/18/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+WARNING 2024-04-10 21:30:58,403 log 7444 6812 Not Found: /demo/api/application/19/
+WARNING 2024-04-10 21:30:58,403 basehttp 7444 6812 "GET /demo/api/application/19/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+WARNING 2024-04-10 21:33:14,669 log 16776 15700 Not Found: /demo/api/application/19/
+WARNING 2024-04-10 21:33:14,670 basehttp 16776 15700 "GET /demo/api/application/19/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+WARNING 2024-04-10 21:35:00,284 log 15620 7516 Not Found: /demo/api/application/19/
+WARNING 2024-04-10 21:35:00,284 basehttp 15620 7516 "GET /demo/api/application/19/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+WARNING 2024-04-10 21:35:15,807 log 6256 2992 Not Found: /demo/api/application/19/
+WARNING 2024-04-10 21:35:15,807 basehttp 6256 2992 "GET /demo/api/application/19/?get=true&create=false&delete=false&accept=false HTTP/1.1" 404 35
+ERROR 2024-04-10 21:36:20,522 log 12276 17048 Internal Server Error: /demo/api/application/19/
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\views.py", line 111, in get
+    get_method = applicationfun.get_application(request)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Projects\ToDoMany\ToDoSource\api\Funs.py", line 27, in get_application
+    applications['outcasts'].append(application)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 420, in __getitem__
+    raise TypeError(
+TypeError: QuerySet indices must be integers or slices, not str.
+ERROR 2024-04-10 21:36:20,525 basehttp 12276 17048 "GET /demo/api/application/19/?get=true&create=false&delete=false&accept=false HTTP/1.1" 500 21865

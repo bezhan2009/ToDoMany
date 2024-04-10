@@ -418,11 +418,11 @@ class EnvironmentDetail(APIView):
                 return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
         application = ApplicationActions()
         create_application = application.get(request, pk, True)
-        print(create_application)
+        print("Without If: ", create_application)
         if create_application == 'True':
-            print(create_application)
+            print("With If: ", create_application)
         else:
-            print(create_application)
+            print("With Else", create_application)
             return Response(create_application, status=status.HTTP_400_BAD_REQUEST)
         saved_environment.save()  # Сохраняем изменения или новую запись
         environment_instance = environment.first()
