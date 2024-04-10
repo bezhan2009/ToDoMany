@@ -1,6 +1,6 @@
 from rest_framework import status
 from rest_framework.response import Response
-from serializers import *
+from .serializers import *
 from ToDoSource.models import *
 
 
@@ -11,10 +11,9 @@ class ApplicationFun:
         self.pk = pk
 
     def get_application(self, request):
-        try:
-            applications = Application.objects.get(environment=self.environment)
-        except Application.DoesNotExist:
-            return Response({'message': 'Application Not Found'}, status=status.HTTP_404_NOT_FOUND)
+        applications = Application.objects.filter(environment=Environment.objects.get(id=pk))
+        if applications.exists():
+            return 404
 
         applications_accepts = {
             'accepted': None,

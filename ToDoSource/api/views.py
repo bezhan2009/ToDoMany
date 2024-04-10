@@ -87,10 +87,10 @@ class ApplicationActions(APIView):
         query_serializer = ApplicationQuerySerializer(data=request.query_params)
         query_serializer.is_valid(raise_exception=True)
 
-        get = query_serializer.validated_data.get("Get", False)
-        create = query_serializer.validated_data.get("Create", False)
-        delete = query_serializer.validated_data.get("Delete", False)
-        accept = query_serializer.validated_data.get("Accept", False)
+        get = query_serializer.validated_data.get("get", False)
+        create = query_serializer.validated_data.get("create", False)
+        delete = query_serializer.validated_data.get("delete", False)
+        accept = query_serializer.validated_data.get("accept", False)
 
         accepted_funs = 0
         query_data = [get, create, delete, accept, create_from_request]
@@ -106,10 +106,14 @@ class ApplicationActions(APIView):
         except Environment.DoesNotExist:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
         user = UserProfile.objects.get(id=get_user_id_from_token(request))
-        applicationfun = ApplicationFun(environment, user, pk)
+        applicationfun = ApplicationFun(environment.id, get_user_id_from_token(request), pk)
         if get:
             get_method = applicationfun.get_application(request)
-            return Response(get_method)
+            print(get_method)
+            if get_method == 404:
+                return Response({'message': 'Application Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                return Response(get_method, status=status.HTTP_200_OK)
         elif create:
             create_method = applicationfun.create_application(request)
             if create_method == 'True':
@@ -412,11 +416,13 @@ class EnvironmentDetail(APIView):
                 saved_environment = saving_environment.save()
             else:
                 return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
-        application = ApplicationActions(environment, user, pk)
+        application = ApplicationActions()
         create_application = application.get(request, pk, True)
+        print(create_application)
         if create_application == 'True':
-            pass
+            print(create_application)
         else:
+            print(create_application)
             return Response(create_application, status=status.HTTP_400_BAD_REQUEST)
         saved_environment.save()  # Сохраняем изменения или новую запись
         environment_instance = environment.first()

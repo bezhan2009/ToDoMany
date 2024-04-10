@@ -18,7 +18,7 @@ urlpatterns = [
     path('comment/<int:task_id>/', CommentList.as_view(), name='comment'),
     path('comment/<int:comment_id>/detail/', CommentDetail.as_view(), name='comment_detail'),
 
-    path('application/', ApplicationActions.as_view(), name='application'),
+    path('application/<int:pk>/', ApplicationActions.as_view(), name='application'),
 ]
 
 # Just Checking
