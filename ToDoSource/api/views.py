@@ -5,7 +5,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 from django.db import transaction
-from Funs import ApplicationFun
+from .Funs import *
 from .serializers import *
 from rest_framework.exceptions import PermissionDenied
 from rest_framework_simplejwt.authentication import JWTAuthentication
