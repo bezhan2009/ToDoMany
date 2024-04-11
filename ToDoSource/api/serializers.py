@@ -91,6 +91,8 @@ class ApplicationQuerySerializer(serializers.Serializer):
     create = serializers.BooleanField(required=False, default=False)
     delete = serializers.BooleanField(required=False, default=False)
     accept = serializers.BooleanField(required=False, default=False)
+    application_pk = serializers.IntegerField(required=False)
+    environment_pk = serializers.IntegerField(required=False)
 
 
 

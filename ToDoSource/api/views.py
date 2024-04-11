@@ -83,34 +83,57 @@ class ApplicationActions(APIView):
         security=[],
         query_serializer=ApplicationQuerySerializer()
     )
-    def get(self, request, pk, create_from_request=False):
+    def get(self, request, create_from_request=False):
         query_serializer = ApplicationQuerySerializer(data=request.query_params)
         query_serializer.is_valid(raise_exception=True)
 
-        get = query_serializer.validated_data.get("Get", False)
-        create = query_serializer.validated_data.get("Create", False)
-        delete = query_serializer.validated_data.get("Delete", False)
-        accept = query_serializer.validated_data.get("Accept", False)
-
+        get = query_serializer.validated_data.get("get", False)
+        create = query_serializer.validated_data.get("create", False)
+        delete = query_serializer.validated_data.get("delete", False)
+        accept = query_serializer.validated_data.get("accept", False)
+        application_pk = query_serializer.validated_data.get("application_pk")
+        environment_pk = query_serializer.validated_data.get("environment_pk")
         accepted_funs = 0
         query_data = [get, create, delete, accept, create_from_request]
 
         for q in query_data:
             if q:
                 accepted_funs += 1
-
+        if accepted_funs == 0:
+            return Response({'message': 'No method is chose. Chooses are:',
+                             'methods': [
+                                 'get',
+                                 'create(post)',
+                                 'delete',
+                                 'accept']}, status=status.HTTP_400_BAD_REQUEST)
         if accepted_funs > 1:
-            return Response({'message': 'You cannot accept more than one method\nChooses are:\n\tget\n\tcreate(post)\n\tdelete\n\taccept'}, status=status.HTTP_400_BAD_REQUEST)
-        try:
-            environment = Environment.objects.get(id=pk)
-        except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({
+                'message': 'You cannot accept more than one method. Chooses are:',
+                'methods': [
+                    'get',
+                    'create(post)',
+                    'delete',
+                    'accept'
+                ]
+            }, status=status.HTTP_400_BAD_REQUEST)
+
         user = UserProfile.objects.get(id=get_user_id_from_token(request))
-        applicationfun = ApplicationFun(environment, user, pk)
         if get:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             get_method = applicationfun.get_application(request)
-            return Response(get_method)
+            if get_method == 403:
+                return Response({'message': 'You have no permission to this action!!!'},
+                                status=status.HTTP_403_FORBIDDEN)
+            if get_method == 404:
+                return Response({'message': 'Application Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                return Response(get_method, status=status.HTTP_200_OK)
         elif create:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             create_method = applicationfun.create_application(request)
             if create_method == 'True':
                 return Response({'message': 'The application has been successfully submitted'},
@@ -118,22 +141,33 @@ class ApplicationActions(APIView):
             elif create_method:
                 return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
         elif create_from_request:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             create_method = applicationfun.create_application(request)
             if create_method == 'True':
                 return 'True'
             elif create_method:
                 return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
         elif delete:
+            if not application_pk:
+                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
             delete_method = applicationfun.delete_application(request)
             if delete_method:
                 return Response({'message': 'The application has been successfully removed'},
-                                status=status.HTTP_204_NO_CONTENT)
+                                status=status.HTTP_200_OK)
+            elif delete_method == 404:
+                return Response({'message': 'Application Not Found.'}, status=status.HTTP_404_NOT_FOUND)
             else:
                 return Response({'message': 'You do not have access to this action'}, status=status.HTTP_403_FORBIDDEN)
         elif accept:
+            if not application_pk:
+                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
             accept_method = applicationfun.accept_application(request)
             if accept_method == 404:
-                return Response({'message': 'Application Not Found.'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'message': 'Application Not Found or has been deleted/accepted.'}, status=status.HTTP_404_NOT_FOUND)
             elif accept_method:
                 return Response({'message': 'The Application has been successfully accepted'},
                                 status=status.HTTP_200_OK)
@@ -412,11 +446,13 @@ class EnvironmentDetail(APIView):
                 saved_environment = saving_environment.save()
             else:
                 return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
-        application = ApplicationActions(environment, user, pk)
+        application = ApplicationActions()
         create_application = application.get(request, pk, True)
+        print("Without If: ", create_application)
         if create_application == 'True':
-            pass
+            print("With If: ", create_application)
         else:
+            print("With Else", create_application)
             return Response(create_application, status=status.HTTP_400_BAD_REQUEST)
         saved_environment.save()  # Сохраняем изменения или новую запись
         environment_instance = environment.first()
@@ -749,10 +785,10 @@ class CommentList(APIView):
             return main_comments, comments_dict
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            raise Response({"message": "Task not found"}, status=404)
+            raise Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=500)
+            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def get(self, request, task_id):
         try:
@@ -803,7 +839,7 @@ class CommentList(APIView):
             return Response({"message": "You have not registered yet"}, status=status.HTTP_404_NOT_FOUND)
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            return Response({"message": "Task not found"}, status=404)
+            return Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -821,7 +857,7 @@ class CommentDetail(APIView):
             raise Http404({"message": "Comment not found"})
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=500)
+            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     @transaction.atomic
     def delete_comment_chain(self, comment):
@@ -846,7 +882,7 @@ class CommentDetail(APIView):
             logger.info(f"Attempting to delete comment with ID {comment_id}.")
         except Comment.DoesNotExist:
             logger.warning(f"Failed to delete Comment. Comment with ID {comment_id} not found.")
-            return Response({"message": "Comment Not Found"}, status=404)
+            return Response({"message": "Comment Not Found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -857,4 +893,4 @@ class CommentDetail(APIView):
         # Delete the parent comment
         comment.delete()
 
-        return Response({'message': 'comment has been successfully deleted!'}, status=204)
+        return Response({'message': 'comment has been successfully deleted!'}, status=status.HTTP_200_OK)

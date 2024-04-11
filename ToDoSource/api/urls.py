@@ -20,3 +20,5 @@ urlpatterns = [
 
     path('application/', ApplicationActions.as_view(), name='application'),
 ]
+
+# Just Checking
