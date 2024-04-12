@@ -135,6 +135,9 @@ class ApplicationActions(APIView):
                 return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
             applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             create_method = applicationfun.create_application(request)
+            if create_method == 403:
+                return Response({'message': 'You are already authorized to this environment!!!'},
+                                status=status.HTTP_403_FORBIDDEN)
             if create_method == 'True':
                 return Response({'message': 'The application has been successfully submitted'},
                                 status=status.HTTP_201_CREATED)
@@ -166,9 +169,18 @@ class ApplicationActions(APIView):
                 return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
             applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
             accept_method = applicationfun.accept_application(request)
+
             if accept_method == 404:
-                return Response({'message': 'Application Not Found or has been deleted/accepted.'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'message': 'Application Not Found or has been deleted/accepted.'},
+                                status=status.HTTP_404_NOT_FOUND)
             elif accept_method:
+                print(accept_method)
+                new_serializer = ApplicationSerializer(accept_method, many=False)
+                accept_method = new_serializer
+                admin = Admin.objects.create(user=UserProfile.objects.get(id=accept_method.data.get('user')), \
+                                             environment=Environment.objects.get(
+                                                 id=accept_method.data.get('environment')))
+                admin.save()
                 return Response({'message': 'The Application has been successfully accepted'},
                                 status=status.HTTP_200_OK)
             elif not accept_method:
@@ -894,3 +906,146 @@ class CommentDetail(APIView):
         comment.delete()
 
         return Response({'message': 'comment has been successfully deleted!'}, status=status.HTTP_200_OK)
+
+
+class AdminPermissions(APIView):
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'is_admin': openapi.Schema(type=openapi.TYPE_BOOLEAN, default=False,
+                                           description='Is this user an admin?'),
+                'is_superadmin': openapi.Schema(type=openapi.TYPE_BOOLEAN, default=False,
+                                                description='Is this user a super admin?'),
+            },
+            required=['is_admin', 'is_superadmin']
+        ),
+        security=[],
+    )
+    def put(self, request, environment_pk, admin_pk):
+        try:
+            environment = Environment.objects.get(id=environment_pk)
+        except Environment.DoesNotExist:
+            return Response({'message': 'Environment not found'},
+                            status=status.HTTP_404_NOT_FOUND)
+
+        admin = Admin.objects.filter(user__pk=get_user_id_from_token(request), is_superadmin=True)
+
+        if admin.exists():
+            is_permission_to_superedit = False
+            is_permission_to_edit = True
+
+        elif environment.user.id == get_user_id_from_token(request):
+            is_permission_to_superedit = True
+            is_permission_to_edit = True
+
+        else:
+            is_permission_to_superedit = False
+            is_permission_to_edit = False
+
+        if not is_permission_to_superedit and not is_permission_to_edit:
+            return Response({'message': 'You have not permission to this action'},
+                            status=status.HTTP_403_FORBIDDEN)
+
+        try:
+            admin = Admin.objects.get(id=admin_pk)
+        except Admin.DoesNotExist:
+            return Response({'message': 'Admin not found'},
+                            status=status.HTTP_404_NOT_FOUND)
+
+        is_superadmin = request.data.get('is_superadmin', False)
+        is_admin = request.data.get('is_admin', False)
+
+        if is_permission_to_superedit:
+            if is_superadmin and admin.is_superadmin:
+                return Response({'message': 'The admin is already a superadmin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_superadmin and not admin.is_superadmin:
+                admin.is_superadmin = True
+                admin.is_admin = True
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the superadmin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and admin.is_admin:
+                if admin.is_superadmin:
+                    admin.is_superadmin = False
+                    admin.save()
+                    return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                    status=status.HTTP_200_OK)
+
+                else:
+                    return Response({'message': 'The user is already an admin'},
+                                    status=status.HTTP_200_OK)
+
+            elif is_admin and not admin.is_admin:
+                admin.is_admin = True
+                admin.is_superadmin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and admin.is_superadmin:
+                admin.is_admin = True
+                admin.is_superadmin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not admin.is_admin:
+                return Response({'message': 'The user is already simple admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not is_superadmin:
+                if admin.is_admin:
+                    admin.is_superadmin = False
+                    admin.is_admin = False
+                    admin.save()
+                    return Response({'message': f'The admin with login {admin.user.username} became the simple admin'},
+                                    status=status.HTTP_200_OK)
+
+                else:
+                    return Response({'message': 'The admin is already simple admin'},
+                                    status=status.HTTP_200_OK)
+
+            else:
+                return Response({'message': 'How can I help?'},
+                                status=status.HTTP_400_BAD_REQUEST)
+
+        elif is_permission_to_edit:
+            if is_superadmin:
+                return Response({'message': 'You have not permission to this action'},
+                                status=status.HTTP_403_FORBIDDEN)
+
+            elif is_admin and admin.is_admin:
+                return Response({'message': 'The user is already an admin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and not admin.is_admin:
+                admin.is_admin = True
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and admin.is_admin:
+                admin.is_admin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the simple admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not admin.is_admin:
+                return Response({'message': 'The user is already simple admin'},
+                                status=status.HTTP_200_OK)
+
+            else:
+                return Response({'message': 'How can I help?'},
+                                status=status.HTTP_400_BAD_REQUEST)
+
+        else:
+            return Response({'message': 'You have not permission to this action'},
+                            status=status.HTTP_403_FORBIDDEN)

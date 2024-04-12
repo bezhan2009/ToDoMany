@@ -95,4 +95,8 @@ class ApplicationQuerySerializer(serializers.Serializer):
     environment_pk = serializers.IntegerField(required=False)
 
 
+class AdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Admin
+        fields = '__all__'
 

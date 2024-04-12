@@ -19,6 +19,8 @@ urlpatterns = [
     path('comment/<int:comment_id>/detail/', CommentDetail.as_view(), name='comment_detail'),
 
     path('application/', ApplicationActions.as_view(), name='application'),
+
+    path('admin/<int:environment_pk>/<int:admin_pk>/', AdminPermissions.as_view(), name='admin actions')
 ]
 
 # Just Checking

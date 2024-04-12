@@ -29,7 +29,7 @@ class ApplicationFun:
 
     def accept_application(self, request):
         try:
-            application = Application.objects.get(id=self.pk, is_accept=False)
+            application = Application.objects.get(id=self.pk, is_accept=False, is_deleted=False)
         except Application.DoesNotExist:
             return 404
 
@@ -37,7 +37,7 @@ class ApplicationFun:
                                                                                 user=self.user, is_admin=True).exists():
             application.is_accept = True
             application.save()
-            return True
+            return application
         else:
             return False
 
@@ -85,8 +85,9 @@ class ApplicationViewSet:
         }
         application = Application.objects.filter(environment=self.environment, user=self.user)
         environment = Environment.objects.filter(id=self.environment, user=self.user)
-        if environment.exists():
-            return 'True'
+        admin = Admin.objects.filter(user=self.user, environment=self.environment)
+        if environment.exists() or admin.exists():
+            return 403
         if application.exists():
             application.data = timezone.now()
             return 'True'
