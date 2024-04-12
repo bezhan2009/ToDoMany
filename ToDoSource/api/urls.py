@@ -22,5 +22,3 @@ urlpatterns = [
 
     path('admin/<int:environment_pk>/<int:admin_pk>/', AdminPermissions.as_view(), name='admin actions')
 ]
-
-# Just Checking
