@@ -100,3 +100,20 @@ class AdminSerializer(serializers.ModelSerializer):
         model = Admin
         fields = '__all__'
 
+
+class TeamPersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TeamPerson
+        fields = '__all__'
+
+
+class TeamSerializer(serializers.ModelSerializer):
+    team_people = TeamPersonSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Team
+        fields = ['id', 'user', 'date', 'team_people']
+
+
+class TeamQuerySerializer(serializers.Serializer):
+    selected_team = serializers.ListField(required=True)

@@ -5,6 +5,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 from django.db import transaction
+from rest_framework.exceptions import ValidationError
 from .Funs import *
 from .serializers import *
 from rest_framework.exceptions import PermissionDenied
@@ -1049,3 +1050,94 @@ class AdminPermissions(APIView):
         else:
             return Response({'message': 'You have not permission to this action'},
                             status=status.HTTP_403_FORBIDDEN)
+
+
+class TeamList(APIView):
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+    )
+    def get(self, request):
+        user_id = get_user_id_from_token(request)
+        user = UserProfile.objects.get(id=user_id)
+        try:
+            teams = Team.objects.filter(user=user)
+        except Team.DoesNotExist:
+            return Response({'message': 'You have not any teams yet.'})
+
+        serializer = TeamSerializer(teams, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+    )
+    def post(self, request):
+        user_id = get_user_id_from_token(request)
+        user = UserProfile.objects.get(id=user_id)
+
+        data = {
+            'user': user
+        }
+        serializer = TeamSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Team has been successfully created'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TeamPersonList(APIView):
+    def get(self, request, team_pk):
+        try:
+            teams = Team.objects.filter(id=team_pk)
+        except Team.DoesNotExist:
+            return Response({'message': 'Team Not Found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = TeamSerializer(teams, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+        query_serializer=TeamQuerySerializer(),
+    )
+    def post(self, request, team_pk=None):
+        query_serializer = TeamQuerySerializer(data=request.query_params)
+        query_serializer.is_valid(raise_exception=True)
+
+        selected_team = query_serializer.validated_data.get('selected_team')
+
+        try:
+            if not selected_team:
+                raise ValidationError("Please provide 'selected_team'")
+        except ValidationError as V:
+            return Response({'message': str(V)})
+        user = UserProfile.objects.get(id=get_user_id_from_token(request))
+
+        # Если не передан team_id, создаем новую команду
+        try:
+            team = get_object_or_404(Team, id=team_pk, user=user)
+        except Http404:
+            return Response({'message': 'Team not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Добавляем выбранных пользователей в команду, если они присутствуют хотя бы в одном из окружений пользователя
+        for admin_id in selected_team:
+            selected_admin = get_object_or_404(Admin, id=admin_id, environment__user=user)
+            if selected_admin.environment.user == user:
+                TeamPerson.objects.get_or_create(team=team, user=selected_admin.user, is_admin=selected_admin.is_admin,
+                                                 is_superadmin=selected_admin.is_superadmin)
+            else:
+                # Пользователь не найден в окружениях пользователя, создаем заявку
+                application = Application.objects.create(user=user, to_user=selected_admin.user, team=team)
+                application.save()
+
+        return Response({'message': 'Team created successfully'}, status=status.HTTP_201_CREATED)
+
+
+

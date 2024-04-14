@@ -20,5 +20,8 @@ urlpatterns = [
 
     path('application/', ApplicationActions.as_view(), name='application'),
 
-    path('admin/<int:environment_pk>/<int:admin_pk>/', AdminPermissions.as_view(), name='admin actions')
+    path('admin/<int:environment_pk>/<int:admin_pk>/', AdminPermissions.as_view(), name='admin actions'),
+
+    path('team/', TeamList.as_view(), name='team'),
+    path('team/person/<int:team_pk>/', TeamPersonList.as_view(), name='team person'),
 ]
