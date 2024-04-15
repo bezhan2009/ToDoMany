@@ -21,9 +21,7 @@ from ToDoSource.api.views import create_user
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from drf_yasg import openapi
-from drf_yasg.renderers import SwaggerUIRenderer
 
-from ToDoSource.views import ping
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -39,8 +37,6 @@ schema_view = get_schema_view(
 )
 
 
-from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.response import Response
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
