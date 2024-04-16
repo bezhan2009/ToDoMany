@@ -22,7 +22,7 @@ class Environment(models.Model):
 
 
 class Task(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=30, null=True)
     description = models.TextField()
     completed = models.BooleanField(default=False)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
@@ -66,8 +66,8 @@ class SavedEnvironment(models.Model):
 
 
 class Application(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    to_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='applications_sent')
+    to_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='applications_received')
     date = models.DateTimeField(default=timezone.now)
     is_deleted = models.BooleanField(default=False)
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE)
