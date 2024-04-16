@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-
+#
 class UserProfile(User):
     age = models.IntegerField()
     is_activate = models.BooleanField(default=True)

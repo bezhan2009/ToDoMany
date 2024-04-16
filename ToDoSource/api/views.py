@@ -378,8 +378,6 @@ class TaskEnvironmentAction(APIView):
     def post(self, request, pk):
         """
         Добавляет задачу в определенное окружение.
-
-
         """
         user_pk = get_user_id_from_token(request)
         task_user_pk = request.data.get('user')
