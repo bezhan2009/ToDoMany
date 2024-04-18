@@ -1,28 +1,73 @@
-
+"""
+This file contains the URL patterns for the API views.
+"""
 from django.urls import path
-from ToDoSource.api.views import *
+
+from ToDoSource.api.views import (
+    TaskList,
+    TaskDetail,
+    TaskEnvironmentAction,
+    EnvironmentDetail,
+    AdminActionsView,
+    EnvironmentList,
+    EnvironmentAction,
+    EnvironmentTaskView,
+    CommentList,
+    CommentDetail,
+    ApplicationActions,
+    AdminPermissions,
+    TeamPersonList,
+    TeamList
+)
 
 urlpatterns = [
-    path('tasks/', TaskList.as_view(), name='task-list'),
-    path('tasks/<int:pk>/', TaskDetail.as_view(), name='task-detail'),
-    path('tasks/for_environment/<int:pk>/', TaskEnvironmentAction.as_view(), name='task-environment-action'),
+    path('tasks/',
+         TaskList.as_view(),
+         name='task-list'),
+    path('tasks/<int:pk>/',
+         TaskDetail.as_view(),
+         name='task-detail'),
+    path('tasks/for_environment/<int:pk>/',
+         TaskEnvironmentAction.as_view(),
+         name='task-environment-action'),
 
-    path('environment/', EnvironmentList.as_view(), name='environment-list'),
-    path('environment/<int:pk>/', EnvironmentDetail.as_view()),
+    path('environment/',
+         EnvironmentList.as_view(),
+         name='environment-list'),
+    path('environment/<int:pk>/',
+         EnvironmentDetail.as_view()),
 
-    path('environment/action/<int:pk>/', EnvironmentAction.as_view(), name='environment-action'),
-    path('environment/admin/action/<int:environment_pk>/', AdminActionsView.as_view(), name='admin-action'),
+    path('environment/action/<int:pk>/',
+         EnvironmentAction.as_view(),
+         name='environment-action'),
+    path('environment/admin/action/<int:environment_pk>/',
+         AdminActionsView.as_view(),
+         name='admin-action'),
 
-    path('environment/task/<int:pk>/', EnvironmentTaskView.as_view(), name='environment-task'),
+    path('environment/task/<int:pk>/',
+         EnvironmentTaskView.as_view(),
+         name='environment-task'),
 
-    path('comment/<int:task_id>/', CommentList.as_view(), name='comment'),
-    path('comment/<int:comment_id>/detail/', CommentDetail.as_view(), name='comment_detail'),
+    path('comment/<int:task_id>/',
+         CommentList.as_view(),
+         name='comment'),
+    path('comment/<int:comment_id>/detail/',
+         CommentDetail.as_view(),
+         name='comment_detail'),
 
-    path('application/', ApplicationActions.as_view(), name='application'),
+    path('application/',
+         ApplicationActions.as_view(),
+         name='application'),
 
-    path('admin/<int:environment_pk>/<int:admin_pk>/', AdminPermissions.as_view(), name='admin actions'),
+    path('admin/<int:environment_pk>/<int:admin_pk>/',
+         AdminPermissions.as_view(),
+         name='admin actions'),
 
-    path('team/', TeamList.as_view(), name='team'),
-    path('team/person/<int:team_pk>/', TeamPersonList.as_view(), name='team person'),
+    path('team/',
+         TeamList.as_view(),
+         name='team'),
+    path('team/person/<int:team_pk>/',
+         TeamPersonList.as_view(),
+         name='team person'),
 ]
 #ss
