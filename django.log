@@ -5499,3 +5499,73 @@ ERROR 2024-04-17 00:22:10,901 basehttp 8084 17028 You're accessing the developme
 ERROR 2024-04-17 00:22:11,164 basehttp 8084 8492 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2024-04-17 00:22:11,212 basehttp 8084 22172 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2024-04-17 00:22:11,477 basehttp 8084 21676 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2024-04-18 23:52:38,359 log 19828 14872 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-18 23:52:38,359 basehttp 19828 14872 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,375 log 19828 14872 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-18 23:52:38,377 log 19828 1860 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-18 23:52:38,379 log 19828 21272 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-18 23:52:38,380 basehttp 19828 14872 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,382 log 19828 9800 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-18 23:52:38,382 basehttp 19828 1860 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,383 basehttp 19828 21272 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,384 log 19828 21876 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-18 23:52:38,389 log 19828 5592 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-18 23:52:38,390 basehttp 19828 9800 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,391 basehttp 19828 5592 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,391 basehttp 19828 21876 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:38,559 log 19828 21876 Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+WARNING 2024-04-18 23:52:38,560 basehttp 19828 21876 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 404 179
+WARNING 2024-04-18 23:52:41,333 log 19828 21876 Not Found: /accounts/login/
+WARNING 2024-04-18 23:52:41,334 basehttp 19828 21876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-18 23:53:35,336 log 19828 21876 Not Found: /accounts/login/
+WARNING 2024-04-18 23:53:35,337 basehttp 19828 21876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-18 23:55:06,273 log 19828 21876 Not Found: /accounts/login/
+WARNING 2024-04-18 23:55:06,273 basehttp 19828 21876 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:03,989 log 21396 19680 Not Found: /static/drf-yasg/style.css
+WARNING 2024-04-18 23:58:03,989 basehttp 21396 19680 "GET /static/drf-yasg/style.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:03,992 log 21396 17404 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+WARNING 2024-04-18 23:58:03,993 log 21396 19680 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+WARNING 2024-04-18 23:58:03,995 log 21396 14072 Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+WARNING 2024-04-18 23:58:03,996 basehttp 21396 17404 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:03,996 basehttp 21396 19680 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:03,998 log 21396 17520 Not Found: /static/drf-yasg/insQ.min.js
+WARNING 2024-04-18 23:58:03,998 basehttp 21396 14072 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:03,999 basehttp 21396 17520 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:04,001 log 21396 9424 Not Found: /static/drf-yasg/immutable.min.js
+WARNING 2024-04-18 23:58:04,002 basehttp 21396 9424 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:04,004 log 21396 7184 Not Found: /static/drf-yasg/swagger-ui-init.js
+WARNING 2024-04-18 23:58:04,005 basehttp 21396 7184 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:04,177 log 21396 7184 Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+WARNING 2024-04-18 23:58:04,177 basehttp 21396 7184 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:05,552 log 21396 7184 Not Found: /accounts/login/
+WARNING 2024-04-18 23:58:05,553 basehttp 21396 7184 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,889 log 21396 9424 Not Found: /static/admin/css/base.css
+WARNING 2024-04-18 23:58:45,889 basehttp 21396 9424 "GET /static/admin/css/base.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,891 log 21396 17520 Not Found: /static/admin/css/dark_mode.css
+WARNING 2024-04-18 23:58:45,892 log 21396 19680 Not Found: /static/admin/css/login.css
+WARNING 2024-04-18 23:58:45,893 log 21396 17404 Not Found: /static/admin/css/responsive.css
+WARNING 2024-04-18 23:58:45,894 log 21396 14072 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2024-04-18 23:58:45,895 basehttp 21396 19680 "GET /static/admin/css/login.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,895 basehttp 21396 17404 "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,895 basehttp 21396 17520 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,896 basehttp 21396 14072 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,955 log 21396 14072 Not Found: /static/admin/js/theme.js
+WARNING 2024-04-18 23:58:45,956 log 21396 17520 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2024-04-18 23:58:45,956 basehttp 21396 14072 "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+WARNING 2024-04-18 23:58:45,956 basehttp 21396 17520 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:06,074 log 21396 14072 Not Found: /accounts/login/
+WARNING 2024-04-19 00:01:06,075 basehttp 21396 14072 "GET /accounts/login/?next=/ HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,334 log 21396 14072 Not Found: /static/admin/css/base.css
+WARNING 2024-04-19 00:01:50,335 basehttp 21396 14072 "GET /static/admin/css/base.css HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,337 log 21396 17520 Not Found: /static/admin/css/dark_mode.css
+WARNING 2024-04-19 00:01:50,338 log 21396 14072 Not Found: /static/admin/css/login.css
+WARNING 2024-04-19 00:01:50,339 log 21396 17404 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2024-04-19 00:01:50,341 log 21396 19680 Not Found: /static/admin/css/responsive.css
+WARNING 2024-04-19 00:01:50,341 basehttp 21396 19680 "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,341 basehttp 21396 14072 "GET /static/admin/css/login.css HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,342 basehttp 21396 17404 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,342 basehttp 21396 17520 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,404 log 21396 17404 Not Found: /static/admin/js/theme.js
+WARNING 2024-04-19 00:01:50,405 log 21396 17520 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2024-04-19 00:01:50,405 basehttp 21396 17520 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+WARNING 2024-04-19 00:01:50,405 basehttp 21396 17404 "GET /static/admin/js/theme.js HTTP/1.1" 404 179
