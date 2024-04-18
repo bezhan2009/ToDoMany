@@ -25,4 +25,3 @@ urlpatterns = [
     path('team/', TeamList.as_view(), name='team'),
     path('team/person/<int:team_pk>/', TeamPersonList.as_view(), name='team person'),
 ]
-#ss
