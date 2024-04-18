@@ -91,6 +91,29 @@ class ApplicationQuerySerializer(serializers.Serializer):
     create = serializers.BooleanField(required=False, default=False)
     delete = serializers.BooleanField(required=False, default=False)
     accept = serializers.BooleanField(required=False, default=False)
+    application_pk = serializers.IntegerField(required=False)
+    environment_pk = serializers.IntegerField(required=False)
 
 
+class AdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Admin
+        fields = '__all__'
 
+
+class TeamPersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TeamPerson
+        fields = '__all__'
+
+
+class TeamSerializer(serializers.ModelSerializer):
+    team_people = TeamPersonSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Team
+        fields = ['id', 'user', 'date', 'team_people']
+
+
+class TeamQuerySerializer(serializers.Serializer):
+    selected_team = serializers.ListField(required=True)

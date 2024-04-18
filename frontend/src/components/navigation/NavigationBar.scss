@@ -1,0 +1,39 @@
+@import "@styles/templates.scss";
+
+.navigation-bar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  overflow-y: auto;
+  box-shadow: 0 0 0 1px $border-color;
+  z-index: 10;
+  text-align: center;
+
+  img {
+    width: 20px;
+    height: 22px;
+  }
+
+  &.partial-open{
+    animation: slideNavBar .3s forwards;
+  }
+
+  .route-nav-item {
+    box-shadow: 0 1px 1px 0 $border-color;
+    padding: 10px 0;  
+  }
+
+  @keyframes slideNavBar {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      width:  300px;
+    }
+  }
+}
+
+  
+  

@@ -1,19 +1,19 @@
-// import { useGetAllDataQuery } from "./redux/services/dataSlice";
+//import { useGetAllDataQuery } from "./redux/services/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu, selectIsMenuOpen } from "./redux/slices/menuOpenSlice";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home/Home";
 import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
-import EnviromentPage from "./pages/enviroment/Enviroment.jsx";
-import Header from "./components/Header";
-import "./App.css";
+import EnviromentPage from "./pages/enviroment/EnviromentTask.jsx";
+import Header from "./components/header/Header.jsx";
+import "./App.scss";
 
 function App() {
   const menuOpen = useSelector(selectIsMenuOpen);
   const dispatch = useDispatch();
 
-  // const { isLoading, error, data } = useGetAllDataQuery("/");
+  //const { isLoading, error, data } = useGetAllDataQuery("/");
 
   const handleChangeHeaderToggleSwitch = () => {
     dispatch(toggleMenu());
@@ -38,7 +38,7 @@ function App() {
       ) : null} */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/demo/api/enviroment/" element={<EnviromentPage />} />
+          <Route path="/demo/api/enviroment/:id" element={<EnviromentPage />} />
           <Route path="*" element={<ErrorPage error="404" />} />
         </Routes>
       </div>

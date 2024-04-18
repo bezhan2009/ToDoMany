@@ -22,6 +22,7 @@ class Environment(models.Model):
 
 
 class Task(models.Model):
+    title = models.CharField(max_length=30, null=True)
     description = models.TextField()
     completed = models.BooleanField(default=False)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
@@ -65,7 +66,8 @@ class SavedEnvironment(models.Model):
 
 
 class Application(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='applications_sent')
+    to_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='applications_received')
     date = models.DateTimeField(default=timezone.now)
     is_deleted = models.BooleanField(default=False)
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE)
@@ -73,3 +75,20 @@ class Application(models.Model):
 
     def __str__(self):
         return f"Environment: {self.environment}\n User: {self.user}"
+
+
+class Team(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
+
+
+class TeamPerson(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    is_deleted = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
+    is_superadmin = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user}\'s team: {self.team}"
+

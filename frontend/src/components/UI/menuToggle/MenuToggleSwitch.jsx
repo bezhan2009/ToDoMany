@@ -1,5 +1,5 @@
 import Button from "../button/Button";
-import style from "./MenuToggleSwitch.module.css";
+import style from "./MenuToggleSwitch.module.scss";
 
 export default function MenuToggleSwitch({ checked, onChangeState }) {
   const switchClass = checked ? style.close : style.burger;

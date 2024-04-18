@@ -4,13 +4,14 @@
     font-size: 14px;
     font-weight: 500;
     align-items: center;
+    
+    .nav-item-img {
+        margin-right: 0;
+        width: 20px;
+        height: 22px;
+    }
 }  
 
-.nav-item-img {
-    margin-right: 0;
-    width: 20px;
-    height: 22px;
-}
 
 .nav-item-partial {
     margin-right: 20px;

@@ -1,6 +1,8 @@
-import MenuToggleSwitch from "./UI/menuToggle/MenuToggleSwitch";
-import Button from "./UI/button/Button";
-import NavigationBar from "./NavigationBar";
+import MenuToggleSwitch from "@UI/menuToggle/MenuToggleSwitch";
+import Button from "@UI/button/Button";
+import NavigationBar from "../navigation/NavigationBar";
+
+import "./Header.scss";
 
 export default function Header({
   onChangeHeaderToggleSwitch,
@@ -9,7 +11,7 @@ export default function Header({
 }) {
   return (
     <>
-      <header className="header">
+      <header>
         <div className="header-float-left">
           <MenuToggleSwitch
             checked={menuOpen}

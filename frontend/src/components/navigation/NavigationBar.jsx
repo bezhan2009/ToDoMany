@@ -1,11 +1,13 @@
-import MenuItem from "./UI/menuItem/MenuItem";
-import homeIco from "../assets/lucide_home.png";
-import tasksIco from "../assets/iconoir_task-list.png";
-import calendarIco from "../assets/calendar.png";
+import MenuItem from "../UI/menuItem/MenuItem";
+import homeIco from "@assets/lucide_home.png";
+import tasksIco from "@assets/iconoir_task-list.png";
+import calendarIco from "@assets/calendar.png";
+
+import "./NavigationBar.scss";
 
 export default function NavigationBar({ partialOpen }) {
   return (
-    <nav className={`navigation-bar ${partialOpen ? "partial-open" : ""}`}>
+    <nav className={`navigation-bar ${partialOpen ? "partial-open" : "close"}`}>
       <div className="route-nav-item">
         <ul>
           <MenuItem
@@ -43,7 +45,8 @@ export default function NavigationBar({ partialOpen }) {
               partialOpen={partialOpen}
               icon="https://placehold.co/18x20"
               mode="nav"
-              to={`/demo/api/environment/admin/action/${index}`}
+              to={`/demo/api/enviroment/${index}`}
+              label="Работа в айти"
             />
           ))}
         </ul>

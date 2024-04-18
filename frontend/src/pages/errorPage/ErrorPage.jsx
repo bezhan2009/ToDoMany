@@ -1,4 +1,4 @@
-import "./ErrorPage.css";
+import "./ErrorPage.scss";
 
 export default function ErrorPage({error}) {
   console.error(error);

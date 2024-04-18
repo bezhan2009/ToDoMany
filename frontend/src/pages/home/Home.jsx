@@ -1,11 +1,17 @@
-/*TO DO: Решить проблему с картками */
+import { Link } from "react-router-dom";
+import Button from "@components/UI/button/Button";
+import RenderCard from "@components/UI/card/CardController";
+import HomeSceleton from "./Home.sceleton.jsx";
 
-import Button from "../../components/UI/button/Button";
-import EnviromentCard from "../../components/EnviromentCard";
-
-import "./Home.css";
+import "./Home.scss";
 
 export default function Home() {
+  /* HARDCODE TO USE SCELETON */
+  const isLoading = true;
+  if (!isLoading) {
+    return <HomeSceleton />;
+  }
+
   return (
     <section className="main-section">
       <article className="top-btn">
@@ -14,38 +20,20 @@ export default function Home() {
         </Button>
         <Button mode="field">Подключиться к окружению</Button>
       </article>
-      <div className="card-container">
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse.Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse.Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse.Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse.Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-        <EnviromentCard
-          title="Работа в айти"
-          img="https://placehold.co/56x56"
-          description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
-        />
-      </div>
+      <ul className="card-container">
+        {[...Array(2)].map((_, index) => (
+          <li className="card-item" key={index}>
+            <Link to={`/demo/api/enviroment/${index}`} className="card-link">
+              <RenderCard
+                cardMode="enviroment"
+                title="Работа в айти"
+                img="https://placehold.co/56x56"
+                description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

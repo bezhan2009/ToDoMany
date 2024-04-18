@@ -5,7 +5,8 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 from django.db import transaction
-from Funs import ApplicationFun
+from rest_framework.exceptions import ValidationError
+from .Funs import *
 from .serializers import *
 from rest_framework.exceptions import PermissionDenied
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -83,58 +84,104 @@ class ApplicationActions(APIView):
         security=[],
         query_serializer=ApplicationQuerySerializer()
     )
-    def get(self, request, pk, create_from_request=False):
+    def get(self, request, create_from_request=False):
         query_serializer = ApplicationQuerySerializer(data=request.query_params)
         query_serializer.is_valid(raise_exception=True)
 
-        get = query_serializer.validated_data.get("Get", False)
-        create = query_serializer.validated_data.get("Create", False)
-        delete = query_serializer.validated_data.get("Delete", False)
-        accept = query_serializer.validated_data.get("Accept", False)
-
+        get = query_serializer.validated_data.get("get", False)
+        create = query_serializer.validated_data.get("create", False)
+        delete = query_serializer.validated_data.get("delete", False)
+        accept = query_serializer.validated_data.get("accept", False)
+        application_pk = query_serializer.validated_data.get("application_pk")
+        environment_pk = query_serializer.validated_data.get("environment_pk")
         accepted_funs = 0
         query_data = [get, create, delete, accept, create_from_request]
 
         for q in query_data:
             if q:
                 accepted_funs += 1
-
+        if accepted_funs == 0:
+            return Response({'message': 'No method is chose. Chooses are:',
+                             'methods': [
+                                 'get',
+                                 'create(post)',
+                                 'delete',
+                                 'accept']}, status=status.HTTP_400_BAD_REQUEST)
         if accepted_funs > 1:
-            return Response({'message': 'You cannot accept more than one method\nChooses are:\n\tget\n\tcreate(post)\n\tdelete\n\taccept'}, status=status.HTTP_400_BAD_REQUEST)
-        try:
-            environment = Environment.objects.get(id=pk)
-        except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({
+                'message': 'You cannot accept more than one method. Chooses are:',
+                'methods': [
+                    'get',
+                    'create(post)',
+                    'delete',
+                    'accept'
+                ]
+            }, status=status.HTTP_400_BAD_REQUEST)
+
         user = UserProfile.objects.get(id=get_user_id_from_token(request))
-        applicationfun = ApplicationFun(environment, user, pk)
         if get:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             get_method = applicationfun.get_application(request)
-            return Response(get_method)
+            if get_method == 403:
+                return Response({'message': 'You have no permission to this action!!!'},
+                                status=status.HTTP_403_FORBIDDEN)
+            if get_method == 404:
+                return Response({'message': 'Application Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                return Response(get_method, status=status.HTTP_200_OK)
         elif create:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             create_method = applicationfun.create_application(request)
+            if create_method == 403:
+                return Response({'message': 'You are already authorized to this environment!!!'},
+                                status=status.HTTP_403_FORBIDDEN)
             if create_method == 'True':
                 return Response({'message': 'The application has been successfully submitted'},
                                 status=status.HTTP_201_CREATED)
             elif create_method:
                 return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
         elif create_from_request:
+            if not environment_pk:
+                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
             create_method = applicationfun.create_application(request)
             if create_method == 'True':
                 return 'True'
             elif create_method:
                 return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
         elif delete:
+            if not application_pk:
+                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
             delete_method = applicationfun.delete_application(request)
             if delete_method:
                 return Response({'message': 'The application has been successfully removed'},
-                                status=status.HTTP_204_NO_CONTENT)
+                                status=status.HTTP_200_OK)
+            elif delete_method == 404:
+                return Response({'message': 'Application Not Found.'}, status=status.HTTP_404_NOT_FOUND)
             else:
                 return Response({'message': 'You do not have access to this action'}, status=status.HTTP_403_FORBIDDEN)
         elif accept:
+            if not application_pk:
+                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
             accept_method = applicationfun.accept_application(request)
+
             if accept_method == 404:
-                return Response({'message': 'Application Not Found.'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'message': 'Application Not Found or has been deleted/accepted.'},
+                                status=status.HTTP_404_NOT_FOUND)
             elif accept_method:
+                print(accept_method)
+                new_serializer = ApplicationSerializer(accept_method, many=False)
+                accept_method = new_serializer
+                admin = Admin.objects.create(user=UserProfile.objects.get(id=accept_method.data.get('user')), \
+                                             environment=Environment.objects.get(
+                                                 id=accept_method.data.get('environment')))
+                admin.save()
                 return Response({'message': 'The Application has been successfully accepted'},
                                 status=status.HTTP_200_OK)
             elif not accept_method:
@@ -412,11 +459,13 @@ class EnvironmentDetail(APIView):
                 saved_environment = saving_environment.save()
             else:
                 return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
-        application = ApplicationActions(environment, user, pk)
+        application = ApplicationActions()
         create_application = application.get(request, pk, True)
+        print("Without If: ", create_application)
         if create_application == 'True':
-            pass
+            print("With If: ", create_application)
         else:
+            print("With Else", create_application)
             return Response(create_application, status=status.HTTP_400_BAD_REQUEST)
         saved_environment.save()  # Сохраняем изменения или новую запись
         environment_instance = environment.first()
@@ -749,10 +798,10 @@ class CommentList(APIView):
             return main_comments, comments_dict
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            raise Response({"message": "Task not found"}, status=404)
+            raise Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=500)
+            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def get(self, request, task_id):
         try:
@@ -803,7 +852,7 @@ class CommentList(APIView):
             return Response({"message": "You have not registered yet"}, status=status.HTTP_404_NOT_FOUND)
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            return Response({"message": "Task not found"}, status=404)
+            return Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -821,7 +870,7 @@ class CommentDetail(APIView):
             raise Http404({"message": "Comment not found"})
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=500)
+            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     @transaction.atomic
     def delete_comment_chain(self, comment):
@@ -846,7 +895,7 @@ class CommentDetail(APIView):
             logger.info(f"Attempting to delete comment with ID {comment_id}.")
         except Comment.DoesNotExist:
             logger.warning(f"Failed to delete Comment. Comment with ID {comment_id} not found.")
-            return Response({"message": "Comment Not Found"}, status=404)
+            return Response({"message": "Comment Not Found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -857,4 +906,238 @@ class CommentDetail(APIView):
         # Delete the parent comment
         comment.delete()
 
-        return Response({'message': 'comment has been successfully deleted!'}, status=204)
+        return Response({'message': 'comment has been successfully deleted!'}, status=status.HTTP_200_OK)
+
+
+class AdminPermissions(APIView):
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'is_admin': openapi.Schema(type=openapi.TYPE_BOOLEAN, default=False,
+                                           description='Is this user an admin?'),
+                'is_superadmin': openapi.Schema(type=openapi.TYPE_BOOLEAN, default=False,
+                                                description='Is this user a super admin?'),
+            },
+            required=['is_admin', 'is_superadmin']
+        ),
+        security=[],
+    )
+    def put(self, request, environment_pk, admin_pk):
+        try:
+            environment = Environment.objects.get(id=environment_pk)
+        except Environment.DoesNotExist:
+            return Response({'message': 'Environment not found'},
+                            status=status.HTTP_404_NOT_FOUND)
+
+        admin = Admin.objects.filter(user__pk=get_user_id_from_token(request), is_superadmin=True)
+
+        if admin.exists():
+            is_permission_to_superedit = False
+            is_permission_to_edit = True
+
+        elif environment.user.id == get_user_id_from_token(request):
+            is_permission_to_superedit = True
+            is_permission_to_edit = True
+
+        else:
+            is_permission_to_superedit = False
+            is_permission_to_edit = False
+
+        if not is_permission_to_superedit and not is_permission_to_edit:
+            return Response({'message': 'You have not permission to this action'},
+                            status=status.HTTP_403_FORBIDDEN)
+
+        try:
+            admin = Admin.objects.get(id=admin_pk)
+        except Admin.DoesNotExist:
+            return Response({'message': 'Admin not found'},
+                            status=status.HTTP_404_NOT_FOUND)
+
+        is_superadmin = request.data.get('is_superadmin', False)
+        is_admin = request.data.get('is_admin', False)
+
+        if is_permission_to_superedit:
+            if is_superadmin and admin.is_superadmin:
+                return Response({'message': 'The admin is already a superadmin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_superadmin and not admin.is_superadmin:
+                admin.is_superadmin = True
+                admin.is_admin = True
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the superadmin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and admin.is_admin:
+                if admin.is_superadmin:
+                    admin.is_superadmin = False
+                    admin.save()
+                    return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                    status=status.HTTP_200_OK)
+
+                else:
+                    return Response({'message': 'The user is already an admin'},
+                                    status=status.HTTP_200_OK)
+
+            elif is_admin and not admin.is_admin:
+                admin.is_admin = True
+                admin.is_superadmin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and admin.is_superadmin:
+                admin.is_admin = True
+                admin.is_superadmin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not admin.is_admin:
+                return Response({'message': 'The user is already simple admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not is_superadmin:
+                if admin.is_admin:
+                    admin.is_superadmin = False
+                    admin.is_admin = False
+                    admin.save()
+                    return Response({'message': f'The admin with login {admin.user.username} became the simple admin'},
+                                    status=status.HTTP_200_OK)
+
+                else:
+                    return Response({'message': 'The admin is already simple admin'},
+                                    status=status.HTTP_200_OK)
+
+            else:
+                return Response({'message': 'How can I help?'},
+                                status=status.HTTP_400_BAD_REQUEST)
+
+        elif is_permission_to_edit:
+            if is_superadmin:
+                return Response({'message': 'You have not permission to this action'},
+                                status=status.HTTP_403_FORBIDDEN)
+
+            elif is_admin and admin.is_admin:
+                return Response({'message': 'The user is already an admin'},
+                                status=status.HTTP_200_OK)
+
+            elif is_admin and not admin.is_admin:
+                admin.is_admin = True
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and admin.is_admin:
+                admin.is_admin = False
+                admin.save()
+                return Response({'message': f'The admin with login {admin.user.username} became the simple admin'},
+                                status=status.HTTP_200_OK)
+
+            elif not is_admin and not admin.is_admin:
+                return Response({'message': 'The user is already simple admin'},
+                                status=status.HTTP_200_OK)
+
+            else:
+                return Response({'message': 'How can I help?'},
+                                status=status.HTTP_400_BAD_REQUEST)
+
+        else:
+            return Response({'message': 'You have not permission to this action'},
+                            status=status.HTTP_403_FORBIDDEN)
+
+
+class TeamList(APIView):
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+    )
+    def get(self, request):
+        user_id = get_user_id_from_token(request)
+        user = UserProfile.objects.get(id=user_id)
+        try:
+            teams = Team.objects.filter(user=user)
+        except Team.DoesNotExist:
+            return Response({'message': 'You have not any teams yet.'})
+
+        serializer = TeamSerializer(teams, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+    )
+    def post(self, request):
+        user_id = get_user_id_from_token(request)
+        user = UserProfile.objects.get(id=user_id)
+
+        data = {
+            'user': user
+        }
+        serializer = TeamSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Team has been successfully created'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TeamPersonList(APIView):
+    def get(self, request, team_pk):
+        try:
+            teams = Team.objects.filter(id=team_pk)
+        except Team.DoesNotExist:
+            return Response({'message': 'Team Not Found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = TeamSerializer(teams, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
+                              type=openapi.TYPE_STRING),
+        ],
+        query_serializer=TeamQuerySerializer(),
+    )
+    def post(self, request, team_pk=None):
+        query_serializer = TeamQuerySerializer(data=request.query_params)
+        query_serializer.is_valid(raise_exception=True)
+
+        selected_team = query_serializer.validated_data.get('selected_team')
+
+        try:
+            if not selected_team:
+                raise ValidationError("Please provide 'selected_team'")
+        except ValidationError as V:
+            return Response({'message': str(V)})
+        user = UserProfile.objects.get(id=get_user_id_from_token(request))
+
+        # Если не передан team_id, создаем новую команду
+        try:
+            team = get_object_or_404(Team, id=team_pk, user=user)
+        except Http404:
+            return Response({'message': 'Team not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Добавляем выбранных пользователей в команду, если они присутствуют хотя бы в одном из окружений пользователя
+        for admin_id in selected_team:
+            selected_admin = get_object_or_404(Admin, id=admin_id, environment__user=user)
+            if selected_admin.environment.user == user:
+                TeamPerson.objects.get_or_create(team=team, user=selected_admin.user, is_admin=selected_admin.is_admin,
+                                                 is_superadmin=selected_admin.is_superadmin)
+            else:
+                # Пользователь не найден в окружениях пользователя, создаем заявку
+                application = Application.objects.create(user=user, to_user=selected_admin.user, team=team)
+                application.save()
+
+        return Response({'message': 'Team created successfully'}, status=status.HTTP_201_CREATED)
+
+
+

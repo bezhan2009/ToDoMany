@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
-const Button = ({
+function Button({
   children,
   className,
   mode,
@@ -11,7 +11,7 @@ const Button = ({
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
   ...props
-}) => {
+}) {
   const cssClasses = classNames(
     styles.button,
     {
@@ -36,7 +36,7 @@ const Button = ({
       {children}
     </button>
   );
-};
+}
 
 Button.propTypes = {
   children: PropTypes.node,

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../button/Button";
-import style from "./MenuItem.module.css";
+import style from "./MenuItem.module.scss";
 
 export default function MenuItem({ mode, partialOpen, icon, label, to }) {
   let navbarContent = (
