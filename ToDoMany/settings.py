@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
-    'ToDoSource',
-    'corsheaders'
+    'corsheaders',
+    'adminapp',
+    'app',
+    'commentapp',
+    'envapp',
+    'taskapp',
+    'teamapp',
+    'userapp',
 ]
 
 MIDDLEWARE = [
