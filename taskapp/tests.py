@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from .models import Task, Environment
-
+from userapp.models import UserProfile
 
 class TaskListTestCase(APITestCase):
     def setUp(self):
@@ -20,11 +20,12 @@ class TaskListTestCase(APITestCase):
         response = self.client.post(url, data)
         self.assertIn(response.status_code, [status.HTTP_200_OK, status.HTTP_201_CREATED])
 
+
 class TaskDetailTestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = UserProfile.objects.create_user(username='testuser', password='testpassword', age=18)
         self.client.login(username='testuser', password='testpassword')
-        self.task = Task.objects.create(description='Test Task', user=self.user)
+        self.task = Task.objects.create(title="Test title", description='Test Task', user=self.user)
 
     def test_get_task_detail(self):
         url = f'/api/tasks/{self.task.id}/'  # Фактический URL для получения деталей задачи
@@ -42,9 +43,10 @@ class TaskDetailTestCase(APITestCase):
         response = self.client.put(url, data)
         self.assertIn(response.status_code, [status.HTTP_200_OK, status.HTTP_400_BAD_REQUEST])
 
+
 class TaskEnvironmentActionTestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = UserProfile.objects.create_user(username='testuser', password='testpassword', age=18)
         self.client.login(username='testuser', password='testpassword')
         self.environment = Environment.objects.create(name='Test Environment', password='password', user=self.user)
 
@@ -54,9 +56,10 @@ class TaskEnvironmentActionTestCase(APITestCase):
         response = self.client.post(url, data)
         self.assertIn(response.status_code, [status.HTTP_200_OK, status.HTTP_201_CREATED, status.HTTP_400_BAD_REQUEST])
 
+
 class EnvironmentTaskViewTestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = UserProfile.objects.create_user(username='testuser', password='testpassword', age=18)
         self.client.login(username='testuser', password='testpassword')
         self.environment = Environment.objects.create(name='Test Environment', password='password', user=self.user)
         self.task = Task.objects.create(description='Test Task', user=self.user, environment=self.environment)

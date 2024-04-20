@@ -5,6 +5,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Team(models.Model):
+    title = models.CharField(max_length=100, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
 

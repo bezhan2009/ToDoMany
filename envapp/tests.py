@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from envapp.models import Environment
-
+from userapp.models import UserProfile
 
 class EnvironmentListTestCase(APITestCase):
     def setUp(self):
@@ -23,7 +23,7 @@ class EnvironmentListTestCase(APITestCase):
 
 class EnvironmentDetailTestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = UserProfile.objects.create_user(username='testuser', password='testpassword', age=18)
         self.client.login(username='testuser', password='testpassword')
         self.environment = Environment.objects.create(name='Test Environment', password='password', user=self.user)
 
