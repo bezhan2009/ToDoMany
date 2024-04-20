@@ -91,18 +91,6 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 
 
 
-   
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'fmsehwdu',  # Имя базы данных
-            'USER': 'fmsehwdu',  # Имя пользователя базы данных
-            'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
-            'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
-            'PORT': '5432',  # Порт базы данных (обычно 5432)
-        }
-    } 
-"""
 
 
 DATABASES = {
@@ -113,6 +101,19 @@ DATABASES = {
         'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
     }
 }
+
+"""
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'fmsehwdu',  # Имя базы данных
+            'USER': 'fmsehwdu',  # Имя пользователя базы данных
+            'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
+            'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
+            'PORT': '5432',  # Порт базы данных (обычно 5432)
+        }
+    }
 
 
 # Password validation
