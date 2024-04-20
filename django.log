@@ -5860,3 +5860,13 @@ WARNING 2024-04-20 18:58:47,464 log 3648 16808 Unauthorized: /api/admin/19
 WARNING 2024-04-20 18:58:47,471 log 3648 16808 Not Found: /api/admin/19/1/
 WARNING 2024-04-20 20:30:57,421 log 18532 10652 Not Found: /api/comments/1/
 WARNING 2024-04-20 20:30:57,426 log 18532 10652 Not Found: /api/comments/1/
+WARNING 2024-04-20 20:34:39,638 log 11140 8756 Not Found: /api/environments/
+WARNING 2024-04-20 20:34:39,642 log 11140 8756 Not Found: /api/environments/
+WARNING 2024-04-20 20:47:32,193 log 3664 13552 Not Found: /api/environments/
+WARNING 2024-04-20 20:47:33,840 log 3664 13552 Not Found: /api/environments/
+WARNING 2024-04-20 20:49:20,459 log 12284 12964 Not Found: /api/comments/1/
+WARNING 2024-04-20 20:49:20,463 log 12284 12964 Not Found: /api/comments/1/
+WARNING 2024-04-20 20:52:10,021 log 19324 19248 Unauthorized: /api/tasks/
+WARNING 2024-04-20 20:52:11,703 log 19324 19248 Unauthorized: /api/tasks/
+WARNING 2024-04-20 20:53:42,863 log 4960 5388 Not Found: /api/teams/
+WARNING 2024-04-20 20:53:44,518 log 4960 5388 Not Found: /api/teams/

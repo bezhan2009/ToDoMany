@@ -25,8 +25,4 @@ urlpatterns = [
          AdminActionsView.as_view(),
          name='admin-action'
          ),
-    path('task/<int:pk>/',
-         EnvironmentTaskView.as_view(),
-         name='environment-task'
-         )
 ]

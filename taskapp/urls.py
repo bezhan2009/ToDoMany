@@ -1,11 +1,10 @@
 from django.urls import path
-
-from taskapp.views import TaskDetail
 from taskapp.views import (
+    TaskDetail,
     TaskList,
     TaskEnvironmentAction
 )
-
+from taskapp.views import EnvironmentTaskView
 urlpatterns = [
     path('',
          TaskList.as_view(),
@@ -17,5 +16,10 @@ urlpatterns = [
          ),
     path('for_environment/<int:pk>/',
          TaskEnvironmentAction.as_view(),
-         name='task-environment-action')
+         name='task-environment-action'),
+
+    path('task/<int:pk>/',
+         EnvironmentTaskView.as_view(),
+         name='environment-task'
+         )
 ]
