@@ -43,14 +43,14 @@ class ApplicationQuerySerializer(serializers.Serializer):
     accept = serializers.BooleanField(required=False, default=False)
     application_pk = serializers.IntegerField(required=False)
     environment_pk = serializers.IntegerField(required=False)
-
+    """
     def create(self, validated_data):
-        """
+        '''
         This function creates a new application.
-        """
+        '''
         application = Application.objects.create(**validated_data)
         return application
-
+    """
     def update(self, instance, validated_data):
         """
         This function updates the application.

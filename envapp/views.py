@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from adminapp.models import Admin
-from app.views import ApplicationActions
+from app.views import ApplicationList
 from envapp.models import Environment, SavedEnvironment
 from envapp.serializers import EnvironmentSerializer, EnvironmentQuerySerializer, SavedEnvironmentSerializer, \
     AdminEnvironmentSerializer
@@ -186,8 +186,8 @@ class EnvironmentDetail(APIView):
                     data=saving_environment.errors,
                     status=status.HTTP_400_BAD_REQUEST
                 )
-        application = ApplicationActions()
-        create_application = application.get(request, pk, True)
+        application = ApplicationList()
+        create_application = application.post(request, pk)
         print("Without If: ", create_application)
         if create_application == 'True':
             print("With If: ", create_application)
