@@ -18,7 +18,7 @@ urlpatterns = [
          TaskEnvironmentAction.as_view(),
          name='task-environment-action'),
 
-    path('task/<int:pk>/',
+    path('task/<int:environment_pk>/',
          EnvironmentTaskView.as_view(),
          name='environment-task'
          )
