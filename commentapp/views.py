@@ -21,6 +21,7 @@ from utils.tokens import get_user_id_from_token
 
 logger = logging.getLogger(__name__)
 
+
 # Create your views here.
 class CommentList(APIView):
     authentication_classes = [SessionAuthentication]

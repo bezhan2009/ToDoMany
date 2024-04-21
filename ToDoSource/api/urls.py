@@ -70,4 +70,5 @@ urlpatterns = [
          TeamPersonList.as_view(),
          name='team person'),
 ]
+
 #ss

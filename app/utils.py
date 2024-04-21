@@ -40,7 +40,7 @@ class ApplicationFun:
         else:
             is_accepted_for_delete = False
         if is_accepted_for_delete:
-            application.is_deleted = False
+            application.is_deleted = True  # Исправлено на True
             application.save()
             return True
         return False
