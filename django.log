@@ -6309,3 +6309,19 @@ WARNING 2024-04-21 16:42:34,957 log 9184 4904 Not Found: /api/tasks/task/2/
 WARNING 2024-04-21 16:43:04,814 log 12076 11856 Not Found: /api/tasks/task/1/
 WARNING 2024-04-21 16:46:32,248 log 9728 4828 Not Found: /api/tasks/task/1/
 WARNING 2024-04-21 16:50:18,804 log 4908 5400 Not Found: /api/tasks/task/1/
+WARNING 2024-04-21 16:51:12,276 log 8588 6588 Unauthorized: /api/admin/19
+WARNING 2024-04-21 16:51:12,289 log 8588 6588 Not Found: /api/admin/19/1/
+WARNING 2024-04-21 16:51:19,392 log 8588 6588 Not Found: /api/comments/1/detail/
+WARNING 2024-04-21 16:51:19,536 log 8588 6588 Not Found: /api/comments/1/
+WARNING 2024-04-21 16:51:19,544 log 8588 6588 Not Found: /api/comments/1/
+WARNING 2024-04-21 16:51:23,123 log 8588 6588 Not Found: /api/environments/1/
+WARNING 2024-04-21 16:51:26,485 log 8588 6588 Not Found: /api/environments/2/
+WARNING 2024-04-21 16:51:30,049 log 8588 6588 Not Found: /api/environments/
+WARNING 2024-04-21 16:51:33,404 log 8588 6588 Not Found: /api/environments/
+WARNING 2024-04-21 16:51:47,019 log 8588 6588 Bad Request: /api/tasks/4/
+WARNING 2024-04-21 16:51:50,491 log 8588 6588 Not Found: /api/tasks/task/4/
+WARNING 2024-04-21 16:52:05,340 log 8588 6588 Not Found: /api/teams/2/
+WARNING 2024-04-21 16:56:42,431 log 3656 3608 Bad Request: /api/environment/1/
+WARNING 2024-04-21 16:56:50,006 log 3656 3608 Bad Request: /api/environment/
+WARNING 2024-04-21 16:57:21,973 log 11192 2892 Bad Request: /api/environment/1/
+WARNING 2024-04-21 17:00:21,122 log 12036 3752 Bad Request: /api/environment/
