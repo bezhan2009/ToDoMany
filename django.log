@@ -6325,3 +6325,10 @@ WARNING 2024-04-21 16:56:42,431 log 3656 3608 Bad Request: /api/environment/1/
 WARNING 2024-04-21 16:56:50,006 log 3656 3608 Bad Request: /api/environment/
 WARNING 2024-04-21 16:57:21,973 log 11192 2892 Bad Request: /api/environment/1/
 WARNING 2024-04-21 17:00:21,122 log 12036 3752 Bad Request: /api/environment/
+WARNING 2024-04-21 17:01:28,607 log 10672 5888 Unauthorized: /api/admin/19
+WARNING 2024-04-21 17:01:28,620 log 10672 5888 Not Found: /api/admin/19/1/
+WARNING 2024-04-21 17:08:48,740 log 1336 4676 Not Found: /api/admin/19/
+WARNING 2024-04-21 17:08:50,123 log 1336 4676 Not Found: /api/admin/19/1/
+WARNING 2024-04-21 17:09:33,498 log 5052 6120 Not Found: /api/admin/19/
+WARNING 2024-04-21 17:09:34,858 log 5052 6120 Not Found: /api/admin/19/1/
+WARNING 2024-04-21 17:13:46,515 log 2800 11716 Not Found: /api/admin/1/
