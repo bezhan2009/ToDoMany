@@ -5,6 +5,11 @@
   margin: 20px;
   cursor: pointer;
 
+  .link {
+    text-decoration: none;
+    color: #000;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -39,21 +44,11 @@
 }
 
 @keyframes hoverCard {
-  0% {
+  from {
     transform: scale(1);
   }
-  5% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(1);
-  }
-  50% {
+  to {
     transform: scale(1.1);
-    box-shadow: 1px 1px 1px 1px #c4c4c4;
-  }
-  100% {
-    transform: scale(1.1);
-    box-shadow: 5px 5px 15px 15px #c4c4c4;
+    box-shadow: 1px 1px 10px 10px #c4c4c4;
   }
 }

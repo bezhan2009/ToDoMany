@@ -11,8 +11,8 @@
     box-sizing: border-box;
     z-index: 2;
     position: relative;
-  
-    .top,
+
+        .top,
     .middle,
     .bottom {
         border-radius: 2px;
@@ -20,6 +20,10 @@
         height: 3px;
         background-color: #333;
         transition: all 0.3s ease;
+    }
+    
+    &.burger{
+        transition: transform .2s ease-in-out;
     }
   
     &.close {

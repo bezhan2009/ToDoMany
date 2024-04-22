@@ -1,3 +1,11 @@
+
+/* 
+  TO DO: 
+    делать моды кнопок, которые будут глобально менять стили,
+    и сделать производную стилизацию, добавить ко всему этому состояние загрузки и стили.
+*/
+
+
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";

@@ -10,6 +10,7 @@
   box-shadow: 0 0 0 1px $border-color;
   z-index: 10;
   text-align: center;
+  background-color: white;
 
   img {
     width: 20px;
@@ -17,7 +18,11 @@
   }
 
   &.partial-open{
-    animation: slideNavBar .3s forwards;
+    animation: toggleSwitchAnim .4s forwards;
+  }
+
+  &.close {
+    width:  72px;
   }
 
   .route-nav-item {
@@ -25,7 +30,7 @@
     padding: 10px 0;  
   }
 
-  @keyframes slideNavBar {
+  @keyframes toggleSwitchAnim {
     from {
       transform: translateX(0);
     }

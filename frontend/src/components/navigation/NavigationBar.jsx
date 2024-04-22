@@ -1,3 +1,4 @@
+import React from "react";
 import MenuItem from "../UI/menuItem/MenuItem";
 import homeIco from "@assets/lucide_home.png";
 import tasksIco from "@assets/iconoir_task-list.png";
@@ -7,7 +8,9 @@ import "./NavigationBar.scss";
 
 export default function NavigationBar({ partialOpen }) {
   return (
-    <nav className={`navigation-bar ${partialOpen ? "partial-open" : "close"}`}>
+    <nav
+      className={`navigation-bar ${partialOpen ? "partial-open" : "close"}`}
+    >
       <div className="route-nav-item">
         <ul>
           <MenuItem

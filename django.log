@@ -6342,3 +6342,21 @@ ERROR 2024-04-21 19:07:30,990 basehttp 17692 20172 You're accessing the developm
 ERROR 2024-04-21 19:07:31,238 basehttp 17692 20348 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2024-04-21 19:07:31,294 basehttp 17692 12868 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2024-04-21 19:07:31,548 basehttp 17692 1628 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2024-04-21 19:37:36,448 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:37:36,448 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:37:43,871 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:37:43,871 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:39:05,743 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:39:05,743 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:39:52,686 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:39:52,686 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:39:58,309 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:39:58,309 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:40:19,468 log 11312 10140 Not Found: /accounts/login/
+WARNING 2024-04-21 19:40:19,469 basehttp 11312 10140 "GET /accounts/login/?next=/ HTTP/1.1" 404 3592
+WARNING 2024-04-21 19:40:37,426 log 11312 10140 Not Found: /accounts/login/
+WARNING 2024-04-21 19:40:37,427 basehttp 11312 10140 "GET /accounts/login/?next=/admin/ HTTP/1.1" 404 3598
+WARNING 2024-04-21 19:41:02,956 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:41:02,957 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-21 19:41:25,341 log 11312 10140 Unauthorized: /api/environment/
+WARNING 2024-04-21 19:41:25,342 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58

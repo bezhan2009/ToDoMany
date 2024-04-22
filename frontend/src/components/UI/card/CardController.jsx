@@ -7,20 +7,24 @@ export default function RenderCard({
   img,
   description,
   state,
+  path,
 }) {
-  /* TO DO: Ubdate this construction to redux slice */
+  /* TO DO: In a feature update this construction to redux slice */
 
   const TASK = "task";
   const ENVIROMENT = "enviroment";
 
   switch (cardMode) {
     case TASK:
-      return (
-        <TaskCard title={title} description={description} state={state} />
-      );
+      return <TaskCard title={title} description={description} state={state} />;
     case ENVIROMENT:
       return (
-        <EnviromentCard title={title} img={img} description={description} />
+        <EnviromentCard
+          title={title}
+          img={img}
+          description={description}
+          path={path}
+        />
       );
     default:
       return null;
