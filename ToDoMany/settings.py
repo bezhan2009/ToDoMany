@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
-from pathlib import Path
+import os
+import sys
 from datetime import timedelta
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,28 +86,23 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-"""
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todomaindb',  # Имя базы данных
-        'USER': 'postgres',  # Имя пользователя базы данных
-        'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
+        'NAME': 'fmsehwdu',  # Имя базы данных
+        'USER': 'fmsehwdu',  # Имя пользователя базы данных
+        'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
+        'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
+        'PORT': '5432',  # Порт базы данных (обычно 5432)
     }
 }
 
-"""
-
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'fmsehwdu',  # Имя базы данных
-            'USER': 'fmsehwdu',  # Имя пользователя базы данных
-            'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
-            'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
-            'PORT': '5432',  # Порт базы данных (обычно 5432)
-        }
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'todomany',  # Имя базы данных
+        'USER': 'postgres',  # Имя пользователя базы данных
+        'PASSWORD': 'GradeTop1!',  # Пароль пользователя базы данных
     }
 
 # Password validation

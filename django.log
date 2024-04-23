@@ -29,8 +29,8 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UniqueViolation: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
-DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+psycopg2.errors.UniqueViolation: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "auth_user_username_key"
+DETAIL:  пїЅпїЅпїЅпїЅ "(username)=(testing_project)" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 
 The above exception was the direct cause of the following exception:
@@ -108,8 +108,8 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.IntegrityError: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "auth_user_username_key"
-DETAIL:  Ключ "(username)=(testing_project)" уже существует.
+django.db.utils.IntegrityError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "auth_user_username_key"
+DETAIL:  пїЅпїЅпїЅпїЅ "(username)=(testing_project)" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 ERROR 2024-03-31 18:12:32,712 basehttp 13080 11724 "POST /auth/sign-up/ HTTP/1.1" 500 199034
 WARNING 2024-03-31 18:13:18,803 log 13080 11724 Unauthorized: /auth/sign-in/
@@ -130,7 +130,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец ToDoSource_environment.password не существует
+psycopg2.errors.UndefinedColumn: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_environment.password пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
                                                              ^
 
@@ -198,7 +198,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Projects\ToDoMany\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.ProgrammingError: ОШИБКА:  столбец ToDoSource_environment.password не существует
+django.db.utils.ProgrammingError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_environment.password пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...vironment"."id", "ToDoSource_environment"."name", "ToDoSourc...
                                                              ^
 
@@ -733,13 +733,13 @@ TypeError: Comment() got unexpected keyword arguments: 'product'
 
 ERROR 2024-04-02 12:19:16,613 log 17436 1560 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 12:19:16,613 basehttp 17436 1560 "POST /demo/api/comment/1/ HTTP/1.1" 500 1317
-ERROR 2024-04-02 12:20:12,644 views 12564 14732 An error occurred while processing the request: ОШИБКА:  отношение "ToDoSource_comment" не существует
+ERROR 2024-04-02 12:20:12,644 views 12564 14732 An error occurred while processing the request: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_comment" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: INSERT INTO "ToDoSource_comment" ("user_id", "task_id", "par...
                     ^
 
 ERROR 2024-04-02 12:20:12,645 log 12564 14732 Internal Server Error: /demo/api/comment/1/
 ERROR 2024-04-02 12:20:12,645 basehttp 12564 14732 "POST /demo/api/comment/1/ HTTP/1.1" 500 199
-ERROR 2024-04-02 12:20:33,452 views 12564 14732 An error occurred while processing the request: ОШИБКА:  столбец "date" в таблице "ToDoSource_comment" не существует
+ERROR 2024-04-02 12:20:33,452 views 12564 14732 An error occurred while processing the request: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "date" пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_comment" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...user_id", "task_id", "parent_id", "comment_text", "date") VA...
                                                              ^
 
@@ -3789,7 +3789,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "is_accept" в таблице "ToDoSource_application" не существует
+psycopg2.errors.UndefinedColumn: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "is_accept" пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_application" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...user_id", "date", "is_deleted", "environment_id", "is_accept...
                                                              ^
 
@@ -3873,7 +3873,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.ProgrammingError: ОШИБКА:  столбец "is_accept" в таблице "ToDoSource_application" не существует
+django.db.utils.ProgrammingError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "is_accept" пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "ToDoSource_application" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ...user_id", "date", "is_deleted", "environment_id", "is_accept...
                                                              ^
 
@@ -5446,12 +5446,14 @@ Traceback (most recent call last):
     raise self.model.MultipleObjectsReturned(
 ToDoSource.models.Admin.MultipleObjectsReturned: get() returned more than one Admin -- it returned 2!
 ERROR 2024-04-12 17:18:53,720 basehttp 14988 15716 "PUT /demo/api/admin/19/1/ HTTP/1.1" 500 21768
+WARNING 2024-04-19 15:30:27,272 log 19668 18632 Method Not Allowed: /auth/sign-in/
+WARNING 2024-04-19 15:30:27,273 basehttp 19668 18632 "GET /auth/sign-in/ HTTP/1.1" 405 7715
 ERROR 2024-04-17 10:54:55,275 log 15264 8764 Internal Server Error: /demo/api/tasks/
 Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец ToDoSource_task.title не существует
+psycopg2.errors.UndefinedColumn: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_task.title пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: SELECT "ToDoSource_task"."id", "ToDoSource_task"."title", "T...
                                        ^
 
@@ -5519,7 +5521,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.ProgrammingError: ОШИБКА:  столбец ToDoSource_task.title не существует
+django.db.utils.ProgrammingError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ToDoSource_task.title пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: SELECT "ToDoSource_task"."id", "ToDoSource_task"."title", "T...
                                        ^
 
@@ -5533,7 +5535,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "userapp_userprofile" не существует
+psycopg2.errors.UndefinedTable: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "userapp_userprofile" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ..."."age", "userapp_userprofile"."is_activate" FROM "userapp_u...
                                                              ^
 
@@ -5598,7 +5600,7 @@ Traceback (most recent call last):
   File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
     return self.cursor.execute(sql, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.ProgrammingError: ОШИБКА:  отношение "userapp_userprofile" не существует
+django.db.utils.ProgrammingError: пїЅпїЅпїЅпїЅпїЅпїЅ:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "userapp_userprofile" пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 LINE 1: ..."."age", "userapp_userprofile"."is_activate" FROM "userapp_u...
                                                              ^
 
@@ -6466,3 +6468,9 @@ WARNING 2024-04-21 20:16:10,928 log 6448 14104 Bad Request: /api/tasks/9/
 WARNING 2024-04-21 20:16:12,336 log 6448 14104 Not Found: /api/tasks/task/10/
 WARNING 2024-04-21 20:16:19,357 log 6448 14104 Not Found: /api/teams/3/
 WARNING 2024-04-21 20:16:20,708 log 6448 14104 Not Found: /api/teams/4/
+WARNING 2024-04-23 12:14:20,803 log 24156 2104 Not Found: /auth/token/obtain/
+WARNING 2024-04-23 12:15:13,717 log 11452 23212 Unauthorized: /auth/sign-in/
+WARNING 2024-04-23 12:15:33,580 log 22024 15228 Unauthorized: /auth/sign-in/
+WARNING 2024-04-23 12:17:40,661 log 10756 8220 Unauthorized: /auth/sign-in/
+WARNING 2024-04-23 12:18:00,118 log 10512 1136 Unauthorized: /auth/sign-in/
+WARNING 2024-04-23 12:19:27,667 log 22448 9004 Unauthorized: /auth/token/refresh/

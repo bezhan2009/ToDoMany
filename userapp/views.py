@@ -9,7 +9,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from userapp.serializers import UserProfileSerializer
 
-logger = logging.getLogger('userapp.views')
+logger = logging.getLogger(__name__)
 
 
 class UserView(APIView):
