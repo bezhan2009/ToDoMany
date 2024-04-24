@@ -87,7 +87,8 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 
 """
 
-DATABASES = {
+
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todomaindb',  # Имя базы данных
@@ -95,8 +96,9 @@ DATABASES = {
         'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
     }
 }
-
 """
+
+
 
 DATABASES = {
         'default': {
