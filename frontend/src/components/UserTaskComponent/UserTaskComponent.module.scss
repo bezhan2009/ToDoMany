@@ -1,0 +1,13 @@
+.task_area_grid {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    // align-items: start;
+    // grid-auto-rows: auto;
+    // grid-auto-flow: dense;
+    // gap: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-evenly;
+}
