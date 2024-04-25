@@ -66,3 +66,5 @@ urlpatterns = [
     path('api/application/', include('app.urls')),
     path('api/admin/', include('adminapp.urls')),
 ]
+# Fix files
+
