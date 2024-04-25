@@ -1,0 +1,44 @@
+@import "@styles/templates.scss";
+
+.navigation-bar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  overflow-y: auto;
+  box-shadow: 0 0 0 1px $border-color;
+  z-index: 10;
+  text-align: center;
+  background-color: white;
+
+  img {
+    width: 20px;
+    height: 22px;
+  }
+
+  &.partial-open{
+    animation: toggleSwitchAnim .4s forwards;
+  }
+
+  &.close {
+    width:  72px;
+  }
+
+  .route-nav-item {
+    box-shadow: 0 1px 1px 0 $border-color;
+    padding: 10px 0;  
+  }
+
+  @keyframes toggleSwitchAnim {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      width:  300px;
+    }
+  }
+}
+
+  
+  

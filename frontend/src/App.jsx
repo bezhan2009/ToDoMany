@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useGetAllDataQuery } from "./redux/services/dataSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import { toggleMenu, selectIsMenuOpen } from "@redux/slices/menuOpenSlice";
+
+import { Home, ErrorPage, EnviromentPage } from "@pages/index.jsx";
+import Header from "@components/header/Header.jsx";
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const menuOpen = useSelector(selectIsMenuOpen);
+  const dispatch = useDispatch();
+
+  // const { isLoading, error, data } = useGetAllDataQuery("api/environment/");
+  // console.log(error);
+
+  const handleChangeHeaderToggleSwitch = () => {
+    dispatch(toggleMenu());
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Header
+        menuOpen={menuOpen}
+        onChangeHeaderToggleSwitch={handleChangeHeaderToggleSwitch}
+        nameOfPage={"Главная страница"}
+      />
+      <div className={`content-container ${menuOpen ? "menu-open" : ""}`}>
+        {/* {error ? (
+          <>Oh no, there was an error^ </>
+        ) : isLoading ? (
+          <>Loading...</>
+        ) : data ? (
+          <>
+            <Home />
+          </>
+        ) : null} */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/demo/api/enviroment/:id" element={<EnviromentPage />} />
+          <Route path="*" element={<ErrorPage error="404" />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
