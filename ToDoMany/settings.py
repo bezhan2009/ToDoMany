@@ -16,6 +16,7 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,6 +27,7 @@ SECRET_KEY = 'django-insecure-#2n#&16h+2neo(&n@w6sd&y^mfu(=+n(5mq!rj!a0gu@9$3ol^
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 
 # Application definition
 
@@ -39,14 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
-    'corsheaders',
-    'adminapp',
-    'app',
-    'commentapp',
-    'envapp',
-    'taskapp',
-    'teamapp',
-    'userapp',
+    'ToDoSource',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -81,14 +77,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
 """
 
-
-    DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todomaindb',  # Имя базы данных
@@ -96,9 +92,9 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
         'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
     }
 }
+   
+
 """
-
-
 
 DATABASES = {
         'default': {
@@ -129,6 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -139,6 +136,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -152,11 +150,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=450),
@@ -226,4 +223,6 @@ LOGGING = {
     },
 }
 
+
 CORS_ALLOW_ALL_ORIGINS = True
+
