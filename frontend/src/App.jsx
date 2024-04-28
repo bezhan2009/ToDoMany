@@ -1,4 +1,4 @@
-// import { useGetAllDataQuery } from "./redux/services/dataSlice";
+import { useGetAllDataQuery } from "./redux/services/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { toggleMenu, selectIsMenuOpen } from "@redux/slices/menuOpenSlice";
@@ -11,8 +11,9 @@ function App() {
   const menuOpen = useSelector(selectIsMenuOpen);
   const dispatch = useDispatch();
 
-  // const { isLoading, error, data } = useGetAllDataQuery("api/environment/");
-  // console.log(error);
+  const { isLoading, error, data } = useGetAllDataQuery();
+  console.log(data);
+  console.log(error);
 
   const handleChangeHeaderToggleSwitch = () => {
     dispatch(toggleMenu());
@@ -25,8 +26,7 @@ function App() {
         onChangeHeaderToggleSwitch={handleChangeHeaderToggleSwitch}
         nameOfPage={"Главная страница"}
       />
-      <div className={`content-container ${menuOpen ? "menu-open" : ""}`}>
-        {/* {error ? (
+      {error ? (
           <>Oh no, there was an error^ </>
         ) : isLoading ? (
           <>Loading...</>
@@ -34,13 +34,12 @@ function App() {
           <>
             <Home />
           </>
-        ) : null} */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/demo/api/enviroment/:id" element={<EnviromentPage />} />
-          <Route path="*" element={<ErrorPage error="404" />} />
-        </Routes>
-      </div>
+        ) : null}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/demo/api/enviroment/:id" element={<EnviromentPage />} />
+        <Route path="*" element={<ErrorPage error="404" />} />
+      </Routes>
     </>
   );
 }

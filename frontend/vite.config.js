@@ -12,6 +12,7 @@ export default defineConfig({
       "@redux": "/src/redux",
       "@styles": "/src/styles",
       "@UI": "/src/components/UI",
+      "@hooks": "/src/hooks",
     }
   },
 })

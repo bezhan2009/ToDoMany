@@ -1,64 +1,85 @@
+/*TO DO: Обновить стили */
 
-/* 
-  TO DO: 
-    делать моды кнопок, которые будут глобально менять стили,
-    и сделать производную стилизацию, добавить ко всему этому состояние загрузки и стили.
-*/
-
-
-import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+
 import styles from "./Button.module.scss";
 
-function Button({
+export default function Button({
   children,
   className,
   mode,
+  size,
   Icon,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  ...props
+  onClick,
+  disabled,
+  ...rest
 }) {
+  PropTypes.checkPropTypes(
+    {
+      mode: PropTypes.oneOf([
+        "nav",
+        "primary",
+        "secondary",
+        "tertiary",
+        "outline",
+        "field",
+        "disabled-nav"
+      ]),
+      size: PropTypes.oneOf(["sm", "medium", "l"]),
+      Icon: PropTypes.node,
+      onClick: PropTypes.func,
+      disabled: PropTypes.bool,
+    },
+    { mode, size, Icon, onClick, disabled },
+    "prop",
+    "Button"
+  );
+
   const cssClasses = classNames(
     styles.button,
-    {
-      [styles[`${mode}-button`]]: mode,
-    },
+    styles[mode],
+    styles[size],
+    { [styles.disabled]: disabled },
     className
   );
 
   return (
     <button
       className={cssClasses}
-      type="button"
-      aria-label={ariaLabel || ariaLabelledBy || "Button"}
-      aria-labelledby={ariaLabelledBy}
-      {...props}
+      onClick={onClick}
+      disabled={disabled}
+      {...rest}
     >
-      {Icon && (
-        <span className={styles["button-icon"]} style={{ fontSize: "1.5rem" }}>
-          {Icon}
-        </span>
-      )}
+      {Icon && <span className={styles["button-icon"]}>{Icon}</span>}
       {children}
     </button>
   );
 }
 
-Button.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  mode: PropTypes.string,
-  Icon: PropTypes.element,
-  "aria-label": PropTypes.string,
-  "aria-labelledby": PropTypes.string,
-};
-
 Button.defaultProps = {
   className: "",
-  mode: "",
+  mode: "primary",
+  size: "medium",
   Icon: null,
+  onClick: () => {},
+  disabled: false,
 };
 
-export default Button;
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  mode: PropTypes.oneOf([
+    "nav",
+    "primary",
+    "secondary",
+    "tertiary",
+    "outline",
+    "field",
+    "disabled-nav",
+  ]),
+  size: PropTypes.oneOf(["sm", "medium", "l"]),
+  Icon: PropTypes.node,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+};

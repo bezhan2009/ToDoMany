@@ -15,12 +15,10 @@ export default function MenuItem({ mode, partialOpen, icon, label, to }) {
     );
   }
 
-  const ariaLabel = `Navbar ${label ? `${label}` : ""} button`;
-
   return (
     <li>
       <Link to={to}>
-        <Button mode={mode} aria-label={ariaLabel}>
+        <Button mode={mode}>
           {navbarContent}
         </Button>
       </Link>

@@ -6360,3 +6360,30 @@ WARNING 2024-04-21 19:41:02,956 log 11312 10140 Unauthorized: /api/environment/
 WARNING 2024-04-21 19:41:02,957 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
 WARNING 2024-04-21 19:41:25,341 log 11312 10140 Unauthorized: /api/environment/
 WARNING 2024-04-21 19:41:25,342 basehttp 11312 10140 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-28 09:39:24,150 log 19256 3684 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:39:24,169 basehttp 19256 3684 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-28 09:39:37,502 log 19256 17920 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:39:37,502 basehttp 19256 17920 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-28 09:39:44,049 log 19256 17920 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:39:44,050 basehttp 19256 17920 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-28 09:44:58,442 log 19256 19776 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:44:58,443 basehttp 19256 19776 "GET /api/environment/ HTTP/1.1" 401 58
+WARNING 2024-04-28 09:53:28,959 log 19256 23956 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:53:29,699 log 19256 9892 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:53:29,700 basehttp 19256 9892 "GET /api/environment/ HTTP/1.1" 401 183
+WARNING 2024-04-28 09:55:30,811 log 19256 6940 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:55:30,812 basehttp 19256 6940 "GET /api/environment/ HTTP/1.1" 401 183
+WARNING 2024-04-28 09:56:30,425 log 19256 2280 Not Found: /accounts/login/
+WARNING 2024-04-28 09:56:30,425 basehttp 19256 2280 "GET /accounts/login/?next=/ HTTP/1.1" 404 3592
+WARNING 2024-04-28 09:56:30,673 log 19256 2280 Not Found: /favicon.ico
+WARNING 2024-04-28 09:56:30,674 basehttp 19256 2280 "GET /favicon.ico HTTP/1.1" 404 3573
+WARNING 2024-04-28 09:58:32,742 log 19256 7736 Unauthorized: /auth/sign-in/
+WARNING 2024-04-28 09:58:32,742 basehttp 19256 7736 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-04-28 09:58:58,031 log 19256 21572 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:58:58,031 basehttp 19256 21572 "GET /api/environment/ HTTP/1.1" 401 183
+WARNING 2024-04-28 09:59:02,507 log 19256 22660 Unauthorized: /api/environment/
+WARNING 2024-04-28 09:59:02,508 basehttp 19256 22660 "GET /api/environment/ HTTP/1.1" 401 183
+WARNING 2024-04-28 10:03:53,486 log 19256 11064 Unauthorized: /api/environment/
+WARNING 2024-04-28 10:03:53,486 basehttp 19256 11064 "GET /api/environment/ HTTP/1.1" 401 183
+WARNING 2024-04-28 10:03:58,916 log 19256 11064 Unauthorized: /api/environment/
+WARNING 2024-04-28 10:03:58,917 basehttp 19256 11064 "GET /api/environment/ HTTP/1.1" 401 183

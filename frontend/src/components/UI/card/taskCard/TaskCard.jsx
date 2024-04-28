@@ -7,7 +7,7 @@ export default function TaskCard({ title, description, state }) {
       <div className={styles.header}>{title}</div>
       <div className={styles.description}>{description}</div>
       <div className={styles.bottom}>
-        <div className={styles.date}>{state}</div>
+        <div className={styles.date}>Срок: {state}</div>
         <Button>Выполнить задание</Button>
       </div>
     </div>
