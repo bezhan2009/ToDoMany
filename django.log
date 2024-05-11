@@ -1,2 +1,6 @@
 WARNING 2024-05-05 10:52:01,429 log 4188 5768 Not Found: /favicon.ico
 WARNING 2024-05-05 10:52:01,430 basehttp 4188 5768 "GET /favicon.ico HTTP/1.1" 404 3573
+WARNING 2024-05-05 10:57:07,906 log 2240 248 Forbidden: /auth/sign-up/
+WARNING 2024-05-05 10:57:07,906 basehttp 2240 248 "POST /auth/sign-up/ HTTP/1.1" 403 82
+WARNING 2024-05-05 10:57:42,691 log 2240 248 Forbidden: /auth/sign-up/
+WARNING 2024-05-05 10:57:42,692 basehttp 2240 248 "POST /auth/sign-up/ HTTP/1.1" 403 82
