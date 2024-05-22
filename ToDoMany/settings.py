@@ -105,6 +105,8 @@ if 'test' in sys.argv:
         'PASSWORD': 'GradeTop1!',  # Пароль пользователя базы данных
     }
 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
