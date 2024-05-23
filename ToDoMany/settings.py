@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#2n#&16h+2neo(&n@w6sd&y^mfu(=+n(5mq!rj!a0gu@9$3ol^'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-#2n#&16h+2neo(&n@w6sd&y^mfu(=+n(5mq!rj!a0gu@9$3ol^')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'todomany-17c00a7d561d.herokuapp.com']
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -66,8 +67,7 @@ ROOT_URLCONF = 'ToDoMany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,27 +85,26 @@ WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fmsehwdu',  # Имя базы данных
-        'USER': 'fmsehwdu',  # Имя пользователя базы данных
-        'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
-        'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
-        'PORT': '5432',  # Порт базы данных (обычно 5432)
+        'NAME': os.environ.get('DB_NAME', 'fmsehwdu'),
+        'USER': os.environ.get('DB_USER', 'fmsehwdu'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j'),
+        'HOST': os.environ.get('DB_HOST', 'rain.db.elephantsql.com'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
 if 'test' in sys.argv:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todomany',  # Имя базы данных
-        'USER': 'postgres',  # Имя пользователя базы данных
-        'PASSWORD': 'GradeTop1!',  # Пароль пользователя базы данных
+        'NAME': 'todomany',
+        'USER': 'postgres',
+        'PASSWORD': 'GradeTop1!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -142,6 +141,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -191,9 +192,9 @@ SIMPLE_JWT = {
     "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
     "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
     "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
-    "TOKEN_BLACKLIST_SERIALIZER": "rest_framework_simplejwt.serializers.TokenBlacklistSerializer",
-    "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
-    "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
+    "TOKEN_BLACKLIST_SERIALIZER": "rest_framework.simplejwt.serializers.TokenBlacklistSerializer",
+    "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework.simplejwt.serializers.TokenObtainSlidingSerializer",
+    "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework.simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
 LOGGING = {
@@ -225,5 +226,3 @@ LOGGING = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
-
-# Fix files
