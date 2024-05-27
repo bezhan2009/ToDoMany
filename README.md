@@ -65,3 +65,5 @@ ToDoMany - это веб-приложение, разработанное для
 4. Создайте суперпользователя: `python manage.py createsuperuser`.
 5. Запустите сервер: `python manage.py runserver`.
 6. Перейдите по адресу [http://127.0.0.1:8000/](http://127.0.0.1:8000/) в вашем браузере.
+
+Ибо можете перейти по ссылке https://todomany-17c00a7d561d.herokuapp.com/
