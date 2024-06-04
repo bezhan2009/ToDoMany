@@ -1,0 +1,51 @@
+.html{
+    align-items: center;
+    background-color: #F1F1F1;
+    height: 100vh;
+    overflow: hidden;
+}
+.form_regis{
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 12%;
+}
+
+.form_regis h1{
+    margin-left: 4.8vw;
+    font-size: 4.2vh;
+}
+
+.form_regis .input_cont{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.form_regis .input_cont input{
+    background-color: #FFFFFF;
+    width: 28vw;
+    height: 5.5vh;
+    margin-bottom: 1.5vh;
+    border-radius: 12px;
+    border: none;
+}
+
+.form_regis .btnRegister{
+    width: 28vw;
+    height: 5.5vh;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(#466CF5, #6686FD);
+    color: #FFFFFF;
+    font-size: 2vh;
+}
+
+.form_regis .if_cont{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20vh;
+}
+.form_regis .if_cont a{
+    margin-left: 1.4vh;
+    margin-top: 1.7vh;
+}
