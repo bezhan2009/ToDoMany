@@ -69,30 +69,3 @@ class SavedEnvironmentSerializer(serializers.ModelSerializer):
         model = SavedEnvironment
         fields = '__all__'
 
-
-class AdminEnvironmentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Admin
-        fields = '__all__'
-
-
-class ApplicationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Application
-        fields = '__all__'
-
-
-class EnvironmentQuerySerializer(serializers.Serializer):
-    password = serializers.CharField(required=False, help_text="Write the of environment")
-
-
-class ApplicationQuerySerializer(serializers.Serializer):
-    get = serializers.BooleanField(required=False, default=False)
-    create = serializers.BooleanField(required=False, default=False)
-    delete = serializers.BooleanField(required=False, default=False)
-    accept = serializers.BooleanField(required=False, default=False)
-    application_pk = serializers.IntegerField(required=False)
-    environment_pk = serializers.IntegerField(required=False)
-
-
-

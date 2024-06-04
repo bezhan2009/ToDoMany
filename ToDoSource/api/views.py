@@ -5,7 +5,6 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 from django.db import transaction
-from .Funs import *
 from .serializers import *
 from rest_framework.exceptions import PermissionDenied
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -74,107 +73,6 @@ def get_user_id_from_token(request):
         return None
 
 
-class ApplicationActions(APIView):
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
-                              type=openapi.TYPE_STRING),
-        ],
-        security=[],
-        query_serializer=ApplicationQuerySerializer()
-    )
-    def get(self, request, create_from_request=False):
-        query_serializer = ApplicationQuerySerializer(data=request.query_params)
-        query_serializer.is_valid(raise_exception=True)
-
-        get = query_serializer.validated_data.get("get", False)
-        create = query_serializer.validated_data.get("create", False)
-        delete = query_serializer.validated_data.get("delete", False)
-        accept = query_serializer.validated_data.get("accept", False)
-        application_pk = query_serializer.validated_data.get("application_pk")
-        environment_pk = query_serializer.validated_data.get("environment_pk")
-        accepted_funs = 0
-        query_data = [get, create, delete, accept, create_from_request]
-
-        for q in query_data:
-            if q:
-                accepted_funs += 1
-        if accepted_funs == 0:
-            return Response({'message': 'No method is chose. Chooses are:',
-                             'methods': [
-                                 'get',
-                                 'create(post)',
-                                 'delete',
-                                 'accept']}, status=status.HTTP_400_BAD_REQUEST)
-        if accepted_funs > 1:
-            return Response({
-                'message': 'You cannot accept more than one method. Chooses are:',
-                'methods': [
-                    'get',
-                    'create(post)',
-                    'delete',
-                    'accept'
-                ]
-            }, status=status.HTTP_400_BAD_REQUEST)
-
-        user = UserProfile.objects.get(id=get_user_id_from_token(request))
-        if get:
-            if not environment_pk:
-                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
-            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
-            get_method = applicationfun.get_application(request)
-            if get_method == 403:
-                return Response({'message': 'You have no permission to this action!!!'},
-                                status=status.HTTP_403_FORBIDDEN)
-            if get_method == 404:
-                return Response({'message': 'Application Not Found'}, status=status.HTTP_404_NOT_FOUND)
-            else:
-                return Response(get_method, status=status.HTTP_200_OK)
-        elif create:
-            if not environment_pk:
-                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
-            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
-            create_method = applicationfun.create_application(request)
-            if create_method == 'True':
-                return Response({'message': 'The application has been successfully submitted'},
-                                status=status.HTTP_201_CREATED)
-            elif create_method:
-                return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
-        elif create_from_request:
-            if not environment_pk:
-                return Response({'message': 'Environment has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
-            applicationfun = ApplicationViewSet(environment_pk, get_user_id_from_token(request))
-            create_method = applicationfun.create_application(request)
-            if create_method == 'True':
-                return 'True'
-            elif create_method:
-                return Response(create_method, status=status.HTTP_400_BAD_REQUEST)
-        elif delete:
-            if not application_pk:
-                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
-            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
-            delete_method = applicationfun.delete_application(request)
-            if delete_method:
-                return Response({'message': 'The application has been successfully removed'},
-                                status=status.HTTP_200_OK)
-            elif delete_method == 404:
-                return Response({'message': 'Application Not Found.'}, status=status.HTTP_404_NOT_FOUND)
-            else:
-                return Response({'message': 'You do not have access to this action'}, status=status.HTTP_403_FORBIDDEN)
-        elif accept:
-            if not application_pk:
-                return Response({'message': 'Application has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
-            applicationfun = ApplicationFun(get_user_id_from_token(request), application_pk)
-            accept_method = applicationfun.accept_application(request)
-            if accept_method == 404:
-                return Response({'message': 'Application Not Found or has been deleted/accepted.'}, status=status.HTTP_404_NOT_FOUND)
-            elif accept_method:
-                return Response({'message': 'The Application has been successfully accepted'},
-                                status=status.HTTP_200_OK)
-            elif not accept_method:
-                return Response({'message': 'You do not have access to this action'}, status=status.HTTP_403_FORBIDDEN)
-
-
 class TaskList(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -234,8 +132,6 @@ class TaskEnvironmentAction(APIView):
         """
         user_pk = get_user_id_from_token(request)
         task_user_pk = request.data.get('user')
-        if not task_user_pk:
-            return Response({'message': 'User has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
         serializer = TaskSerializer(data=request.data)
         try:
             environment = Environment.objects.get(id=pk, user=UserProfile.objects.get(id=user_pk))
@@ -249,7 +145,7 @@ class TaskEnvironmentAction(APIView):
                                           user=UserProfile.objects.get(id=get_user_id_from_token(request)),
                                           is_admin=True)
             except Admin.DoesNotExist:
-                return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
             except UserProfile.DoesNotExist:
                 return Response({'message': 'You have to chose one of the admins'}, status=status.HTTP_404_NOT_FOUND)
         except UserProfile.DoesNotExist:
@@ -263,8 +159,8 @@ class TaskDetail(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk, request):
-        return get_object_or_404(Task, id=pk, user=UserProfile.objects.get(id=get_user_id_from_token(request)))
+    def get_object(self, pk):
+        return get_object_or_404(Task, id=pk)
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -278,7 +174,7 @@ class TaskDetail(APIView):
         Получает информацию о задаче.
         """
         try:
-            task = self.get_object(pk, request)
+            task = self.get_object(pk)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
         serializer = TaskSerializer(task)
@@ -296,7 +192,7 @@ class TaskDetail(APIView):
         Удаляет задачу.
         """
         try:
-            task = self.get_object(pk, request)
+            task = self.get_object(pk)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -316,7 +212,7 @@ class TaskDetail(APIView):
         Обновляет информацию о задаче.
         """
         try:
-            task = self.get_object(pk, request)
+            task = self.get_object(pk)
         except Http404:
             return Response({'message': 'Task not found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -336,7 +232,7 @@ class EnvironmentList(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        responses={200: EnvironmentSerializer(many=True)},
+        responses={200: SavedEnvironmentSerializer(many=True)},
     )
     def get(self, request):
         """
@@ -344,11 +240,11 @@ class EnvironmentList(APIView):
         """
         try:
             user_id = get_user_id_from_token(request)
-            environments = Environment.objects.filter(user=user_id)
-        except Environment.DoesNotExist:
+            saved_environments = SavedEnvironment.objects.filter(user=user_id)
+        except SavedEnvironment.DoesNotExist:
             return Response({'message': 'You have not saved environments.'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = EnvironmentSerializer(environments, many=True)
+        serializer = SavedEnvironmentSerializer(saved_environments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
@@ -357,30 +253,18 @@ class EnvironmentList(APIView):
                               type=openapi.TYPE_STRING),
         ],
         request_body=EnvironmentSerializer,
-        responses={
-            201: 'Environment has been successfully created',
-            400: 'Environment with this name is already taken. Please try again.'
-        },
+        responses={201: 'Environment has been successfully created'},
     )
     def post(self, request):
         """
         Создает новое окружение.
         """
-
         user_pk = get_user_id_from_token(request)
         serializer = EnvironmentSerializer(data=request.data)
         if serializer.is_valid():
-            user = UserProfile.objects.get(id=user_pk)
-            if Environment.objects.filter(name=serializer.validated_data['name'], user=user):
-                return Response({'message': 'Environment with this name is already taken. Please try again.'},
-                                status=status.HTTP_400_BAD_REQUEST)
-            serializer.save(user=user)
-            saving_environment = SavedEnvironment.objects.create(user=user,
-                                                                 environment=Environment.objects.get(
-                                                                     id=serializer.data.get('id')))
-            saving_environment.save()
+            serializer.save(user=UserProfile.objects.get(id=user_pk))
             return Response(
-                serializer.data, status=status.HTTP_201_CREATED
+                {'message': 'Environment has been successfully created'}, status=status.HTTP_201_CREATED
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -390,7 +274,7 @@ class EnvironmentDetail(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, pk):
-        return get_object_or_404(Environment, pk=pk, is_deleted=False)
+        return get_object_or_404(Environment, pk=pk)
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -398,26 +282,18 @@ class EnvironmentDetail(APIView):
                               type=openapi.TYPE_STRING),
         ],
         responses={200: EnvironmentSerializer()},
-        query_serializer=EnvironmentQuerySerializer()
     )
     def get(self, request, pk):
         """
         Получает информацию об определенном окружении.
         """
-
-        query_serializer = EnvironmentQuerySerializer(data=request.query_params)
-        query_serializer.is_valid(raise_exception=True)
-
-        password = query_serializer.validated_data.get('password')
         try:
-            environment = Environment.objects.filter(id=pk, is_deleted=False)
-        except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        if not environment:
+            environment = self.get_object(pk)
+        except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
 
         user_id = get_user_id_from_token(request)  # Получаем первичный ключ пользователя
-        user = UserProfile.objects.get(id=get_user_id_from_token(request))
+
         # Проверяем, существует ли уже запись для данного пользователя и окружения
         saved_environment_qs = SavedEnvironment.objects.filter(user=user_id, environment=pk)
 
@@ -427,37 +303,19 @@ class EnvironmentDetail(APIView):
             saved_environment.date = timezone.now()  # Обновляем дату
         else:
             # Если запись не существует, создаем новую запись
-            if not password:
-                return Response({'message': 'Password has no provided'})
-            environment = Environment.objects.filter(id=pk)
-            if environment.exists():
-                environment = Environment.objects.filter(id=pk, password=password)
-                if environment.exists():
-                    data = {
-                        'user': user_id,
-                        'environment': pk,
-                    }
-                else:
-                    return Response({'message': 'Incorrect password'}, status=status.HTTP_403_FORBIDDEN)
-            else:
-                return Response({'message': 'Environment Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            data = {
+                'user': user_id,
+                'environment': pk,
+            }
             saving_environment = SavedEnvironmentSerializer(data=data)
             if saving_environment.is_valid():
                 saved_environment = saving_environment.save()
             else:
                 return Response(saving_environment.errors, status=status.HTTP_400_BAD_REQUEST)
-        application = ApplicationActions()
-        create_application = application.get(request, pk, True)
-        print("Without If: ", create_application)
-        if create_application == 'True':
-            print("With If: ", create_application)
-        else:
-            print("With Else", create_application)
-            return Response(create_application, status=status.HTTP_400_BAD_REQUEST)
-        saved_environment.save()  # Сохраняем изменения или новую запись
-        environment_instance = environment.first()
-        serializer = EnvironmentSerializer(environment_instance, many=False)
 
+        saved_environment.save()  # Сохраняем изменения или новую запись
+
+        serializer = EnvironmentSerializer(environment, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
@@ -465,87 +323,29 @@ class EnvironmentDetail(APIView):
             openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
                               type=openapi.TYPE_STRING),
         ],
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            properties={
-                'password': openapi.Schema(type=openapi.TYPE_STRING,
-                                           description="пароль от окружения для его удаления"),
-            },
-            required=['password']
-        ),
-        responses={
-            200: 'Environment has been removed successfully.',
-            400: 'Password has no provided.',
-            403: 'You do not have permission to delete this environment.',
-            404: 'Environment not found',
-        },
+        responses={200: 'Environment has been removed successfully'},
     )
     def delete(self, request, pk):
         """
         Удаляет окружение.
         """
-
-        is_access = False
         try:
-            password = request.data.get('password')
-            if password:
-                if Environment.objects.filter(id=pk, user=UserProfile.objects.get(
-                        id=get_user_id_from_token(request))):
-                    if Environment.objects.filter(id=pk, password=password):
-                        is_access = True
-                    else:
-                        return Response({'message': 'Incorrect password.'}, status=status.HTTP_403_FORBIDDEN)
-                else:
-                    pass
-            else:
-                return Response({'message': 'Password has no provided.'}, status=status.HTTP_400_BAD_REQUEST)
             environment = self.get_object(pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        if is_access:
-            environment.is_deleted = True
-            environment.save()
-        else:
-            return Response({'message': 'You do not have permission to delete this environment'},
-                            status=status.HTTP_403_FORBIDDEN)
-        return Response({'message': 'Environment has been removed successfully.'}, status=status.HTTP_200_OK)
+
+        environment.is_deleted = True
+        return Response({'message': 'Environment has been removed successfully'}, status=status.HTTP_200_OK)
 
 
 class EnvironmentAction(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk):
+    def get_object(self, pk, user_pk):
         return get_object_or_404(Environment,
-                                 id=pk)
-
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('Authorization', openapi.IN_HEADER, description="Bearer <token>",
-                              type=openapi.TYPE_STRING),
-        ],
-    )
-    def get(self, request, pk):
-        try:
-            user = UserProfile.objects.get(id=get_user_id_from_token(request))
-            environment = Environment.objects.get(id=pk)
-            admins = Admin.objects.filter(
-                environment=environment)
-        except Http404:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        except Environment.DoesNotExist:
-            return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        if Admin.objects.filter(environment=environment, user=user).exists() or Environment.objects.filter(
-                user=user).exists():
-            pass
-        else:
-            return Response({'message': 'You do not have any access to this environment'},
-                            status=status.HTTP_403_FORBIDDEN)
-        if admins:
-            serializer = AdminEnvironmentSerializer(admins, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({'message': 'This environment do not have any admins'}, status=status.HTTP_404_NOT_FOUND)
+                                 id=pk,
+                                 user=UserProfile.objects.get(id=user_pk))
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -566,56 +366,24 @@ class EnvironmentAction(APIView):
         Добавляет пользователя в окружение в качестве администратора.
         """
         user_pk = get_user_id_from_token(request)
-        user = UserProfile.objects.get(id=user_pk)
-        is_access = False
         try:
-            environment = self.get_object(pk)
+            environment = self.get_object(pk, user_pk)
         except Http404:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
         admin_pk = request.data.get('admin_pk')
-        if admin_pk is None:
-            return Response({'message': 'admin_pk has no provided'}, status=status.HTTP_400_BAD_REQUEST)
-        environment_check = Environment.objects.filter(user=user)
-        if environment_check:
-            is_access = True
-        elif Admin.objects.filter(user=user):
-            is_access = True
-        elif not is_access:
-            return Response({'message': 'You do not have permission to add your friend!!!'},
-                            status=status.HTTP_403_FORBIDDEN)
-        try:
-            user_admin_pk = UserProfile.objects.get(id=admin_pk)
-            admin = Admin.objects.filter(user=user_admin_pk, environment=environment).first()
-            if admin is None:
-                if is_access:
-                    admin = Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
-                    if request.data.get('is_superadmin'):
-                        admin.save(is_superadmin=True, is_admin=True)
-                    return Response({'message': 'You have successfully added your friend to environment'},
-                                    status=status.HTTP_201_CREATED)
-                else:
-                    return Response({'message': 'You do not have permission to add your friend!'},
-                                    status=status.HTTP_403_FORBIDDEN)
-            return Response({'message': 'This admin is already associated with this environment'},
-                            status=status.HTTP_200_OK)
-        except UserProfile.DoesNotExist:
-            return Response({'message': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        Admin.objects.create(environment=environment, user=UserProfile.objects.get(id=admin_pk))
+        return Response({'message': 'You have successfully added your friend to environment'},
+                        status=status.HTTP_201_CREATED)
 
 
 class EnvironmentAdminAction(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, pk, user_pk, is_superadmin):
-        if is_superadmin:
-            return get_object_or_404(Environment,
-                                     pk=pk, )
-        else:
-            return get_object_or_404(Environment,
-                                     pk=pk,
-                                     user=UserProfile.objects.get(id=user_pk))
+    def get_object(self, pk, user_pk):
+        return get_object_or_404(Environment,
+                                 pk=pk,
+                                 user=UserProfile.objects.get(id=user_pk))
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -630,32 +398,11 @@ class EnvironmentAdminAction(APIView):
         """
         user_pk = get_user_id_from_token(request)
         try:
-            environment = self.get_object(pk, user_pk, False)
-            is_access_to_delete_superadmin = True
+            environment = self.get_object(pk, user_pk)
         except Http404:
-            try:
-                environment = self.get_object(pk, user_pk, True)
-                Admin.objects.get(id=get_user_id_from_token(request), is_superadmin=True, environment=environment)
-                is_access_to_delete_superadmin = False
-            except Admin.DoesNotExist:
-                return Response({'message': 'You Do Not Have access.'}, status=status.HTTP_403_FORBIDDEN)
-            except Http404:
-                return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        if is_access_to_delete_superadmin:
-            try:
-                admin = Admin.objects.get(id=admin_pk, environment=environment)
-            except Admin.DoesNotExist:
-                return Response({'message': 'Admin not found'}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            try:
-                admin = Admin.objects.get(id=admin_pk, is_superadmin=True, environment=environment)
-            except Admin.DoesNotExist:
-                try:
-                    admin = Admin.objects.get(id=admin_pk, environment=environment)
-                except Admin.DoesNotExist:
-                    return Response({'message': 'You do not have access'}, status=status.HTTP_403_FORBIDDEN)
-        admin.delete()
+
+        Admin.objects.get(id=admin_pk).delete()
         return Response({'message': 'Admin deleted successfully'}, status=status.HTTP_200_OK)
 
 
@@ -674,31 +421,17 @@ class AdminActionsView(APIView):
         """
         Получает список задач для текущего пользователя в указанном окружении.
         """
-
-        is_admin = False
         try:
             environment = Environment.objects.get(id=environment_pk)
-            admin = Admin.objects.filter(user=UserProfile.objects.get(id=get_user_id_from_token(request)))
+            admin = Admin.objects.get(user=UserProfile.objects.get(id=get_user_id_from_token(request)))
         except Environment.DoesNotExist:
             return Response({'message': 'Environment not found'}, status=status.HTTP_404_NOT_FOUND)
-        if not admin.exists():
-            if Environment.objects.filter(id=environment_pk,
-                                          user=UserProfile.objects.get(id=get_user_id_from_token(request))):
-                is_admin = True
-            else:
-                return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
-        if is_admin:
-            task = Task.objects.filter(environment=environment,
-                                       is_deleted=False,
-                                       completed=False)
-        else:
-            task = Task.objects.filter(environment=environment,
-                                       user=UserProfile.objects.get(id=get_user_id_from_token(request)),
-                                       is_deleted=False,
-                                       completed=False)
-
-        if not task:
-            return Response({'message': 'You have not any tasks.'}, status=status.HTTP_404_NOT_FOUND)
+        except Admin.DoesNotExist:
+            return Response({'message': 'You Do Not Have access'}, status=status.HTTP_404_NOT_FOUND)
+        task = Task.objects.filter(environment=environment,
+                                   user=UserProfile.objects.get(id=get_user_id_from_token(request)),
+                                   is_deleted=False,
+                                   completed=False)
         serializer = TaskSerializer(task, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
@@ -785,10 +518,10 @@ class CommentList(APIView):
             return main_comments, comments_dict
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            raise Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
+            raise Response({"message": "Task not found"}, status=404)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            raise Response({"error": str(e)}, status=500)
 
     def get(self, request, task_id):
         try:
@@ -839,7 +572,7 @@ class CommentList(APIView):
             return Response({"message": "You have not registered yet"}, status=status.HTTP_404_NOT_FOUND)
         except Task.DoesNotExist:
             logger.warning(f"Failed to get comments. Task not found.")
-            return Response({"message": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message": "Task not found"}, status=404)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -857,7 +590,7 @@ class CommentDetail(APIView):
             raise Http404({"message": "Comment not found"})
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
-            raise Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            raise Response({"error": str(e)}, status=500)
 
     @transaction.atomic
     def delete_comment_chain(self, comment):
@@ -882,7 +615,7 @@ class CommentDetail(APIView):
             logger.info(f"Attempting to delete comment with ID {comment_id}.")
         except Comment.DoesNotExist:
             logger.warning(f"Failed to delete Comment. Comment with ID {comment_id} not found.")
-            return Response({"message": "Comment Not Found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message": "Comment Not Found"}, status=404)
         except Exception as e:
             logger.error(f"An error occurred while processing the request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -893,4 +626,4 @@ class CommentDetail(APIView):
         # Delete the parent comment
         comment.delete()
 
-        return Response({'message': 'comment has been successfully deleted!'}, status=status.HTTP_200_OK)
+        return Response({'message': 'comment has been successfully deleted!'}, status=204)
