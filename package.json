@@ -10,5 +10,8 @@
     "type": "git",
     "url": "https://github.com/bezhan2009/ToDoMany.git"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "eslint-plugin-react-refresh": "^0.4.6"
+  }
 }
