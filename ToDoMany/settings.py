@@ -9,13 +9,13 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
-from pathlib import Path
+import os
+import sys
 from datetime import timedelta
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-#2n#&16h+2neo(&n@w6sd&y^mfu(=+n(5mq!rj!a0gu@9$3ol^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'bezhan2009.pythonanywhere.com', 'localhost']
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'todomany-17c00a7d561d.herokuapp.com']
 
 # Application definition
 
@@ -38,15 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
-    'ToDoSource',
-    'corsheaders'
+    'corsheaders',
+    'adminapp',
+    'app',
+    'commentapp',
+    'envapp',
+    'taskapp',
+    'teamapp',
+    'userapp',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,8 +68,7 @@ ROOT_URLCONF = 'ToDoMany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,33 +83,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ToDoMany.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todomaindb',  # Имя базы данных
-        'USER': 'postgres',  # Имя пользователя базы данных
-        'PASSWORD': 'bezhan2009',  # Пароль пользователя базы данных
+        'NAME': os.environ.get('DB_NAME', 'fmsehwdu'),  # Имя базы данных
+        'USER': os.environ.get('DB_USER', 'fmsehwdu'),  # Имя пользователя базы данных
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j'),  # Пароль пользователя базы данных
+        'HOST': os.environ.get('DB_HOST', 'rain.db.elephantsql.com'),  # Хост базы данных
+        'PORT': os.environ.get('DB_PORT', '5432'),  # Порт базы данных (обычно 5432)
     }
 }
 
-"""
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'fmsehwdu',  # Имя базы данных
-            'USER': 'fmsehwdu',  # Имя пользователя базы данных
-            'PASSWORD': 'dQfWrGxmF8vO1S60SxtgQjTKYtSQ8_5j',  # Пароль пользователя базы данных
-            'HOST': 'rain.db.elephantsql.com',  # Хост базы данных
-            'PORT': '5432',  # Порт базы данных (обычно 5432)
-        }
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('TEST_DB_NAME', 'todomany'),  # Имя базы данных
+        'USER': os.environ.get('TEST_DB_USER', 'postgres'),  # Имя пользователя базы данных
+        'PASSWORD': os.environ.get('TEST_DB_PASSWORD', 'GradeTop1!'),  # Пароль пользователя базы данных
+        'HOST': os.environ.get('TEST_DB_HOST', 'localhost'),  # Хост базы данных
+        'PORT': os.environ.get('TEST_DB_PORT', '5432'),  # Порт базы данных (обычно 5432)
     }
-"""
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -123,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -135,11 +136,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -148,10 +150,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=450),
@@ -186,11 +189,11 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 
     "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
-    "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
-    "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
-    "TOKEN_BLACKLIST_SERIALIZER": "rest_framework_simplejwt.serializers.TokenBlacklistSerializer",
-    "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
-    "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
+    "TOKEN_REFRESH_SERIALIZER": "rest_framework.simplejwt.serializers.TokenRefreshSerializer",
+    "TOKEN_VERIFY_SERIALIZER": "rest_framework.simplejwt.serializers.TokenVerifySerializer",
+    "TOKEN_BLACKLIST_SERIALIZER": "rest_framework.simplejwt.serializers.TokenBlacklistSerializer",
+    "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework.simplejwt.serializers.TokenObtainSlidingSerializer",
+    "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework.simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
 LOGGING = {
@@ -221,6 +224,4 @@ LOGGING = {
     },
 }
 
-
 CORS_ALLOW_ALL_ORIGINS = True
-

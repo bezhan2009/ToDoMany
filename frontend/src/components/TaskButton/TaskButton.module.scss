@@ -1,0 +1,48 @@
+.task_btn {
+    padding: 12px 30px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 16px;
+}
+
+.active {
+    color: #fff;
+    background: linear-gradient(0deg, #6686fd 0%, #6484fc 0%, #466cf5 100%);
+}
+
+.active:hover {
+    background: linear-gradient(0deg, #5a7eff 0%, #476fff 0%, #335fff 100%);
+    color: #ebebeb;
+}
+
+.active:active {
+    background: linear-gradient(0deg, #96adff 0%, #85a0ff 0%, #6082ff 100%);
+    color: rgb(0, 0, 0);
+}
+
+.overdue {
+    background: #e29696;
+    color: #3e1919;
+}
+.overdue:hover {
+    background: #e38585;
+    color: #3e1919;
+}
+.overdue:active {
+    background: #f1aeae;
+    color: #3e1919;
+}
+
+.completed {
+    background: linear-gradient(0deg, #6686fd 0%, #6484fc 0%, #466cf5 100%);
+    color: #cfe8ff;
+}
+.completed:hover {
+    background: linear-gradient(0deg, #597dff 0%, #567bff 0%, #3561ff 100%);
+    color: #cfe8ff;
+}
+.completed:active {
+    background: linear-gradient(0deg, #6788ff 0%, #6587ff 0%, #4c73ff 100%);
+    color: #c9c9c9;
+}

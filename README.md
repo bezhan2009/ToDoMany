@@ -1,3 +1,10 @@
+![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany) 
+![GitHub language count](https://img.shields.io/github/languages/count/bezhan2009/ToDoMany)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bezhan2009/ToDoMany)
+![GitHub repo size](https://img.shields.io/github/repo-size/bezhan2009/ToDoMany) 
+![GitHub last commit](https://img.shields.io/github/last-commit/bezhan2009/ToDoMany)
+![GitHub User's stars](https://img.shields.io/github/stars/bezhan2009?style=social)
+
 **Название приложения**: ToDoMany
 
 **Описание проекта**:
@@ -54,6 +61,16 @@ ToDoMany - это веб-приложение, разработанное для
 **Интерфейс**:
 Интерфейс приложения представлен в виде веб-страниц с использованием современных средств стилизации и визуализации, обеспечивающих удобство использования и приятный пользовательский опыт. В приложении реализованы различные страницы для управления задачами, комментариями, профилем пользователя и другими функциями.
 
-**Структура БД**
 
-![image](https://github.com/bezhan2009/ToDoMany/assets/157696306/ae11cbdb-cb8e-44e8-bb0c-7ea612f463ef)
+## Установка и запуск
+
+Чтобы запустить проект локально, выполните следующие шаги:
+
+1. Склонируйте репозиторий на локальную машину.
+2. Установите зависимости, используя `pip install -r requirements.txt`.
+3. Примените миграции базы данных: `python manage.py migrate`.
+4. Создайте суперпользователя: `python manage.py createsuperuser`.
+5. Запустите сервер: `python manage.py runserver`.
+6. Перейдите по адресу [http://127.0.0.1:8000/](http://127.0.0.1:8000/) в вашем браузере.
+
+Ибо можете перейти по ссылке https://todomany-17c00a7d561d.herokuapp.com/

@@ -1,0 +1,19 @@
+:root {
+  font-family: "Arimo", sans-serif;
+  font-size: 14px;  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+
+.content-container {
+  transition: margin-left 0.2s ease-out;
+  margin: 63px 0 0 72px;
+}
+
+.menu-open {
+  margin-left: 300px; 
+}
