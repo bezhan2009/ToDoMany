@@ -52,6 +52,8 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Оставьте только одно определение для 'admin/'
+    path('accounts/', include('django.contrib.auth.urls')),
+
     path('auth/', include('userapp.urls'), name='sign_up'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
