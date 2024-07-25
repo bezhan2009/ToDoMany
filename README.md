@@ -1,13 +1,15 @@
-![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany) 
+![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany)
 ![GitHub language count](https://img.shields.io/github/languages/count/bezhan2009/ToDoMany)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bezhan2009/ToDoMany)
-![GitHub repo size](https://img.shields.io/github/repo-size/bezhan2009/ToDoMany) 
+![GitHub repo size](https://img.shields.io/github/repo-size/bezhan2009/ToDoMany)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bezhan2009/ToDoMany)
 ![GitHub User's stars](https://img.shields.io/github/stars/bezhan2009?style=social)
 
 **Название приложения**: ToDoMany
 
 **Описание проекта**:
+
+ЭЭЭЭХХХ
 
 ToDoMany - это веб-приложение, разработанное для управления задачами и комментариями в различных рабочих окружениях. Оно предоставляет возможность создания задач, их назначения, отслеживания статуса выполнения и обсуждения в комментариях. Пользователи могут работать в различных окружениях, где могут просматривать задачи, назначенные на них или других участников, а также добавлять комментарии.
 
