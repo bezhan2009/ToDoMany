@@ -1,3 +1,5 @@
+![Opera_Снимок_2024-07-29_155631_logo html-removebg-preview](https://github.com/user-attachments/assets/3bbc9a09-1df3-405f-b4d7-a5670059ad9a)
+
 ![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany)
 ![GitHub language count](https://img.shields.io/github/languages/count/bezhan2009/ToDoMany)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bezhan2009/ToDoMany)
