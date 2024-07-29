@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import RenderCard from "@components/UI/card/CardController";
+import RenderCard from "../../components/UI/card/CardController";
 
 export default function EnviromentPage() {
   //получение значения id из URL-адреса

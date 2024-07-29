@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import Button from "@components/UI/button/Button";
-import RenderCard from "@components/UI/card/CardController";
+import Button from "../../components/UI/button/Button";
+import RenderCard from "../../components/UI/card/CardController";
 import HomeSceleton from "./Home.sceleton.jsx";
 import useCustomIntersectionObserver from "../../hooks/useCustomIntersectionObserver.jsx";
 
@@ -32,10 +31,10 @@ export default function Home() {
           >
             <RenderCard
               path={`/demo/api/enviroment/${index}`}
-              cardMode="enviroment"
-              title="Работа в айти"
-              img="https://placehold.co/56x56"
-              description="Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."
+              cardMode={"enviroment"}
+              title={"Работа в айти"}
+              img={"https://placehold.co/56x56"}
+              description={"Lorem ipsum dolor sit amet consectetur. In commodo varius lacinia suspendisse."}
             />
           </li>
         ))}

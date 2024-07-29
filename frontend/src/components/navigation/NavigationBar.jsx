@@ -1,8 +1,7 @@
-import React from "react";
 import MenuItem from "../UI/menuItem/MenuItem";
-import homeIco from "@assets/lucide_home.png";
-import tasksIco from "@assets/iconoir_task-list.png";
-import calendarIco from "@assets/calendar.png";
+import homeIco from "../../assets/lucide_home.png";
+import tasksIco from "../../assets/iconoir_task-list.png";
+import calendarIco from "../../assets/calendar.png";
 
 import "./NavigationBar.scss";
 
@@ -37,7 +36,7 @@ export default function NavigationBar({ partialOpen }) {
             icon={tasksIco}
             mode="disabled-nav"
           />
-          {/* 
+          {/*
             Это тупой (статический) метод отображения,
             перехода по двум пунктам окружения.
           */}

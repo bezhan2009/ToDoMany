@@ -1,10 +1,10 @@
 // import { useGetAllDataQuery } from "./redux/services/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
-import { toggleMenu, selectIsMenuOpen } from "@redux/slices/menuOpenSlice";
+import { toggleMenu, selectIsMenuOpen } from "./redux/slices/menuOpenSlice";
 
-import { Home, ErrorPage, EnviromentPage } from "@pages/index.jsx";
-import Header from "@components/header/Header.jsx";
+import { Home, ErrorPage, EnviromentPage, RegistrationPage } from "./pages/index.jsx";
+import Header from "./components/header/Header.jsx";
 import "./App.scss";
 
 function App() {
@@ -39,6 +39,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/demo/api/enviroment/:id" element={<EnviromentPage />} />
           <Route path="*" element={<ErrorPage error="404" />} />
+          <Route exact path="/registration" element={<RegistrationPage />} />
         </Routes>
       </div>
     </>

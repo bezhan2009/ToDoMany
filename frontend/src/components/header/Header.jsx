@@ -1,5 +1,5 @@
-import MenuToggleSwitch from "@UI/menuToggle/MenuToggleSwitch";
-import Button from "@UI/button/Button";
+import MenuToggleSwitch from "../UI/menuToggle/MenuToggleSwitch";
+import Button from "../UI/button/Button";
 import NavigationBar from "../navigation/NavigationBar";
 
 import "./Header.scss";
