@@ -1,43 +1,50 @@
 const path = require('path');
 const { ProvidePlugin } = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    main: path.resolve(__dirname, './src/index.js'),
-  },
+    mode: 'development', // или 'production', в зависимости от нужд
 
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
-  },
+    entry: {
+        main: path.resolve(__dirname, './src/index.js'),
+    },
 
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
-          }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      // Добавьте другие необходимые загрузчики, например для изображений
-    ]
-  },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].bundle.js',
+    },
 
-  plugins: [
-    new ProvidePlugin({
-      React: 'react'
-    })
-  ],
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            // Добавьте другие необходимые загрузчики, например для изображений
+        ]
+    },
 
-  resolve: {
-    extensions: ['.js', '.jsx']
-  }
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './public/index.html'), // путь к вашему шаблону HTML
+            filename: 'index.html', // имя выходного HTML файла
+        }),
+        new ProvidePlugin({
+            React: 'react'
+        })
+    ],
+
+    resolve: {
+        extensions: ['.js', '.jsx']
+    }
 };
