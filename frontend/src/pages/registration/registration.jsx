@@ -1,4 +1,4 @@
-import '../css/registration.css';
+import './registration.css';
 const Regis = () => {
     return (
         <div className='html'>
