@@ -1,14 +1,15 @@
-![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany) 
+![Opera_Снимок_2024-07-29_155631_logo html-removebg-preview](https://github.com/user-attachments/assets/3bbc9a09-1df3-405f-b4d7-a5670059ad9a)
+
+![GitHub top language](https://img.shields.io/github/languages/top/bezhan2009/ToDoMany)
 ![GitHub language count](https://img.shields.io/github/languages/count/bezhan2009/ToDoMany)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bezhan2009/ToDoMany)
-![GitHub repo size](https://img.shields.io/github/repo-size/bezhan2009/ToDoMany) 
+![GitHub repo size](https://img.shields.io/github/repo-size/bezhan2009/ToDoMany)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bezhan2009/ToDoMany)
 ![GitHub User's stars](https://img.shields.io/github/stars/bezhan2009?style=social)
 
 **Название приложения**: ToDoMany
 
 **Описание проекта**:
-
 ToDoMany - это веб-приложение, разработанное для управления задачами и комментариями в различных рабочих окружениях. Оно предоставляет возможность создания задач, их назначения, отслеживания статуса выполнения и обсуждения в комментариях. Пользователи могут работать в различных окружениях, где могут просматривать задачи, назначенные на них или других участников, а также добавлять комментарии.
 
 **Функциональность**:
@@ -54,6 +55,7 @@ ToDoMany - это веб-приложение, разработанное для
   - Фреймворк: React.js
   - Управление состоянием: Redux
   - Библиотеки: React Router, Axios
+  - Сборщик: WebPack
 
 - **Аутентификация и авторизация**:
   - JSON Web Tokens (JWT)
